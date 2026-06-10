@@ -1,22 +1,22 @@
 leak_id,leak_type,impact_class,entity_type,entity_id,euro_impact,description
-GT0001,commission_overpayment,recoverable_cash,commission,CM00283,794.33,Paid 1.58x the plan rate on opp O00671
-GT0002,commission_overpayment,recoverable_cash,commission,CM00218,1348.68,Paid 1.70x the plan rate on opp O00493
-GT0003,commission_overpayment,recoverable_cash,commission,CM00469,5715.45,Paid 1.78x the plan rate on opp O01145
-GT0004,commission_overpayment,recoverable_cash,commission,CM00053,2881.18,Paid 1.33x the plan rate on opp O00131
-GT0005,commission_overpayment,recoverable_cash,commission,CM00406,3452.11,Paid 1.63x the plan rate on opp O00986
-GT0006,commission_overpayment,recoverable_cash,commission,CM00385,892.3,Paid 1.74x the plan rate on opp O00927
-GT0007,commission_overpayment,recoverable_cash,commission,CM00085,533.51,Paid 1.34x the plan rate on opp O00199
-GT0008,commission_overpayment,recoverable_cash,commission,CM00556,271.21,Paid 1.49x the plan rate on opp O01360
-GT0009,commission_overpayment,recoverable_cash,commission,CM00463,3851.62,Paid 1.56x the plan rate on opp O01132
-GT0010,commission_overpayment,recoverable_cash,commission,CM00360,849.2,Paid 1.60x the plan rate on opp O00857
-GT0011,commission_overpayment,recoverable_cash,commission,CM00426,279.32,Paid 1.32x the plan rate on opp O01030
-GT0012,commission_overpayment,recoverable_cash,commission,CM00263,2166.92,Paid 1.33x the plan rate on opp O00608
-GT0013,commission_overpayment,recoverable_cash,commission,CM00425,5855.48,Paid 1.53x the plan rate on opp O01029
-GT0014,commission_overpayment,recoverable_cash,commission,CM00479,671.15,Paid 1.76x the plan rate on opp O01160
-GT0015,commission_overpayment,recoverable_cash,commission,CM00135,1320.7,Paid 1.38x the plan rate on opp O00319
-GT0016,commission_overpayment,recoverable_cash,commission,CM00398,656.04,Paid 1.72x the plan rate on opp O00961
-GT0017,commission_overpayment,recoverable_cash,commission,CM00240,292.63,Paid 1.31x the plan rate on opp O00547
-GT0018,commission_overpayment,recoverable_cash,commission,CM00414,4334.61,Paid 1.56x the plan rate on opp O01005
+GT0001,commission_overpayment,potentially_recoverable_cash,commission,CM00283,794.33,Paid 1.58x the plan rate on opp O00671
+GT0002,commission_overpayment,potentially_recoverable_cash,commission,CM00218,1348.68,Paid 1.70x the plan rate on opp O00493
+GT0003,commission_overpayment,potentially_recoverable_cash,commission,CM00469,5715.45,Paid 1.78x the plan rate on opp O01145
+GT0004,commission_overpayment,potentially_recoverable_cash,commission,CM00053,2881.18,Paid 1.33x the plan rate on opp O00131
+GT0005,commission_overpayment,potentially_recoverable_cash,commission,CM00406,3452.11,Paid 1.63x the plan rate on opp O00986
+GT0006,commission_overpayment,potentially_recoverable_cash,commission,CM00385,892.3,Paid 1.74x the plan rate on opp O00927
+GT0007,commission_overpayment,potentially_recoverable_cash,commission,CM00085,533.51,Paid 1.34x the plan rate on opp O00199
+GT0008,commission_overpayment,potentially_recoverable_cash,commission,CM00556,271.21,Paid 1.49x the plan rate on opp O01360
+GT0009,commission_overpayment,potentially_recoverable_cash,commission,CM00463,3851.62,Paid 1.56x the plan rate on opp O01132
+GT0010,commission_overpayment,potentially_recoverable_cash,commission,CM00360,849.2,Paid 1.60x the plan rate on opp O00857
+GT0011,commission_overpayment,potentially_recoverable_cash,commission,CM00426,279.32,Paid 1.32x the plan rate on opp O01030
+GT0012,commission_overpayment,potentially_recoverable_cash,commission,CM00263,2166.92,Paid 1.33x the plan rate on opp O00608
+GT0013,commission_overpayment,potentially_recoverable_cash,commission,CM00425,5855.48,Paid 1.53x the plan rate on opp O01029
+GT0014,commission_overpayment,potentially_recoverable_cash,commission,CM00479,671.15,Paid 1.76x the plan rate on opp O01160
+GT0015,commission_overpayment,potentially_recoverable_cash,commission,CM00135,1320.7,Paid 1.38x the plan rate on opp O00319
+GT0016,commission_overpayment,potentially_recoverable_cash,commission,CM00398,656.04,Paid 1.72x the plan rate on opp O00961
+GT0017,commission_overpayment,potentially_recoverable_cash,commission,CM00240,292.63,Paid 1.31x the plan rate on opp O00547
+GT0018,commission_overpayment,potentially_recoverable_cash,commission,CM00414,4334.61,Paid 1.56x the plan rate on opp O01005
 GT0019,attribution_gap,revenue_at_risk,opportunity,O00812,19043.0,Won revenue with no resolvable source lead
 GT0020,attribution_gap,revenue_at_risk,opportunity,O00111,8765.0,Won revenue with no resolvable source lead
 GT0021,attribution_gap,revenue_at_risk,opportunity,O01136,19265.0,Won revenue with no resolvable source lead
@@ -87,183 +87,183 @@ GT0085,stalled_deal,revenue_at_risk,opportunity,O01038,71388.0,Parked in Negotia
 GT0086,stalled_deal,revenue_at_risk,opportunity,O00868,13586.0,Parked in Qualification for 202 days
 GT0087,stalled_deal,revenue_at_risk,opportunity,O00036,40125.0,Parked in Proposal for 197 days
 GT0088,stalled_deal,revenue_at_risk,opportunity,O00662,12999.0,Parked in Negotiation for 165 days
-GT0089,under_billing,recoverable_cash,contract,C0145,812.5,Missing invoice for period 2026-05-01
-GT0090,under_billing,recoverable_cash,contract,C0699,580.83,Missing invoice for period 2026-05-01
-GT0091,under_billing,recoverable_cash,contract,C0189,913.25,Missing invoice for period 2026-05-01
-GT0092,under_billing,recoverable_cash,contract,C0506,6286.75,Missing invoice for period 2026-05-01
-GT0093,under_billing,recoverable_cash,contract,C0392,548.92,Missing invoice for period 2026-05-01
-GT0094,under_billing,recoverable_cash,contract,C0257,1749.2,Missing invoice for period 2026-05-01
-GT0095,under_billing,recoverable_cash,contract,C0291,1346.5,Missing invoice for period 2026-01-01
-GT0096,under_billing,recoverable_cash,contract,C0564,8252.42,Missing invoice for period 2026-05-01
-GT0097,under_billing,recoverable_cash,contract,C0110,1115.25,Missing invoice for period 2026-05-01
-GT0098,under_billing,recoverable_cash,contract,C0554,21826.0,Missing invoice for period 2026-05-01
-GT0099,under_billing,recoverable_cash,contract,C0008,1854.12,Missing invoice for period 2026-05-01
-GT0100,under_billing,recoverable_cash,contract,C0660,438.67,Missing invoice for period 2026-04-01
-GT0101,under_billing,recoverable_cash,contract,C0511,3796.08,Missing invoice for period 2025-08-01
-GT0102,under_billing,recoverable_cash,contract,C0376,12621.42,Missing invoice for period 2026-05-01
-GT0103,under_billing,recoverable_cash,contract,C0323,2801.6,Missing invoice for period 2026-05-01
-GT0104,under_billing,recoverable_cash,contract,C0211,2153.0,Missing invoice for period 2026-05-01
-GT0105,under_billing,recoverable_cash,contract,C0491,1401.75,Missing invoice for period 2026-05-01
-GT0106,under_billing,recoverable_cash,contract,C0357,10127.92,Missing invoice for period 2026-05-01
-GT0107,under_billing,recoverable_cash,contract,C0193,932.42,Missing invoice for period 2026-05-01
-GT0108,under_billing,recoverable_cash,contract,C0036,18517.5,Missing invoice for period 2026-05-01
-GT0109,under_billing,recoverable_cash,contract,C0260,1335.67,Missing invoice for period 2026-05-01
-GT0110,under_billing,recoverable_cash,contract,C0663,1365.92,Missing invoice for period 2026-02-01
-GT0111,under_billing,recoverable_cash,contract,C0293,14190.0,Missing invoice for period 2026-05-01
-GT0112,under_billing,recoverable_cash,contract,C0107,1040.42,Missing invoice for period 2026-05-01
-GT0113,silent_churn,overstated_revenue,contract,C0517,139044.0,Marked Active but no billing for ~5 months (phantom ARR)
-GT0114,silent_churn,overstated_revenue,contract,C0643,33016.0,Marked Active but no billing for ~3 months (phantom ARR)
-GT0115,silent_churn,overstated_revenue,contract,C0585,19117.0,Marked Active but no billing for ~4 months (phantom ARR)
-GT0116,silent_churn,overstated_revenue,contract,C0548,24775.5,Marked Active but no billing for ~4 months (phantom ARR)
-GT0117,silent_churn,overstated_revenue,contract,C0594,67466.0,Marked Active but no billing for ~5 months (phantom ARR)
-GT0118,silent_churn,overstated_revenue,contract,C0502,9525.6,Marked Active but no billing for ~5 months (phantom ARR)
-GT0119,silent_churn,overstated_revenue,contract,C0018,59323.0,Marked Active but no billing for ~5 months (phantom ARR)
-GT0120,silent_churn,overstated_revenue,contract,C0718,162838.0,Marked Active but no billing for ~5 months (phantom ARR)
-GT0121,silent_churn,overstated_revenue,contract,C0195,44755.0,Marked Active but no billing for ~3 months (phantom ARR)
-GT0122,silent_churn,overstated_revenue,contract,C0597,18917.0,Marked Active but no billing for ~3 months (phantom ARR)
-GT0123,silent_churn,overstated_revenue,contract,C0086,23173.2,Marked Active but no billing for ~4 months (phantom ARR)
-GT0124,silent_churn,overstated_revenue,contract,C0715,231851.0,Marked Active but no billing for ~4 months (phantom ARR)
-GT0125,silent_churn,overstated_revenue,contract,C0485,9092.0,Marked Active but no billing for ~5 months (phantom ARR)
-GT0126,silent_churn,overstated_revenue,contract,C0422,8607.0,Marked Active but no billing for ~5 months (phantom ARR)
-GT0127,silent_churn,overstated_revenue,contract,C0176,10832.0,Marked Active but no billing for ~4 months (phantom ARR)
-GT0128,silent_churn,overstated_revenue,contract,C0173,6839.95,Marked Active but no billing for ~4 months (phantom ARR)
-GT0129,silent_churn,overstated_revenue,contract,C0212,27766.0,Marked Active but no billing for ~3 months (phantom ARR)
-GT0130,silent_churn,overstated_revenue,contract,C0076,7443.45,Marked Active but no billing for ~4 months (phantom ARR)
+GT0089,under_billing,potentially_recoverable_cash,contract,C0145,812.5,Missing invoice for period 2026-05-01
+GT0090,under_billing,potentially_recoverable_cash,contract,C0699,580.83,Missing invoice for period 2026-05-01
+GT0091,under_billing,potentially_recoverable_cash,contract,C0189,913.25,Missing invoice for period 2026-05-01
+GT0092,under_billing,potentially_recoverable_cash,contract,C0506,6286.75,Missing invoice for period 2026-05-01
+GT0093,under_billing,potentially_recoverable_cash,contract,C0392,548.92,Missing invoice for period 2026-05-01
+GT0094,under_billing,potentially_recoverable_cash,contract,C0257,1749.2,Missing invoice for period 2026-05-01
+GT0095,under_billing,potentially_recoverable_cash,contract,C0291,1346.5,Missing invoice for period 2026-01-01
+GT0096,under_billing,potentially_recoverable_cash,contract,C0564,8252.42,Missing invoice for period 2026-05-01
+GT0097,under_billing,potentially_recoverable_cash,contract,C0110,1115.25,Missing invoice for period 2026-05-01
+GT0098,under_billing,potentially_recoverable_cash,contract,C0554,21826.0,Missing invoice for period 2026-05-01
+GT0099,under_billing,potentially_recoverable_cash,contract,C0008,1854.12,Missing invoice for period 2026-05-01
+GT0100,under_billing,potentially_recoverable_cash,contract,C0660,438.67,Missing invoice for period 2026-04-01
+GT0101,under_billing,potentially_recoverable_cash,contract,C0511,3796.08,Missing invoice for period 2025-08-01
+GT0102,under_billing,potentially_recoverable_cash,contract,C0376,12621.42,Missing invoice for period 2026-05-01
+GT0103,under_billing,potentially_recoverable_cash,contract,C0323,2801.6,Missing invoice for period 2026-05-01
+GT0104,under_billing,potentially_recoverable_cash,contract,C0211,2153.0,Missing invoice for period 2026-05-01
+GT0105,under_billing,potentially_recoverable_cash,contract,C0491,1401.75,Missing invoice for period 2026-05-01
+GT0106,under_billing,potentially_recoverable_cash,contract,C0357,10127.92,Missing invoice for period 2026-05-01
+GT0107,under_billing,potentially_recoverable_cash,contract,C0193,932.42,Missing invoice for period 2026-05-01
+GT0108,under_billing,potentially_recoverable_cash,contract,C0036,18517.5,Missing invoice for period 2026-05-01
+GT0109,under_billing,potentially_recoverable_cash,contract,C0260,1335.67,Missing invoice for period 2026-05-01
+GT0110,under_billing,potentially_recoverable_cash,contract,C0663,1365.92,Missing invoice for period 2026-02-01
+GT0111,under_billing,potentially_recoverable_cash,contract,C0293,14190.0,Missing invoice for period 2026-05-01
+GT0112,under_billing,potentially_recoverable_cash,contract,C0107,1040.42,Missing invoice for period 2026-05-01
+GT0113,silent_churn,overstated_revenue,contract,C0176,10832.0,Marked Active but no billing for ~5 months (phantom ARR)
+GT0114,silent_churn,overstated_revenue,contract,C0076,7443.45,Marked Active but no billing for ~3 months (phantom ARR)
+GT0115,silent_churn,overstated_revenue,contract,C0212,27766.0,Marked Active but no billing for ~4 months (phantom ARR)
+GT0116,silent_churn,overstated_revenue,contract,C0597,18917.0,Marked Active but no billing for ~4 months (phantom ARR)
+GT0117,silent_churn,overstated_revenue,contract,C0485,9092.0,Marked Active but no billing for ~5 months (phantom ARR)
+GT0118,silent_churn,overstated_revenue,contract,C0718,162838.0,Marked Active but no billing for ~5 months (phantom ARR)
+GT0119,silent_churn,overstated_revenue,contract,C0086,23173.2,Marked Active but no billing for ~5 months (phantom ARR)
+GT0120,silent_churn,overstated_revenue,contract,C0715,231851.0,Marked Active but no billing for ~5 months (phantom ARR)
+GT0121,silent_churn,overstated_revenue,contract,C0548,24775.5,Marked Active but no billing for ~3 months (phantom ARR)
+GT0122,silent_churn,overstated_revenue,contract,C0173,6839.95,Marked Active but no billing for ~3 months (phantom ARR)
+GT0123,silent_churn,overstated_revenue,contract,C0018,59323.0,Marked Active but no billing for ~4 months (phantom ARR)
+GT0124,silent_churn,overstated_revenue,contract,C0195,44755.0,Marked Active but no billing for ~4 months (phantom ARR)
+GT0125,silent_churn,overstated_revenue,contract,C0643,33016.0,Marked Active but no billing for ~5 months (phantom ARR)
+GT0126,silent_churn,overstated_revenue,contract,C0502,9525.6,Marked Active but no billing for ~5 months (phantom ARR)
+GT0127,silent_churn,overstated_revenue,contract,C0517,139044.0,Marked Active but no billing for ~4 months (phantom ARR)
+GT0128,silent_churn,overstated_revenue,contract,C0422,8607.0,Marked Active but no billing for ~4 months (phantom ARR)
+GT0129,silent_churn,overstated_revenue,contract,C0594,67466.0,Marked Active but no billing for ~3 months (phantom ARR)
+GT0130,silent_churn,overstated_revenue,contract,C0585,19117.0,Marked Active but no billing for ~4 months (phantom ARR)
 GT0131,duplicate_revenue,overstated_revenue,invoice,INV006973,1320.97,Duplicate of INV004967 (2026-02-01)
-GT0132,duplicate_revenue,overstated_revenue,invoice,INV006974,994.08,Duplicate of INV001490 (2025-11-01)
-GT0133,duplicate_revenue,overstated_revenue,invoice,INV006975,648.0,Duplicate of INV000528 (2025-01-01)
-GT0134,duplicate_revenue,overstated_revenue,invoice,INV006976,6001.92,Duplicate of INV005120 (2026-04-01)
-GT0135,duplicate_revenue,overstated_revenue,invoice,INV006977,518.17,Duplicate of INV002825 (2025-01-01)
+GT0132,duplicate_revenue,overstated_revenue,invoice,INV006974,994.08,Duplicate of INV001489 (2025-10-01)
+GT0133,duplicate_revenue,overstated_revenue,invoice,INV006975,648.0,Duplicate of INV000527 (2024-12-01)
+GT0134,duplicate_revenue,overstated_revenue,invoice,INV006976,6001.92,Duplicate of INV005119 (2026-03-01)
+GT0135,duplicate_revenue,overstated_revenue,invoice,INV006977,518.17,Duplicate of INV002826 (2025-02-01)
 GT0136,duplicate_revenue,overstated_revenue,invoice,INV006978,520.58,Duplicate of INV006813 (2024-11-01)
 GT0137,duplicate_revenue,overstated_revenue,invoice,INV006979,884.5,Duplicate of INV004461 (2024-12-01)
-GT0138,duplicate_revenue,overstated_revenue,invoice,INV006980,6198.92,Duplicate of INV003640 (2025-02-01)
-GT0139,duplicate_revenue,overstated_revenue,invoice,INV006981,2870.08,Duplicate of INV001574 (2026-02-01)
+GT0138,duplicate_revenue,overstated_revenue,invoice,INV006980,6198.92,Duplicate of INV003641 (2025-03-01)
+GT0139,duplicate_revenue,overstated_revenue,invoice,INV006981,3976.3,Duplicate of INV001573 (2026-05-01)
 GT0140,duplicate_revenue,overstated_revenue,invoice,INV006982,1520.92,Duplicate of INV000017 (2026-02-01)
-GT0141,duplicate_revenue,overstated_revenue,invoice,INV006983,3764.58,Duplicate of INV003054 (2026-04-01)
-GT0142,duplicate_revenue,overstated_revenue,invoice,INV006984,8892.0,Duplicate of INV002153 (2024-11-01)
-GT0143,duplicate_revenue,overstated_revenue,invoice,INV006985,1042.08,Duplicate of INV005041 (2025-10-01)
+GT0141,duplicate_revenue,overstated_revenue,invoice,INV006983,3764.58,Duplicate of INV003055 (2026-05-01)
+GT0142,duplicate_revenue,overstated_revenue,invoice,INV006984,8892.0,Duplicate of INV002154 (2024-12-01)
+GT0143,duplicate_revenue,overstated_revenue,invoice,INV006985,1042.08,Duplicate of INV005040 (2025-09-01)
 GT0144,duplicate_revenue,overstated_revenue,invoice,INV006986,505.0,Duplicate of INV004394 (2025-06-01)
-GT0145,duplicate_revenue,overstated_revenue,invoice,INV006987,5489.83,Duplicate of INV001348 (2026-03-01)
-GT0146,duplicate_revenue,overstated_revenue,invoice,INV006988,10015.58,Duplicate of INV002260 (2025-12-01)
+GT0145,duplicate_revenue,overstated_revenue,invoice,INV006987,5489.83,Duplicate of INV001347 (2026-02-01)
+GT0146,duplicate_revenue,overstated_revenue,invoice,INV006988,10015.58,Duplicate of INV002261 (2026-01-01)
 GT0147,duplicate_revenue,overstated_revenue,invoice,INV006989,24426.6,Duplicate of INV001932 (2026-04-01)
 GT0148,duplicate_revenue,overstated_revenue,invoice,INV006990,17169.33,Duplicate of INV004653 (2026-05-01)
 GT0149,duplicate_revenue,overstated_revenue,invoice,INV006991,4990.0,Duplicate of INV004248 (2025-08-01)
-GT0150,duplicate_revenue,overstated_revenue,invoice,INV006992,2064.25,Duplicate of INV006170 (2026-01-01)
-GT0151,duplicate_revenue,overstated_revenue,invoice,INV006993,1211.58,Duplicate of INV006445 (2026-05-01)
-GT0152,duplicate_revenue,overstated_revenue,invoice,INV006994,4421.42,Duplicate of INV002312 (2025-09-01)
-GT0153,duplicate_revenue,overstated_revenue,invoice,INV006995,1214.17,Duplicate of INV005468 (2025-04-01)
-GT0154,duplicate_revenue,overstated_revenue,invoice,INV006996,600.42,Duplicate of INV006531 (2026-03-01)
-GT0155,duplicate_revenue,overstated_revenue,invoice,INV006997,1000.58,Duplicate of INV002045 (2024-08-01)
-GT0156,duplicate_revenue,overstated_revenue,invoice,INV006998,505.83,Duplicate of INV006740 (2026-05-01)
-GT0157,duplicate_revenue,overstated_revenue,invoice,INV006999,656.58,Duplicate of INV000452 (2025-04-01)
-GT0158,duplicate_revenue,overstated_revenue,invoice,INV007000,5443.42,Duplicate of INV005797 (2025-02-01)
-GT0159,duplicate_revenue,overstated_revenue,invoice,INV007001,1229.75,Duplicate of INV001219 (2025-12-01)
-GT0160,duplicate_revenue,overstated_revenue,invoice,INV007002,3756.0,Duplicate of INV006502 (2025-10-01)
-GT0161,duplicate_revenue,overstated_revenue,invoice,INV007003,1398.42,Duplicate of INV005768 (2026-05-01)
-GT0162,duplicate_revenue,overstated_revenue,invoice,INV007004,955.08,Duplicate of INV005633 (2025-07-01)
+GT0150,duplicate_revenue,overstated_revenue,invoice,INV006992,2064.25,Duplicate of INV006169 (2025-12-01)
+GT0151,duplicate_revenue,overstated_revenue,invoice,INV006993,1211.58,Duplicate of INV006444 (2026-04-01)
+GT0152,duplicate_revenue,overstated_revenue,invoice,INV006994,4421.42,Duplicate of INV002313 (2025-10-01)
+GT0153,duplicate_revenue,overstated_revenue,invoice,INV006995,1214.17,Duplicate of INV005466 (2025-02-01)
+GT0154,duplicate_revenue,overstated_revenue,invoice,INV006996,600.42,Duplicate of INV006530 (2026-02-01)
+GT0155,duplicate_revenue,overstated_revenue,invoice,INV006997,1000.58,Duplicate of INV002046 (2024-09-01)
+GT0156,duplicate_revenue,overstated_revenue,invoice,INV006998,505.83,Duplicate of INV006739 (2026-04-01)
+GT0157,duplicate_revenue,overstated_revenue,invoice,INV006999,656.58,Duplicate of INV000451 (2025-03-01)
+GT0158,duplicate_revenue,overstated_revenue,invoice,INV007000,5443.42,Duplicate of INV005794 (2024-11-01)
+GT0159,duplicate_revenue,overstated_revenue,invoice,INV007001,1229.75,Duplicate of INV001218 (2025-11-01)
+GT0160,duplicate_revenue,overstated_revenue,invoice,INV007002,3756.0,Duplicate of INV006501 (2025-09-01)
+GT0161,duplicate_revenue,overstated_revenue,invoice,INV007003,1398.42,Duplicate of INV005765 (2026-02-01)
+GT0162,duplicate_revenue,overstated_revenue,invoice,INV007004,955.08,Duplicate of INV005631 (2025-05-01)
 GT0163,duplicate_revenue,overstated_revenue,invoice,INV007005,806.0,Duplicate of INV006834 (2025-02-01)
-GT0164,duplicate_revenue,overstated_revenue,invoice,INV007006,1458.0,Duplicate of INV006153 (2025-09-01)
-GT0165,duplicate_revenue,overstated_revenue,invoice,INV007007,988.83,Duplicate of INV000625 (2025-08-01)
-GT0166,duplicate_revenue,overstated_revenue,invoice,INV007008,4391.33,Duplicate of INV003860 (2025-11-01)
-GT0167,duplicate_revenue,overstated_revenue,invoice,INV007009,3922.0,Duplicate of INV006021 (2025-10-01)
+GT0164,duplicate_revenue,overstated_revenue,invoice,INV007006,1458.0,Duplicate of INV006152 (2025-08-01)
+GT0165,duplicate_revenue,overstated_revenue,invoice,INV007007,988.83,Duplicate of INV000624 (2025-07-01)
+GT0166,duplicate_revenue,overstated_revenue,invoice,INV007008,4391.33,Duplicate of INV003861 (2025-12-01)
+GT0167,duplicate_revenue,overstated_revenue,invoice,INV007009,3922.0,Duplicate of INV006018 (2025-07-01)
 GT0168,duplicate_revenue,overstated_revenue,invoice,INV007010,884.5,Duplicate of INV004462 (2025-01-01)
-GT0169,duplicate_revenue,overstated_revenue,invoice,INV007011,596.5,Duplicate of INV000930 (2025-04-01)
-GT0170,duplicate_revenue,overstated_revenue,invoice,INV007012,5010.75,Duplicate of INV003435 (2026-03-01)
-GT0171,duplicate_revenue,overstated_revenue,invoice,INV007013,846.42,Duplicate of INV003906 (2026-01-01)
+GT0169,duplicate_revenue,overstated_revenue,invoice,INV007011,596.5,Duplicate of INV000929 (2025-03-01)
+GT0170,duplicate_revenue,overstated_revenue,invoice,INV007012,5010.75,Duplicate of INV003436 (2026-04-01)
+GT0171,duplicate_revenue,overstated_revenue,invoice,INV007013,846.42,Duplicate of INV003907 (2026-02-01)
 GT0172,duplicate_revenue,overstated_revenue,invoice,INV007014,625.75,Duplicate of INV004161 (2024-09-01)
 GT0173,duplicate_revenue,overstated_revenue,invoice,INV007015,6525.83,Duplicate of INV000046 (2026-04-01)
-GT0174,duplicate_revenue,overstated_revenue,invoice,INV007016,13419.42,Duplicate of INV003206 (2025-01-01)
-GT0175,duplicate_revenue,overstated_revenue,invoice,INV007017,1580.83,Duplicate of INV005260 (2026-02-01)
-GT0176,duplicate_revenue,overstated_revenue,invoice,INV007018,8333.17,Duplicate of INV003128 (2024-12-01)
-GT0177,duplicate_revenue,overstated_revenue,invoice,INV007019,18094.42,Duplicate of INV005321 (2025-07-01)
-GT0178,duplicate_revenue,overstated_revenue,invoice,INV007020,10015.58,Duplicate of INV002256 (2025-08-01)
-GT0179,duplicate_revenue,overstated_revenue,invoice,INV007021,1132.0,Duplicate of INV005506 (2026-05-01)
+GT0174,duplicate_revenue,overstated_revenue,invoice,INV007016,13419.42,Duplicate of INV003207 (2025-02-01)
+GT0175,duplicate_revenue,overstated_revenue,invoice,INV007017,1580.83,Duplicate of INV005259 (2026-01-01)
+GT0176,duplicate_revenue,overstated_revenue,invoice,INV007018,8333.17,Duplicate of INV003129 (2025-01-01)
+GT0177,duplicate_revenue,overstated_revenue,invoice,INV007019,1270.08,Duplicate of INV005319 (2026-05-01)
+GT0178,duplicate_revenue,overstated_revenue,invoice,INV007020,10015.58,Duplicate of INV002257 (2025-09-01)
+GT0179,duplicate_revenue,overstated_revenue,invoice,INV007021,9951.83,Duplicate of INV005504 (2026-05-01)
 GT0180,duplicate_revenue,overstated_revenue,invoice,INV007022,795.92,Duplicate of INV001848 (2026-04-01)
-GT0181,duplicate_revenue,overstated_revenue,invoice,INV007023,955.08,Duplicate of INV005629 (2025-03-01)
-GT0182,duplicate_revenue,overstated_revenue,invoice,INV007024,1617.58,Duplicate of INV000949 (2025-12-01)
-GT0183,duplicate_revenue,overstated_revenue,invoice,INV007025,9863.25,Duplicate of INV002855 (2025-08-01)
-GT0184,duplicate_revenue,overstated_revenue,invoice,INV007026,4710.17,Duplicate of INV005357 (2025-02-01)
+GT0181,duplicate_revenue,overstated_revenue,invoice,INV007023,955.08,Duplicate of INV005627 (2025-01-01)
+GT0182,duplicate_revenue,overstated_revenue,invoice,INV007024,1617.58,Duplicate of INV000948 (2025-11-01)
+GT0183,duplicate_revenue,overstated_revenue,invoice,INV007025,9863.25,Duplicate of INV002856 (2025-08-01)
+GT0184,duplicate_revenue,overstated_revenue,invoice,INV007026,1906.25,Duplicate of INV005355 (2026-04-01)
 GT0185,duplicate_revenue,overstated_revenue,invoice,INV007027,867.25,Duplicate of INV004371 (2026-04-01)
 GT0186,duplicate_revenue,overstated_revenue,invoice,INV007028,4556.33,Duplicate of INV004810 (2024-09-01)
-GT0187,duplicate_revenue,overstated_revenue,invoice,INV007029,4463.92,Duplicate of INV006278 (2025-11-01)
-GT0188,duplicate_revenue,overstated_revenue,invoice,INV007030,5000.42,Duplicate of INV006304 (2026-05-01)
-GT0189,duplicate_revenue,overstated_revenue,invoice,INV007031,2444.58,Duplicate of INV000432 (2026-05-01)
-GT0190,duplicate_revenue,overstated_revenue,invoice,INV007032,2519.17,Duplicate of INV000859 (2025-07-01)
-GT0191,duplicate_revenue,overstated_revenue,invoice,INV007033,1376.58,Duplicate of INV003150 (2024-10-01)
-GT0192,duplicate_revenue,overstated_revenue,invoice,INV007034,8252.42,Duplicate of INV005400 (2025-12-01)
-GT0193,duplicate_revenue,overstated_revenue,invoice,INV007035,1302.25,Duplicate of INV002105 (2026-05-01)
-GT0194,duplicate_revenue,overstated_revenue,invoice,INV007036,14600.58,Duplicate of INV006417 (2026-02-01)
+GT0187,duplicate_revenue,overstated_revenue,invoice,INV007029,4463.92,Duplicate of INV006277 (2025-10-01)
+GT0188,duplicate_revenue,overstated_revenue,invoice,INV007030,5000.42,Duplicate of INV006303 (2026-04-01)
+GT0189,duplicate_revenue,overstated_revenue,invoice,INV007031,2444.58,Duplicate of INV000431 (2026-04-01)
+GT0190,duplicate_revenue,overstated_revenue,invoice,INV007032,2519.17,Duplicate of INV000858 (2025-06-01)
+GT0191,duplicate_revenue,overstated_revenue,invoice,INV007033,1376.58,Duplicate of INV003151 (2024-11-01)
+GT0192,duplicate_revenue,overstated_revenue,invoice,INV007034,8252.42,Duplicate of INV005398 (2025-10-01)
+GT0193,duplicate_revenue,overstated_revenue,invoice,INV007035,4776.5,Duplicate of INV002106 (2024-07-01)
+GT0194,duplicate_revenue,overstated_revenue,invoice,INV007036,14600.58,Duplicate of INV006416 (2026-01-01)
 GT0195,duplicate_revenue,overstated_revenue,invoice,INV007037,4556.33,Duplicate of INV004818 (2025-05-01)
-GT0196,duplicate_revenue,overstated_revenue,invoice,INV007038,1626.0,Duplicate of INV006005 (2024-12-01)
-GT0197,duplicate_revenue,overstated_revenue,invoice,INV007039,804.67,Duplicate of INV005464 (2026-04-01)
-GT0198,duplicate_revenue,overstated_revenue,invoice,INV007040,750.92,Duplicate of INV001180 (2026-04-01)
-GT0199,duplicate_revenue,overstated_revenue,invoice,INV007041,16774.25,Duplicate of INV005430 (2025-10-01)
+GT0196,duplicate_revenue,overstated_revenue,invoice,INV007038,17620.25,Duplicate of INV006002 (2026-05-01)
+GT0197,duplicate_revenue,overstated_revenue,invoice,INV007039,6042.75,Duplicate of INV005462 (2026-02-01)
+GT0198,duplicate_revenue,overstated_revenue,invoice,INV007040,750.92,Duplicate of INV001179 (2026-03-01)
+GT0199,duplicate_revenue,overstated_revenue,invoice,INV007041,16774.25,Duplicate of INV005428 (2025-08-01)
 GT0200,duplicate_revenue,overstated_revenue,invoice,INV007042,4652.75,Duplicate of INV004235 (2026-03-01)
-GT0201,duplicate_revenue,overstated_revenue,invoice,INV007043,12100.08,Duplicate of INV000775 (2026-05-01)
-GT0202,duplicate_revenue,overstated_revenue,invoice,INV007044,1395.08,Duplicate of INV002731 (2025-07-01)
+GT0201,duplicate_revenue,overstated_revenue,invoice,INV007043,12100.08,Duplicate of INV000773 (2026-03-01)
+GT0202,duplicate_revenue,overstated_revenue,invoice,INV007044,1395.08,Duplicate of INV002732 (2025-08-01)
 GT0203,duplicate_revenue,overstated_revenue,invoice,INV007045,1520.92,Duplicate of INV000013 (2025-10-01)
-GT0204,duplicate_revenue,overstated_revenue,invoice,INV007046,474.67,Duplicate of INV001663 (2026-02-01)
-GT0205,duplicate_revenue,overstated_revenue,invoice,INV007047,6198.92,Duplicate of INV003720 (2026-05-01)
-GT0206,duplicate_revenue,overstated_revenue,invoice,INV007048,628.57,Duplicate of INV006436 (2026-05-01)
-GT0207,duplicate_revenue,overstated_revenue,invoice,INV007049,4632.58,Duplicate of INV000387 (2026-02-01)
-GT0208,duplicate_revenue,overstated_revenue,invoice,INV007050,1617.58,Duplicate of INV000953 (2026-04-01)
-GT0209,duplicate_revenue,overstated_revenue,invoice,INV007051,3162.17,Duplicate of INV003943 (2025-05-01)
-GT0210,duplicate_revenue,overstated_revenue,invoice,INV007052,656.58,Duplicate of INV000453 (2025-05-01)
+GT0204,duplicate_revenue,overstated_revenue,invoice,INV007046,474.67,Duplicate of INV001662 (2026-01-01)
+GT0205,duplicate_revenue,overstated_revenue,invoice,INV007047,1252.08,Duplicate of INV003721 (2024-11-01)
+GT0206,duplicate_revenue,overstated_revenue,invoice,INV007048,628.57,Duplicate of INV006435 (2026-04-01)
+GT0207,duplicate_revenue,overstated_revenue,invoice,INV007049,4632.58,Duplicate of INV000386 (2026-01-01)
+GT0208,duplicate_revenue,overstated_revenue,invoice,INV007050,1617.58,Duplicate of INV000952 (2026-03-01)
+GT0209,duplicate_revenue,overstated_revenue,invoice,INV007051,3162.17,Duplicate of INV003944 (2025-06-01)
+GT0210,duplicate_revenue,overstated_revenue,invoice,INV007052,656.58,Duplicate of INV000452 (2025-04-01)
 GT0211,duplicate_revenue,overstated_revenue,invoice,INV007053,1320.97,Duplicate of INV004969 (2026-04-01)
-GT0212,duplicate_revenue,overstated_revenue,invoice,INV007054,1248.3,Duplicate of INV001296 (2026-02-01)
-GT0213,duplicate_revenue,overstated_revenue,invoice,INV007055,791.33,Duplicate of INV003419 (2026-03-01)
-GT0214,duplicate_revenue,overstated_revenue,invoice,INV007056,712.67,Duplicate of INV005234 (2025-05-01)
-GT0215,duplicate_revenue,overstated_revenue,invoice,INV007057,448.33,Duplicate of INV002482 (2024-12-01)
-GT0216,duplicate_revenue,overstated_revenue,invoice,INV007058,1162.92,Duplicate of INV000356 (2025-04-01)
-GT0217,duplicate_revenue,overstated_revenue,invoice,INV007059,7277.67,Duplicate of INV003699 (2026-01-01)
-GT0218,duplicate_revenue,overstated_revenue,invoice,INV007060,1007.83,Duplicate of INV000400 (2026-04-01)
-GT0219,duplicate_revenue,overstated_revenue,invoice,INV007061,6315.83,Duplicate of INV001694 (2025-06-01)
-GT0220,duplicate_revenue,overstated_revenue,invoice,INV007062,998.25,Duplicate of INV000261 (2025-03-01)
+GT0212,duplicate_revenue,overstated_revenue,invoice,INV007054,1468.58,Duplicate of INV001295 (2026-02-01)
+GT0213,duplicate_revenue,overstated_revenue,invoice,INV007055,791.33,Duplicate of INV003420 (2026-04-01)
+GT0214,duplicate_revenue,overstated_revenue,invoice,INV007056,712.67,Duplicate of INV005233 (2025-04-01)
+GT0215,duplicate_revenue,overstated_revenue,invoice,INV007057,448.33,Duplicate of INV002483 (2025-01-01)
+GT0216,duplicate_revenue,overstated_revenue,invoice,INV007058,1162.92,Duplicate of INV000355 (2025-03-01)
+GT0217,duplicate_revenue,overstated_revenue,invoice,INV007059,7277.67,Duplicate of INV003700 (2026-02-01)
+GT0218,duplicate_revenue,overstated_revenue,invoice,INV007060,1007.83,Duplicate of INV000399 (2026-03-01)
+GT0219,duplicate_revenue,overstated_revenue,invoice,INV007061,6315.83,Duplicate of INV001693 (2025-05-01)
+GT0220,duplicate_revenue,overstated_revenue,invoice,INV007062,998.25,Duplicate of INV000260 (2025-02-01)
 GT0221,duplicate_revenue,overstated_revenue,invoice,INV007063,4990.0,Duplicate of INV004252 (2025-12-01)
-GT0222,duplicate_revenue,overstated_revenue,invoice,INV007064,24862.25,Duplicate of INV005220 (2025-09-01)
+GT0222,duplicate_revenue,overstated_revenue,invoice,INV007064,24862.25,Duplicate of INV005219 (2025-08-01)
 GT0223,duplicate_revenue,overstated_revenue,invoice,INV007065,884.5,Duplicate of INV004467 (2025-06-01)
-GT0224,duplicate_revenue,overstated_revenue,invoice,INV007066,998.25,Duplicate of INV000264 (2025-06-01)
+GT0224,duplicate_revenue,overstated_revenue,invoice,INV007066,998.25,Duplicate of INV000263 (2025-05-01)
 GT0225,duplicate_revenue,overstated_revenue,invoice,INV007067,3284.0,Duplicate of INV004289 (2025-03-01)
-GT0226,duplicate_revenue,overstated_revenue,invoice,INV007068,1270.08,Duplicate of INV005318 (2026-04-01)
-GT0227,duplicate_revenue,overstated_revenue,invoice,INV007069,648.0,Duplicate of INV000545 (2026-05-01)
-GT0228,duplicate_revenue,overstated_revenue,invoice,INV007070,1154.67,Duplicate of INV003765 (2026-03-01)
-GT0229,duplicate_revenue,overstated_revenue,invoice,INV007071,512.75,Duplicate of INV001323 (2024-11-01)
-GT0230,duplicate_revenue,overstated_revenue,invoice,INV007072,5623.5,Duplicate of INV003336 (2025-09-01)
-GT0231,duplicate_revenue,overstated_revenue,invoice,INV007073,4261.4,Duplicate of INV001248 (2026-05-01)
+GT0226,duplicate_revenue,overstated_revenue,invoice,INV007068,1270.08,Duplicate of INV005316 (2026-02-01)
+GT0227,duplicate_revenue,overstated_revenue,invoice,INV007069,648.0,Duplicate of INV000544 (2026-04-01)
+GT0228,duplicate_revenue,overstated_revenue,invoice,INV007070,1154.67,Duplicate of INV003766 (2026-04-01)
+GT0229,duplicate_revenue,overstated_revenue,invoice,INV007071,512.75,Duplicate of INV001322 (2024-10-01)
+GT0230,duplicate_revenue,overstated_revenue,invoice,INV007072,5623.5,Duplicate of INV003337 (2025-10-01)
+GT0231,duplicate_revenue,overstated_revenue,invoice,INV007073,4261.4,Duplicate of INV001247 (2026-04-01)
 GT0232,duplicate_revenue,overstated_revenue,invoice,INV007074,3647.58,Duplicate of INV004380 (2025-08-01)
-GT0233,duplicate_revenue,overstated_revenue,invoice,INV007075,3953.75,Duplicate of INV001375 (2025-11-01)
-GT0234,duplicate_revenue,overstated_revenue,invoice,INV007076,767.83,Duplicate of INV004987 (2026-01-01)
-GT0235,duplicate_revenue,overstated_revenue,invoice,INV007077,481.92,Duplicate of INV003438 (2025-09-01)
+GT0233,duplicate_revenue,overstated_revenue,invoice,INV007075,13995.83,Duplicate of INV001374 (2026-05-01)
+GT0234,duplicate_revenue,overstated_revenue,invoice,INV007076,767.83,Duplicate of INV004986 (2025-12-01)
+GT0235,duplicate_revenue,overstated_revenue,invoice,INV007077,481.92,Duplicate of INV003439 (2025-10-01)
 GT0236,duplicate_revenue,overstated_revenue,invoice,INV007078,756.58,Duplicate of INV004556 (2026-01-01)
-GT0237,duplicate_revenue,overstated_revenue,invoice,INV007079,11478.9,Duplicate of INV001443 (2025-06-01)
-GT0238,duplicate_revenue,overstated_revenue,invoice,INV007080,995.33,Duplicate of INV005408 (2025-01-01)
-GT0239,duplicate_revenue,overstated_revenue,invoice,INV007081,1424.67,Duplicate of INV006401 (2025-10-01)
-GT0240,duplicate_revenue,overstated_revenue,invoice,INV007082,5707.0,Duplicate of INV002462 (2025-09-01)
+GT0237,duplicate_revenue,overstated_revenue,invoice,INV007079,9565.75,Duplicate of INV001442 (2025-06-01)
+GT0238,duplicate_revenue,overstated_revenue,invoice,INV007080,1605.42,Duplicate of INV005406 (2026-05-01)
+GT0239,duplicate_revenue,overstated_revenue,invoice,INV007081,1424.67,Duplicate of INV006400 (2025-09-01)
+GT0240,duplicate_revenue,overstated_revenue,invoice,INV007082,5707.0,Duplicate of INV002463 (2025-10-01)
 GT0241,duplicate_revenue,overstated_revenue,invoice,INV007083,943.58,Duplicate of INV006923 (2025-02-01)
-GT0242,duplicate_revenue,overstated_revenue,invoice,INV007084,448.33,Duplicate of INV002488 (2025-06-01)
+GT0242,duplicate_revenue,overstated_revenue,invoice,INV007084,448.33,Duplicate of INV002489 (2025-07-01)
 GT0243,duplicate_revenue,overstated_revenue,invoice,INV007085,1208.25,Duplicate of INV004362 (2025-12-01)
-GT0244,duplicate_revenue,overstated_revenue,invoice,INV007086,1060.5,Duplicate of INV002712 (2026-04-01)
-GT0245,duplicate_revenue,overstated_revenue,invoice,INV007087,722.33,Duplicate of INV006250 (2026-01-01)
-GT0246,duplicate_revenue,overstated_revenue,invoice,INV007088,3536.92,Duplicate of INV000254 (2026-04-01)
-GT0247,duplicate_revenue,overstated_revenue,invoice,INV007089,784.92,Duplicate of INV005483 (2025-08-01)
+GT0244,duplicate_revenue,overstated_revenue,invoice,INV007086,1060.5,Duplicate of INV002713 (2026-05-01)
+GT0245,duplicate_revenue,overstated_revenue,invoice,INV007087,722.33,Duplicate of INV006249 (2025-12-01)
+GT0246,duplicate_revenue,overstated_revenue,invoice,INV007088,3536.92,Duplicate of INV000253 (2026-03-01)
+GT0247,duplicate_revenue,overstated_revenue,invoice,INV007089,1214.17,Duplicate of INV005481 (2026-04-01)
 GT0248,duplicate_revenue,overstated_revenue,invoice,INV007090,4943.58,Duplicate of INV000159 (2025-06-01)
-GT0249,duplicate_revenue,overstated_revenue,invoice,INV007091,1404.25,Duplicate of INV003793 (2026-02-01)
-GT0250,duplicate_revenue,overstated_revenue,invoice,INV007092,1229.75,Duplicate of INV001224 (2026-05-01)
+GT0249,duplicate_revenue,overstated_revenue,invoice,INV007091,1404.25,Duplicate of INV003794 (2026-03-01)
+GT0250,duplicate_revenue,overstated_revenue,invoice,INV007092,1229.75,Duplicate of INV001223 (2026-04-01)
 GT0251,duplicate_revenue,overstated_revenue,invoice,INV007093,24607.67,Duplicate of INV004278 (2025-12-01)
 GT0252,duplicate_revenue,overstated_revenue,invoice,INV007094,834.56,Duplicate of INV004207 (2026-01-01)
-GT0253,duplicate_revenue,overstated_revenue,invoice,INV007095,1214.17,Duplicate of INV005477 (2026-01-01)
+GT0253,duplicate_revenue,overstated_revenue,invoice,INV007095,1214.17,Duplicate of INV005475 (2025-11-01)
 GT0254,duplicate_revenue,overstated_revenue,invoice,INV007096,6467.5,Duplicate of INV004806 (2026-04-01)
-GT0255,duplicate_revenue,overstated_revenue,invoice,INV007097,1234.58,Duplicate of INV002816 (2026-02-01)
+GT0255,duplicate_revenue,overstated_revenue,invoice,INV007097,1234.58,Duplicate of INV002817 (2026-03-01)
 GT0256,duplicate_revenue,overstated_revenue,invoice,INV007098,1234.5,Duplicate of INV004683 (2026-01-01)
-GT0257,duplicate_revenue,overstated_revenue,invoice,INV007099,6284.25,Duplicate of INV001525 (2025-02-01)
-GT0258,duplicate_revenue,overstated_revenue,invoice,INV007100,18094.42,Duplicate of INV005326 (2025-12-01)
-GT0259,duplicate_revenue,overstated_revenue,invoice,INV007101,4710.17,Duplicate of INV005370 (2026-03-01)
-GT0260,duplicate_revenue,overstated_revenue,invoice,INV007102,1434.67,Duplicate of INV003869 (2025-05-01)
-GT0261,duplicate_revenue,overstated_revenue,invoice,INV007103,712.67,Duplicate of INV005238 (2025-09-01)
-GT0262,duplicate_revenue,overstated_revenue,invoice,INV007104,7174.83,Duplicate of INV002293 (2026-02-01)
-GT0263,duplicate_revenue,overstated_revenue,invoice,INV007105,947.92,Duplicate of INV000739 (2025-11-01)
-GT0264,duplicate_revenue,overstated_revenue,invoice,INV007106,988.83,Duplicate of INV000624 (2025-07-01)
-GT0265,duplicate_revenue,overstated_revenue,invoice,INV007107,1604.25,Duplicate of INV003474 (2025-11-01)
+GT0257,duplicate_revenue,overstated_revenue,invoice,INV007099,6284.25,Duplicate of INV001524 (2025-01-01)
+GT0258,duplicate_revenue,overstated_revenue,invoice,INV007100,18094.42,Duplicate of INV005324 (2025-10-01)
+GT0259,duplicate_revenue,overstated_revenue,invoice,INV007101,4710.17,Duplicate of INV005368 (2026-01-01)
+GT0260,duplicate_revenue,overstated_revenue,invoice,INV007102,1434.67,Duplicate of INV003870 (2025-06-01)
+GT0261,duplicate_revenue,overstated_revenue,invoice,INV007103,712.67,Duplicate of INV005237 (2025-08-01)
+GT0262,duplicate_revenue,overstated_revenue,invoice,INV007104,7174.83,Duplicate of INV002294 (2026-03-01)
+GT0263,duplicate_revenue,overstated_revenue,invoice,INV007105,947.92,Duplicate of INV000737 (2025-09-01)
+GT0264,duplicate_revenue,overstated_revenue,invoice,INV007106,988.83,Duplicate of INV000623 (2025-06-01)
+GT0265,duplicate_revenue,overstated_revenue,invoice,INV007107,1604.25,Duplicate of INV003475 (2025-11-01)
 GT0266,duplicate_revenue,overstated_revenue,invoice,INV007108,884.5,Duplicate of INV004471 (2025-10-01)
 GT0267,duplicate_revenue,overstated_revenue,invoice,INV007109,1520.92,Duplicate of INV000018 (2026-03-01)
 GT0268,nrr_decay,revenue_at_risk,cohort,2024-06,76178.05,Cohort net revenue retention 86%

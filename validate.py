@@ -3,11 +3,13 @@ Flow Audit v2 - validation harness
 ===================================
 
 Loads the seed CSVs into DuckDB and runs the *detection* logic for each leak
-type using ONLY the dirty data (never the ground-truth file). It then compares
-what detection found to what was planted. A clean run means the audit logic that
-stage 2 will move into dbt actually works: plant -> detect -> reconcile.
+type using ONLY the operational data (never the ground-truth file). The data
+now contains both planted leaks AND planted legitimate exceptions (approved
+accelerators, credit notes). Detection must net out the approval registers:
+leakage = UNEXPLAINED variance, not raw variance. Reconciliation to ground
+truth therefore measures precision as well as recall.
 
-This is the embryo of the audit. Every query here becomes a dbt model later.
+This is the embryo of the audit. Every query here lives as a dbt model.
 
 Run:  python validate.py
 """
@@ -22,10 +24,9 @@ SEEDS = os.path.join(os.path.dirname(__file__), "seeds")
 con = duckdb.connect()
 for t in ["commission_plans", "reps", "accounts", "leads", "opportunities",
           "opportunity_stage_history", "contracts", "invoices", "commissions",
-          "ground_truth_leaks"]:
+          "commission_adjustments", "billing_adjustments", "ground_truth_leaks"]:
     con.execute(f"CREATE VIEW {t} AS SELECT * FROM read_csv_auto('{SEEDS}/{t}.csv', header=true)")
 
-# de-duplicated invoice base (a real reconciliation dedups before summing)
 con.execute("""
 CREATE VIEW invoices_dedup AS
 SELECT * EXCLUDE (rn) FROM (
@@ -35,15 +36,20 @@ SELECT * EXCLUDE (rn) FROM (
 ) WHERE rn = 1
 """)
 
-# ---- detection queries: (count, euros) per leak type ----------------------
 DETECT = {
-"commission_overpayment": f"""
-  SELECT count(*), round(sum(c.commission_amount - o.amount*p.commission_rate),2)
+"commission_overpayment": """
+  WITH adj AS (SELECT commission_id, sum(adjustment_amount) AS approved
+               FROM commission_adjustments GROUP BY 1)
+  SELECT count(*),
+         round(sum(c.commission_amount - o.amount*p.commission_rate
+                   - coalesce(a.approved, 0)), 2)
   FROM commissions c
   JOIN opportunities o ON c.opportunity_id=o.opportunity_id
   JOIN reps r          ON c.rep_id=r.rep_id
   JOIN commission_plans p ON r.commission_plan_id=p.commission_plan_id
-  WHERE c.commission_amount - o.amount*p.commission_rate > 1
+  LEFT JOIN adj a      ON c.commission_id=a.commission_id
+  WHERE c.commission_amount - o.amount*p.commission_rate
+        - coalesce(a.approved, 0) > 1
 """,
 
 "duplicate_revenue": """
@@ -89,6 +95,10 @@ DETECT = {
   WITH billed AS (
     SELECT contract_id, sum(amount) AS actual FROM invoices_dedup GROUP BY contract_id
   ),
+  adj AS (
+    SELECT contract_id, sum(adjustment_amount) AS approved
+    FROM billing_adjustments GROUP BY 1
+  ),
   churned AS (
     SELECT c.contract_id
     FROM contracts c
@@ -96,15 +106,17 @@ DETECT = {
       ON c.contract_id=li.contract_id
     WHERE c.status='Active' AND c.end_date > {AS_OF} AND li.last_pm < {CHURN_CUTOFF}
   )
-  SELECT count(*), round(sum(expected-actual),2) FROM (
+  SELECT count(*), round(sum(expected - actual - approved),2) FROM (
     SELECT c.contract_id,
       (c.acv/12.0) * (date_diff('month', date_trunc('month', c.start_date),
                                 date_trunc('month', least(c.end_date, {AS_OF}))) + 1) AS expected,
-      coalesce(b.actual,0) AS actual
+      coalesce(b.actual,0) AS actual,
+      coalesce(a.approved,0) AS approved
     FROM contracts c
     LEFT JOIN billed b ON c.contract_id=b.contract_id
+    LEFT JOIN adj a    ON c.contract_id=a.contract_id
     WHERE c.contract_id NOT IN (SELECT contract_id FROM churned)
-  ) WHERE expected - actual > 1
+  ) WHERE expected - actual - approved > 1
 """,
 }
 
@@ -112,6 +124,11 @@ planted = {r[0]: (r[1], r[2]) for r in con.execute(
     "SELECT leak_type, count(*), round(sum(euro_impact),2) FROM ground_truth_leaks GROUP BY leak_type"
 ).fetchall()}
 
+n_decoys = con.execute(
+    "SELECT (SELECT count(*) FROM commission_adjustments) + (SELECT count(*) FROM billing_adjustments)"
+).fetchone()[0]
+
+print(f"Mixed field: planted leaks + {n_decoys} planted legitimate exceptions (decoys)")
 print(f"{'leak type':<24}{'planted':>9}{'detected':>10}{'  match':>8}   euros detected")
 print("-" * 78)
 all_ok = True
@@ -125,31 +142,5 @@ for leak, sql in DETECT.items():
           f"EUR {deuro:>13,.0f}")
 
 print("-" * 78)
-print("ALL DETECTIONS RECONCILE TO GROUND TRUTH" if all_ok
-      else "MISMATCH - detection logic needs review")
-
-# ---- NRR trend (engineered pattern, reported not pass/failed) -------------
-print("\nNet revenue retention by signup cohort (should trend down for newer cohorts)")
-print("-" * 78)
-rows = con.execute(f"""
-  WITH orig AS (
-    SELECT strftime(start_date,'%Y-%m') cohort, contract_id, acv, status,
-           opportunity_id, contract_id AS cid
-    FROM contracts WHERE renewal_of = '' OR renewal_of IS NULL
-  ),
-  kept AS (
-    SELECT o.cohort,
-           sum(o.acv) AS orig_acv,
-           sum(CASE WHEN o.status='Churned' THEN 0
-                    WHEN o.status='Renewed' THEN coalesce(
-                         (SELECT r.acv FROM contracts r WHERE r.renewal_of=o.cid), o.acv)
-                    ELSE o.acv END) AS kept_acv,
-           count(*) AS n
-    FROM orig o GROUP BY o.cohort
-  )
-  SELECT cohort, n, orig_acv, kept_acv, kept_acv/orig_acv AS nrr
-  FROM kept WHERE orig_acv > 0 ORDER BY cohort
-""").fetchall()
-for cohort, n, orig, kept, nrr in rows:
-    bar = "#" * int(nrr * 30)
-    print(f"  {cohort}  n={n:>3}  NRR {nrr:>5.0%}  {bar}")
+print("ALL DETECTIONS RECONCILE TO GROUND TRUTH (decoys correctly NOT flagged)"
+      if all_ok else "MISMATCH - detection logic needs review")

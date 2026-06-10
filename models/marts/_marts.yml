@@ -36,3 +36,8 @@ models:
     columns:
       - name: leak_type
         tests: [unique, not_null]
+  - name: fct_audit_calibration
+    description: "Precision/recall of detection vs planted ground truth, per leak type."
+    columns:
+      - name: leak_type
+        tests: [unique, not_null]

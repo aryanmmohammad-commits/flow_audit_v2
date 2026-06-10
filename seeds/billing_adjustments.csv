@@ -1,0 +1,23 @@
+adjustment_id,contract_id,adjustment_type,adjustment_amount,approved_by,approved_date
+BA0001,C0144,approved_discount,2226.2,Aria Falk (Finance),2026-05-01
+BA0002,C0566,credit_note,476.82,Omar Dubois (Finance),2025-12-01
+BA0003,C0593,credit_note,503.22,Lucas Klein (Finance),2026-04-01
+BA0004,C0051,credit_note,221.78,Petra Reyes (Finance),2025-12-01
+BA0005,C0200,credit_note,705.74,Noah Rossi (Finance),2026-05-01
+BA0006,C0004,credit_note,2373.72,Ivan Berg (Finance),2026-01-01
+BA0007,C0141,approved_discount,2524.8,Elena Costa (Finance),2026-05-01
+BA0008,C0164,credit_note,1254.08,Noah Falk (Finance),2026-05-01
+BA0009,C0166,credit_note,2360.52,Maya Dubois (Finance),2026-05-01
+BA0010,C0023,approved_discount,291.69,Aria Bauer (Finance),2026-05-01
+BA0011,C0447,credit_note,2703.2,Hana Costa (Finance),2026-05-01
+BA0012,C0157,approved_discount,3772.5,Aria Nowak (Finance),2026-05-01
+BA0013,C0682,credit_note,1023.39,Nadia Costa (Finance),2026-05-01
+BA0014,C0351,approved_discount,2073.18,Elena Klein (Finance),2026-05-01
+BA0015,C0615,approved_discount,4523.32,Sven Aalto (Finance),2026-05-01
+BA0016,C0450,approved_discount,3545.4,Adam Falk (Finance),2026-05-01
+BA0017,C0508,credit_note,854.84,Hana Bauer (Finance),2026-02-01
+BA0018,C0117,credit_note,5059.64,Sofia Costa (Finance),2026-05-01
+BA0019,C0046,credit_note,8577.72,Aria Dubois (Finance),2026-05-01
+BA0020,C0124,approved_discount,1179.54,Jonas Nowak (Finance),2025-09-01
+BA0021,C0286,approved_discount,350.58,Sven Bauer (Finance),2026-05-01
+BA0022,C0536,approved_discount,8703.02,Nadia Sato (Finance),2025-12-01

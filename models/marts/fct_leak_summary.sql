@@ -1,11 +1,12 @@
 -- The scorecard: one row per leak type, with its euro total and impact class.
--- This is what the stage-5 dashboard and narrative read from.
+-- potentially_recoverable_cash = may be recovered after finance/legal review;
+-- at minimum it prices preventable future leakage.
 with parts as (
-    select 'commission_overpayment' as leak_type, 'recoverable_cash' as impact_class,
+    select 'commission_overpayment' as leak_type, 'potentially_recoverable_cash' as impact_class,
            count(*) as leak_count, round(sum(euro_impact), 2) as euro_impact
     from {{ ref('fct_commission_overpayments') }}
     union all
-    select 'under_billing', 'recoverable_cash',
+    select 'under_billing', 'potentially_recoverable_cash',
            count(*), round(sum(euro_impact), 2) from {{ ref('fct_underbilled_contracts') }}
     union all
     select 'duplicate_revenue', 'overstated_revenue',

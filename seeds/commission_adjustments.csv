@@ -1,0 +1,16 @@
+adjustment_id,commission_id,adjustment_type,adjustment_amount,approved_by,approved_date
+CA0001,CM00040,accelerator,505.46,Noah Reyes (Finance),2025-12-28
+CA0002,CM00300,accelerator,3501.88,Mira Brandt (Finance),2024-10-22
+CA0003,CM00151,spiff,1296.44,Mira Berg (Finance),2025-08-05
+CA0004,CM00491,spiff,1561.17,Sofia Vermeer (Finance),2026-06-16
+CA0005,CM00388,accelerator,458.21,Liam Dubois (Finance),2024-11-16
+CA0006,CM00101,accelerator,229.57,Mira Haas (Finance),2026-02-06
+CA0007,CM00482,manager_override,1138.02,Liam Haas (Finance),2025-07-10
+CA0008,CM00528,spiff,3433.05,Nadia Moreau (Finance),2025-05-24
+CA0009,CM00020,manager_override,2055.03,Yuki Dubois (Finance),2024-10-08
+CA0010,CM00544,accelerator,827.82,Nadia Vermeer (Finance),2025-08-07
+CA0011,CM00457,spiff,9652.39,Ivan Dubois (Finance),2026-06-28
+CA0012,CM00391,accelerator,15041.73,Adam Haas (Finance),2025-02-24
+CA0013,CM00579,manager_override,177.76,Ivan Falk (Finance),2025-06-25
+CA0014,CM00459,spiff,163.18,Sofia Sato (Finance),2025-12-30
+CA0015,CM00416,accelerator,2271.04,Elena Klein (Finance),2025-10-07

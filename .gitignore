@@ -3,5 +3,3 @@ dbt_packages/
 logs/
 *.duckdb
 __pycache__/
-.venv/
-profiles.yml

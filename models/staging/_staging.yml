@@ -98,3 +98,23 @@ models:
           - relationships:
               to: ref('stg_opportunities')
               field: opportunity_id
+
+  - name: stg_commission_adjustments
+    columns:
+      - name: adjustment_id
+        tests: [unique, not_null]
+      - name: commission_id
+        tests:
+          - relationships:
+              to: ref('stg_commissions')
+              field: commission_id
+
+  - name: stg_billing_adjustments
+    columns:
+      - name: adjustment_id
+        tests: [unique, not_null]
+      - name: contract_id
+        tests:
+          - relationships:
+              to: ref('stg_contracts')
+              field: contract_id

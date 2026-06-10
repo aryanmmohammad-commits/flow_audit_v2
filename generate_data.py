@@ -52,12 +52,19 @@ RATE_STALLED            = 0.06   # of open opportunities
 RATE_SILENT_CHURN       = 0.05   # of active contracts
 RATE_DUPLICATE_INVOICE  = 0.02   # of invoices
 
+# Decoy rates: legitimate, APPROVED exceptions planted so the audit can be
+# scored on precision, not just recall. These must NOT be flagged.
+RATE_APPROVED_UPLIFT    = 0.025  # of won opps: accelerators/spiffs above plan rate
+RATE_APPROVED_DISCOUNT  = 0.03   # of contracts: credit notes / approved discounts
+
 OVERPAY_MULT = (1.30, 1.80)      # paid commission as a multiple of the correct one
 STALL_DAYS = (150, 300)          # how long a planted stalled deal sits in-stage
 
 HISTORY_START = date(AS_OF.year - 2, AS_OF.month, 1)
 
 random.seed(SEED)
+rng_x = random.Random(SEED + 1)  # separate stream for decoys: keeps the main
+                                 # stream (and all previously planted numbers) stable
 
 # --- id counters ----------------------------------------------------------
 _lead = itertools.count(1)
@@ -67,6 +74,8 @@ _contract = itertools.count(1)
 _invoice = itertools.count(1)
 _commission = itertools.count(1)
 _leak = itertools.count(1)
+_cadj = itertools.count(1)
+_badj = itertools.count(1)
 
 nid = lambda c, p, w=5: f"{p}{next(c):0{w}d}"
 
@@ -395,14 +404,37 @@ def sample(pop, rate):
     return random.sample(pop, min(n, len(pop)))
 
 # 6a. Commission overpayment ------------------------------------------------
+overpaid_opp_ids = set()
 for opp in sample(won_opps, RATE_COMMISSION_OVERPAY):
     row = comm_of_opp[opp["opportunity_id"]]
     correct = row["commission_amount"]
     mult = random.uniform(*OVERPAY_MULT)
     row["commission_amount"] = money(correct * mult)
-    plant("commission_overpayment", "recoverable_cash", "commission",
+    overpaid_opp_ids.add(opp["opportunity_id"])
+    plant("commission_overpayment", "potentially_recoverable_cash", "commission",
           row["commission_id"], row["commission_amount"] - correct,
           f"Paid {mult:.2f}x the plan rate on opp {opp['opportunity_id']}")
+
+# 6a-bis. DECOY: approved commission uplifts (accelerators / spiffs) ---------
+# Paid above plan rate, but with a finance-approved adjustment on record.
+# A naive paid-vs-rate check WOULD flag these; the audit must clear them by
+# consulting the approval register. NOT recorded as leaks.
+commission_adjustments = []
+_uplift_pool = [o for o in won_opps if o["opportunity_id"] not in overpaid_opp_ids]
+_n_uplift = max(1, round(len(won_opps) * RATE_APPROVED_UPLIFT))
+for opp in rng_x.sample(_uplift_pool, min(_n_uplift, len(_uplift_pool))):
+    row = comm_of_opp[opp["opportunity_id"]]
+    correct = row["commission_amount"]
+    mult = rng_x.uniform(1.20, 1.60)
+    row["commission_amount"] = money(correct * mult)
+    commission_adjustments.append({
+        "adjustment_id": nid(_cadj, "CA", 4),
+        "commission_id": row["commission_id"],
+        "adjustment_type": rng_x.choice(["accelerator", "spiff", "manager_override"]),
+        "adjustment_amount": money(row["commission_amount"] - correct),
+        "approved_by": f"{rng_x.choice(FIRST)} {rng_x.choice(LAST)} (Finance)",
+        "approved_date": row["paid_date"],
+    })
 
 # 6b. Attribution gap (won opp's lead link broken) --------------------------
 for i, opp in enumerate(sample(won_opps, RATE_ATTRIBUTION_GAP)):
@@ -437,12 +469,14 @@ billable = [c for c in contracts
             and len(inv_of_contract[c["contract_id"]]) >= 4]
 
 # 6d. Under-billing (drop the most recent invoice on a live contract) -------
+underbilled_ids = set()
 for c in sample(billable, RATE_UNDERBILLING):
     rows = sorted(inv_of_contract[c["contract_id"]], key=lambda r: r["period_month"])
     dropped = rows[-1]
     invoices.remove(dropped)
     inv_of_contract[c["contract_id"]].remove(dropped)
-    plant("under_billing", "recoverable_cash", "contract",
+    underbilled_ids.add(c["contract_id"])
+    plant("under_billing", "potentially_recoverable_cash", "contract",
           c["contract_id"], dropped["amount"],
           f"Missing invoice for period {dropped['period_month']}")
 
@@ -456,6 +490,35 @@ for cid in churn_targets:
         inv_of_contract[cid].remove(d)
     plant("silent_churn", "overstated_revenue", "contract", cid, c["acv"],
           f"Marked Active but no billing for ~{drop_n} months (phantom ARR)")
+
+# 6e-bis. DECOY: approved billing credits / discounts ------------------------
+# Invoices legitimately reduced, with a finance-approved credit note on record.
+# A naive expected-vs-billed check WOULD flag these; the audit must net out the
+# approval register first. NOT recorded as leaks. (Must run before duplicates
+# are cloned so clones carry the post-discount amounts.)
+billing_adjustments = []
+_discount_pool = [c for c in contracts
+                  if c["contract_id"] not in churn_targets
+                  and c["contract_id"] not in underbilled_ids
+                  and len(inv_of_contract[c["contract_id"]]) >= 5]
+_n_disc = max(1, round(len(contracts) * RATE_APPROVED_DISCOUNT))
+for c in rng_x.sample(_discount_pool, min(_n_disc, len(_discount_pool))):
+    rows = sorted(inv_of_contract[c["contract_id"]], key=lambda r: r["period_month"])
+    n = rng_x.randint(2, 4)
+    rate = rng_x.uniform(0.10, 0.25)
+    total_red = 0.0
+    for inv in rows[-n:]:
+        red = money(inv["amount"] * rate)
+        inv["amount"] = money(inv["amount"] - red)
+        total_red += red
+    billing_adjustments.append({
+        "adjustment_id": nid(_badj, "BA", 4),
+        "contract_id": c["contract_id"],
+        "adjustment_type": rng_x.choice(["credit_note", "approved_discount"]),
+        "adjustment_amount": money(total_red),
+        "approved_by": f"{rng_x.choice(FIRST)} {rng_x.choice(LAST)} (Finance)",
+        "approved_date": rows[-1]["period_month"],
+    })
 
 # 6f. Duplicate revenue (clone an existing invoice) -------------------------
 for inv in sample(list(invoices), RATE_DUPLICATE_INVOICE):
@@ -510,6 +573,8 @@ tables = {
     "contracts": (contracts, ["contract_id", "opportunity_id", "account_id", "renewal_of", "start_date", "end_date", "term_months", "acv", "status"]),
     "invoices": (invoices, ["invoice_id", "contract_id", "account_id", "invoice_date", "period_month", "amount"]),
     "commissions": (commissions, ["commission_id", "opportunity_id", "rep_id", "contract_id", "commission_amount", "paid_date"]),
+    "commission_adjustments": (commission_adjustments, ["adjustment_id", "commission_id", "adjustment_type", "adjustment_amount", "approved_by", "approved_date"]),
+    "billing_adjustments": (billing_adjustments, ["adjustment_id", "contract_id", "adjustment_type", "adjustment_amount", "approved_by", "approved_date"]),
     "ground_truth_leaks": (ground_truth, ["leak_id", "leak_type", "impact_class", "entity_type", "entity_id", "euro_impact", "description"]),
 }
 
@@ -543,3 +608,10 @@ for t, (c, e) in sorted(by_class.items()):
 print("-" * 52)
 print(f"  {'TOTAL':<24} {len(ground_truth):>4} leaks   "
       f"EUR {sum(g['euro_impact'] for g in ground_truth):>14,.0f}")
+
+print("\nPlanted legitimate exceptions (decoys - must NOT be flagged)")
+print("-" * 52)
+print(f"  approved commission uplifts {len(commission_adjustments):>3}   "
+      f"EUR {sum(a['adjustment_amount'] for a in commission_adjustments):>14,.0f}")
+print(f"  approved billing credits    {len(billing_adjustments):>3}   "
+      f"EUR {sum(a['adjustment_amount'] for a in billing_adjustments):>14,.0f}")
