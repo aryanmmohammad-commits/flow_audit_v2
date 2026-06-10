@@ -4,3 +4,4 @@ logs/
 *.duckdb
 __pycache__/
 .venv/
+profiles.yml

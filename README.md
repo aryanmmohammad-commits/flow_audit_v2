@@ -8,7 +8,7 @@ Each finding is traced to its cause and given a euro figure a non-technical mana
 
 The principle behind it, in one line: *growth comes from removing obstruction in the value flow.*
 This project finds the obstructions and prices them.
-
+**Status:** stages 1–2 complete · `dbt build` green (21 models, 44 tests passing).
 ## Why this project is unusual
 
 Every leak in the test data is **planted with known ground truth**, so the audit can be
