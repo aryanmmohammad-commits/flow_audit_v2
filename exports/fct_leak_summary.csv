@@ -1,7 +1,0 @@
-leak_type,impact_class,leak_count,euro_impact
-duplicate_revenue,overstated_revenue,137,515568.73
-silent_churn,overstated_revenue,18,904381.7
-commission_overpayment,potentially_recoverable_cash,18,36166.44
-under_billing,potentially_recoverable_cash,24,116007.94
-attribution_gap,revenue_at_risk,48,2172510.0
-stalled_deal,revenue_at_risk,22,874685.0
