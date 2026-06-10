@@ -1,0 +1,25 @@
+name: 'flow_audit'
+version: '2.0.0'
+config-version: 2
+profile: 'flow_audit'
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+test-paths: ["tests"]
+
+vars:
+  as_of_date: '2026-05-31'   # the audit's "today"; change to re-point the whole project
+  stall_days: 100            # an open deal in-stage longer than this is flagged stalled
+
+seeds:
+  flow_audit:
+    +schema: raw
+
+models:
+  flow_audit:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

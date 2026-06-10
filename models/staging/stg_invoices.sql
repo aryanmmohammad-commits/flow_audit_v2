@@ -1,0 +1,2 @@
+select invoice_id, contract_id, account_id, invoice_date, period_month, amount
+from {{ ref('invoices') }}

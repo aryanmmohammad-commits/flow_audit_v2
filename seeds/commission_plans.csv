@@ -1,0 +1,4 @@
+commission_plan_id,plan_name,commission_rate,floor_price
+CP1,SMB Standard,0.08,5000
+CP2,Mid-Market,0.1,20000
+CP3,Enterprise,0.12,80000

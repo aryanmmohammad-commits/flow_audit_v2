@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: fct_commission_overpayments
+    description: "Reps paid more than the plan rate owed. Recoverable cash."
+    columns:
+      - name: commission_id
+        tests: [unique, not_null]
+  - name: fct_underbilled_contracts
+    description: "Live contracts billed below the prorated ACV. Recoverable cash."
+    columns:
+      - name: contract_id
+        tests: [unique, not_null]
+  - name: fct_silent_churn
+    description: "Active contracts that quietly stopped billing. Phantom ARR."
+    columns:
+      - name: contract_id
+        tests: [unique, not_null]
+  - name: fct_attribution_gaps
+    description: "Won revenue with no resolvable source lead. Revenue at risk."
+    columns:
+      - name: opportunity_id
+        tests: [unique, not_null]
+  - name: fct_stalled_deals
+    description: "Open deals parked in-stage beyond the stall threshold."
+    columns:
+      - name: opportunity_id
+        tests: [unique, not_null]
+  - name: fct_duplicate_invoices
+    description: "Invoices double-counting the same contract/period/amount."
+    columns:
+      - name: invoice_id
+        tests: [unique, not_null]
+  - name: fct_leak_summary
+    description: "Scorecard: euro impact per leak type and impact class."
+    columns:
+      - name: leak_type
+        tests: [unique, not_null]

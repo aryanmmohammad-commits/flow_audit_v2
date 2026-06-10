@@ -1,0 +1,2251 @@
+lead_id,account_id,source,created_date,status
+L00001,A0154,Event,2026-03-11,Converted
+L00002,A0302,Inbound,2024-07-12,Converted
+L00003,A0084,Inbound,2026-04-25,Converted
+L00004,A0176,Partner,2025-06-24,Converted
+L00005,A0274,Event,2026-05-01,Converted
+L00006,A0017,Partner,2026-02-26,Converted
+L00007,A0471,Partner,2026-04-02,Converted
+L00008,A0083,Event,2024-11-12,Converted
+L00009,A0331,Inbound,2025-10-11,Converted
+L00010,A0332,Outbound,2024-09-09,Converted
+L00011,A0199,Outbound,2025-10-13,Converted
+L00012,A0132,Paid Search,2026-05-01,Converted
+L00013,A0334,Inbound,2026-03-16,Converted
+L00014,A0262,Outbound,2026-04-11,Converted
+L00015,A0427,Partner,2026-05-04,Converted
+L00016,A0475,Inbound,2026-02-16,Converted
+L00017,A0342,Inbound,2025-01-13,Converted
+L00018,A0429,Event,2026-05-10,Converted
+L00019,A0470,Partner,2025-10-06,Converted
+L00020,A0237,Event,2025-06-11,Converted
+L00021,A0238,Partner,2025-02-23,Converted
+L00022,A0114,Referral,2024-12-21,Converted
+L00023,A0371,Inbound,2025-09-27,Converted
+L00024,A0263,Inbound,2024-06-11,Converted
+L00025,A0185,Event,2026-03-11,Converted
+L00026,A0298,Partner,2025-04-11,Converted
+L00027,A0046,Referral,2024-11-19,Converted
+L00028,A0011,Paid Search,2024-08-03,Converted
+L00029,A0305,Event,2025-06-13,Converted
+L00030,A0312,Paid Search,2025-04-27,Converted
+L00031,A0139,Inbound,2025-02-15,Converted
+L00032,A0402,Event,2024-05-01,Converted
+L00033,A0369,Referral,2025-03-11,Converted
+L00034,A0471,Inbound,2026-05-04,Converted
+L00035,A0130,Event,2026-03-27,Converted
+L00036,A0373,Outbound,2026-03-09,Converted
+L00037,A0434,Referral,2024-10-20,Converted
+L00038,A0207,Partner,2025-03-18,Converted
+L00039,A0432,Inbound,2024-09-16,Converted
+L00040,A0387,Event,2024-06-18,Converted
+L00041,A0215,Partner,2025-05-15,Converted
+L00042,A0003,Event,2025-03-07,Converted
+L00043,A0084,Partner,2026-03-30,Converted
+L00044,A0451,Outbound,2024-05-03,Converted
+L00045,A0253,Referral,2025-04-13,Converted
+L00046,A0055,Referral,2025-07-19,Converted
+L00047,A0316,Referral,2024-12-21,Converted
+L00048,A0360,Outbound,2026-03-24,Converted
+L00049,A0262,Paid Search,2024-05-25,Converted
+L00050,A0045,Partner,2024-07-23,Converted
+L00051,A0323,Paid Search,2024-06-12,Converted
+L00052,A0339,Partner,2024-06-13,Converted
+L00053,A0219,Event,2025-04-06,Converted
+L00054,A0136,Inbound,2026-02-14,Converted
+L00055,A0491,Referral,2025-08-24,Converted
+L00056,A0440,Event,2024-07-26,Converted
+L00057,A0435,Referral,2024-11-10,Converted
+L00058,A0331,Partner,2025-04-22,Converted
+L00059,A0006,Outbound,2024-09-13,Converted
+L00060,A0166,Paid Search,2025-04-25,Converted
+L00061,A0045,Inbound,2026-02-25,Converted
+L00062,A0046,Paid Search,2025-10-14,Converted
+L00063,A0182,Event,2026-02-27,Converted
+L00064,A0002,Inbound,2026-03-30,Converted
+L00065,A0359,Partner,2024-10-30,Converted
+L00066,A0359,Paid Search,2025-12-14,Converted
+L00067,A0068,Paid Search,2025-06-13,Converted
+L00068,A0408,Partner,2025-08-31,Converted
+L00069,A0482,Outbound,2025-12-03,Converted
+L00070,A0468,Partner,2025-01-28,Converted
+L00071,A0089,Event,2025-03-19,Converted
+L00072,A0374,Event,2026-02-27,Converted
+L00073,A0027,Inbound,2026-03-03,Converted
+L00074,A0103,Referral,2026-01-30,Converted
+L00075,A0393,Partner,2025-04-27,Converted
+L00076,A0007,Paid Search,2026-03-15,Converted
+L00077,A0378,Event,2024-10-25,Converted
+L00078,A0368,Referral,2025-01-13,Converted
+L00079,A0166,Paid Search,2025-12-27,Converted
+L00080,A0395,Referral,2026-03-28,Converted
+L00081,A0080,Outbound,2024-10-21,Converted
+L00082,A0266,Event,2026-01-17,Converted
+L00083,A0121,Partner,2026-03-03,Converted
+L00084,A0271,Inbound,2025-04-15,Converted
+L00085,A0475,Inbound,2026-03-27,Converted
+L00086,A0336,Paid Search,2024-10-14,Converted
+L00087,A0359,Referral,2025-11-16,Converted
+L00088,A0316,Referral,2025-10-27,Converted
+L00089,A0351,Inbound,2026-02-21,Converted
+L00090,A0198,Paid Search,2024-08-20,Converted
+L00091,A0150,Referral,2026-05-20,Converted
+L00092,A0003,Outbound,2025-02-12,Converted
+L00093,A0426,Outbound,2024-11-05,Converted
+L00094,A0467,Inbound,2026-02-28,Converted
+L00095,A0363,Outbound,2024-12-18,Converted
+L00096,A0165,Partner,2025-11-09,Converted
+L00097,A0393,Event,2024-08-13,Converted
+L00098,A0276,Outbound,2024-08-15,Converted
+L00099,A0447,Outbound,2026-04-05,Converted
+L00100,A0270,Inbound,2025-12-04,Converted
+L00101,A0006,Inbound,2026-04-14,Converted
+L00102,A0284,Outbound,2026-04-27,Converted
+L00103,A0185,Partner,2025-05-01,Converted
+L00104,A0485,Referral,2026-03-08,Converted
+L00105,A0327,Event,2025-09-13,Converted
+L00106,A0303,Inbound,2024-07-02,Converted
+L00107,A0409,Event,2026-02-11,Converted
+L00108,A0122,Partner,2025-10-02,Converted
+L00109,A0259,Outbound,2026-04-29,Converted
+L00110,A0241,Paid Search,2024-10-21,Converted
+L00111,A0296,Partner,2024-10-19,Converted
+L00112,A0049,Event,2025-10-19,Converted
+L00113,A0066,Event,2025-06-10,Converted
+L00114,A0470,Event,2025-12-02,Converted
+L00115,A0042,Referral,2024-05-01,Converted
+L00116,A0260,Inbound,2025-06-14,Converted
+L00117,A0428,Referral,2025-05-13,Converted
+L00118,A0090,Paid Search,2025-11-18,Converted
+L00119,A0060,Event,2024-07-07,Converted
+L00120,A0276,Paid Search,2026-02-08,Converted
+L00121,A0045,Referral,2025-05-01,Converted
+L00122,A0473,Inbound,2024-11-08,Converted
+L00123,A0116,Inbound,2024-05-01,Converted
+L00124,A0203,Partner,2024-06-24,Converted
+L00125,A0139,Outbound,2025-11-21,Converted
+L00126,A0254,Partner,2025-09-19,Converted
+L00127,A0484,Partner,2025-07-12,Converted
+L00128,A0192,Referral,2025-02-23,Converted
+L00129,A0047,Outbound,2024-09-27,Converted
+L00130,A0374,Outbound,2024-12-15,Converted
+L00131,A0078,Inbound,2025-08-06,Converted
+L00132,A0186,Outbound,2026-04-10,Converted
+L00133,A0199,Inbound,2025-07-27,Converted
+L00134,A0229,Event,2024-05-01,Converted
+L00135,A0051,Outbound,2025-01-07,Converted
+L00136,A0212,Outbound,2025-01-11,Converted
+L00137,A0050,Event,2024-11-05,Converted
+L00138,A0211,Outbound,2026-04-03,Converted
+L00139,A0200,Inbound,2025-07-19,Converted
+L00140,A0279,Outbound,2025-03-15,Converted
+L00141,A0391,Referral,2025-07-05,Converted
+L00142,A0232,Inbound,2025-06-29,Converted
+L00143,A0356,Referral,2025-03-28,Converted
+L00144,A0063,Event,2026-02-27,Converted
+L00145,A0469,Inbound,2025-10-11,Converted
+L00146,A0195,Referral,2024-08-27,Converted
+L00147,A0458,Event,2026-04-02,Converted
+L00148,A0089,Event,2025-06-25,Converted
+L00149,A0154,Event,2025-10-07,Converted
+L00150,A0474,Referral,2026-04-05,Converted
+L00151,A0442,Outbound,2025-05-08,Converted
+L00152,A0400,Outbound,2026-01-26,Converted
+L00153,A0056,Outbound,2025-09-01,Converted
+L00154,A0487,Inbound,2024-05-01,Converted
+L00155,A0171,Inbound,2025-07-25,Converted
+L00156,A0376,Outbound,2026-02-25,Converted
+L00157,A0061,Outbound,2025-01-04,Converted
+L00158,A0105,Paid Search,2024-08-28,Converted
+L00159,A0241,Outbound,2026-05-16,Converted
+L00160,A0008,Referral,2024-05-05,Converted
+L00161,A0386,Inbound,2025-02-28,Converted
+L00162,A0054,Paid Search,2026-04-22,Converted
+L00163,A0363,Paid Search,2025-10-18,Converted
+L00164,A0174,Referral,2026-05-10,Converted
+L00165,A0410,Paid Search,2025-09-04,Converted
+L00166,A0311,Paid Search,2025-04-26,Converted
+L00167,A0078,Partner,2024-08-02,Converted
+L00168,A0065,Referral,2024-08-05,Converted
+L00169,A0351,Partner,2024-07-09,Converted
+L00170,A0040,Paid Search,2025-06-04,Converted
+L00171,A0368,Paid Search,2026-04-28,Converted
+L00172,A0266,Paid Search,2025-12-24,Converted
+L00173,A0053,Paid Search,2025-06-29,Converted
+L00174,A0275,Partner,2025-07-03,Converted
+L00175,A0207,Paid Search,2024-12-06,Converted
+L00176,A0128,Referral,2024-05-15,Converted
+L00177,A0151,Referral,2024-12-31,Converted
+L00178,A0231,Outbound,2024-12-25,Converted
+L00179,A0109,Paid Search,2026-02-13,Converted
+L00180,A0405,Partner,2025-03-14,Converted
+L00181,A0386,Outbound,2026-02-03,Converted
+L00182,A0252,Event,2025-07-14,Converted
+L00183,A0394,Event,2024-05-13,Converted
+L00184,A0066,Outbound,2026-01-19,Converted
+L00185,A0036,Event,2024-06-16,Converted
+L00186,A0183,Referral,2025-02-12,Converted
+L00187,A0222,Inbound,2026-03-05,Converted
+L00188,A0043,Event,2026-03-17,Converted
+L00189,A0236,Event,2025-10-04,Converted
+L00190,A0350,Outbound,2026-04-19,Converted
+L00191,A0143,Inbound,2026-02-27,Converted
+L00192,A0181,Partner,2026-05-07,Converted
+L00193,A0243,Partner,2025-07-05,Converted
+L00194,A0167,Referral,2025-04-01,Converted
+L00195,A0406,Outbound,2025-10-31,Converted
+L00196,A0365,Referral,2024-12-01,Converted
+L00197,A0225,Outbound,2024-11-13,Converted
+L00198,A0498,Referral,2026-03-15,Converted
+L00199,A0159,Outbound,2025-05-30,Converted
+L00200,A0370,Referral,2024-05-01,Converted
+L00201,A0116,Event,2024-08-02,Converted
+L00202,A0097,Paid Search,2026-03-19,Converted
+L00203,A0464,Event,2025-07-13,Converted
+L00204,A0368,Referral,2025-10-27,Converted
+L00205,A0055,Event,2025-09-07,Converted
+L00206,A0316,Event,2025-02-04,Converted
+L00207,A0072,Paid Search,2024-08-10,Converted
+L00208,A0207,Outbound,2024-11-15,Converted
+L00209,A0360,Paid Search,2025-04-01,Converted
+L00210,A0364,Paid Search,2025-05-20,Converted
+L00211,A0076,Outbound,2026-02-14,Converted
+L00212,A0059,Event,2025-01-12,Converted
+L00213,A0442,Referral,2025-06-16,Converted
+L00214,A0315,Event,2024-05-13,Converted
+L00215,A0302,Paid Search,2024-10-17,Converted
+L00216,A0394,Outbound,2024-05-15,Converted
+L00217,A0449,Inbound,2024-06-03,Converted
+L00218,A0264,Paid Search,2024-07-12,Converted
+L00219,A0345,Referral,2025-03-02,Converted
+L00220,A0282,Partner,2025-12-25,Converted
+L00221,A0012,Inbound,2025-12-23,Converted
+L00222,A0321,Referral,2026-03-06,Converted
+L00223,A0167,Partner,2024-10-03,Converted
+L00224,A0240,Partner,2024-08-31,Converted
+L00225,A0029,Referral,2025-11-04,Converted
+L00226,A0166,Event,2025-02-08,Converted
+L00227,A0303,Outbound,2026-04-05,Converted
+L00228,A0186,Event,2024-10-17,Converted
+L00229,A0253,Outbound,2025-03-09,Converted
+L00230,A0492,Event,2024-05-06,Converted
+L00231,A0023,Referral,2024-06-08,Converted
+L00232,A0157,Outbound,2025-01-02,Converted
+L00233,A0137,Outbound,2024-10-21,Converted
+L00234,A0142,Inbound,2025-10-05,Converted
+L00235,A0192,Partner,2025-11-15,Converted
+L00236,A0409,Inbound,2026-02-01,Converted
+L00237,A0228,Inbound,2026-04-14,Converted
+L00238,A0130,Event,2025-03-03,Converted
+L00239,A0240,Inbound,2026-04-13,Converted
+L00240,A0399,Event,2025-09-26,Converted
+L00241,A0487,Paid Search,2025-11-27,Converted
+L00242,A0119,Referral,2025-11-29,Converted
+L00243,A0089,Event,2025-05-01,Converted
+L00244,A0444,Referral,2026-02-17,Converted
+L00245,A0289,Paid Search,2026-03-10,Converted
+L00246,A0292,Partner,2025-01-31,Converted
+L00247,A0484,Partner,2026-03-26,Converted
+L00248,A0118,Event,2025-04-30,Converted
+L00249,A0278,Inbound,2026-02-04,Converted
+L00250,A0072,Referral,2026-03-08,Converted
+L00251,A0208,Referral,2025-12-28,Converted
+L00252,A0226,Paid Search,2025-11-25,Converted
+L00253,A0017,Inbound,2025-12-08,Converted
+L00254,A0390,Referral,2024-06-27,Converted
+L00255,A0335,Referral,2026-03-17,Converted
+L00256,A0006,Partner,2025-03-11,Converted
+L00257,A0462,Event,2026-02-20,Converted
+L00258,A0085,Outbound,2026-01-26,Converted
+L00259,A0139,Referral,2024-05-05,Converted
+L00260,A0185,Partner,2024-10-09,Converted
+L00261,A0484,Outbound,2025-05-31,Converted
+L00262,A0368,Event,2024-06-10,Converted
+L00263,A0462,Partner,2024-12-19,Converted
+L00264,A0464,Partner,2024-06-03,Converted
+L00265,A0460,Referral,2024-12-04,Converted
+L00266,A0336,Referral,2024-10-09,Converted
+L00267,A0049,Outbound,2025-01-27,Converted
+L00268,A0329,Inbound,2024-07-21,Converted
+L00269,A0329,Outbound,2026-03-11,Converted
+L00270,A0234,Paid Search,2026-02-20,Converted
+L00271,A0389,Event,2026-03-21,Converted
+L00272,A0306,Referral,2025-06-30,Converted
+L00273,A0018,Inbound,2024-05-01,Converted
+L00274,A0134,Event,2025-09-06,Converted
+L00275,A0036,Referral,2026-03-24,Converted
+L00276,A0496,Partner,2024-06-25,Converted
+L00277,A0381,Outbound,2025-04-14,Converted
+L00278,A0180,Inbound,2024-09-06,Converted
+L00279,A0499,Event,2026-01-27,Converted
+L00280,A0009,Outbound,2026-02-25,Converted
+L00281,A0436,Referral,2024-05-04,Converted
+L00282,A0460,Paid Search,2024-10-02,Converted
+L00283,A0049,Paid Search,2024-07-15,Converted
+L00284,A0406,Inbound,2025-11-04,Converted
+L00285,A0297,Paid Search,2025-06-17,Converted
+L00286,A0021,Inbound,2024-09-05,Converted
+L00287,A0004,Outbound,2025-06-20,Converted
+L00288,A0470,Paid Search,2025-08-12,Converted
+L00289,A0151,Referral,2025-10-16,Converted
+L00290,A0233,Paid Search,2024-08-12,Converted
+L00291,A0336,Event,2025-07-01,Converted
+L00292,A0371,Partner,2026-04-26,Converted
+L00293,A0361,Outbound,2025-03-20,Converted
+L00294,A0369,Event,2026-01-30,Converted
+L00295,A0228,Outbound,2026-01-18,Converted
+L00296,A0030,Partner,2024-10-06,Converted
+L00297,A0319,Partner,2024-11-23,Converted
+L00298,A0245,Paid Search,2026-03-07,Converted
+L00299,A0124,Partner,2024-08-22,Converted
+L00300,A0367,Outbound,2024-07-06,Converted
+L00301,A0475,Paid Search,2024-05-01,Converted
+L00302,A0292,Paid Search,2025-06-06,Converted
+L00303,A0431,Paid Search,2024-05-04,Converted
+L00304,A0288,Partner,2024-05-22,Converted
+L00305,A0183,Referral,2025-11-17,Converted
+L00306,A0270,Outbound,2026-04-28,Converted
+L00307,A0252,Referral,2025-07-04,Converted
+L00308,A0413,Inbound,2024-06-05,Converted
+L00309,A0090,Inbound,2024-08-26,Converted
+L00310,A0209,Paid Search,2025-06-04,Converted
+L00311,A0401,Referral,2025-10-31,Converted
+L00312,A0349,Paid Search,2024-08-31,Converted
+L00313,A0145,Partner,2024-09-06,Converted
+L00314,A0420,Inbound,2026-03-12,Converted
+L00315,A0064,Outbound,2024-05-01,Converted
+L00316,A0082,Partner,2024-08-25,Converted
+L00317,A0254,Paid Search,2025-10-31,Converted
+L00318,A0170,Inbound,2026-02-25,Converted
+L00319,A0309,Outbound,2025-11-30,Converted
+L00320,A0098,Event,2024-07-14,Converted
+L00321,A0334,Inbound,2026-03-23,Converted
+L00322,A0281,Paid Search,2025-07-15,Converted
+L00323,A0449,Partner,2024-10-27,Converted
+L00324,A0467,Event,2026-01-25,Converted
+L00325,A0069,Partner,2024-05-22,Converted
+L00326,A0014,Inbound,2026-01-09,Converted
+L00327,A0454,Referral,2025-09-10,Converted
+L00328,A0129,Inbound,2025-04-29,Converted
+L00329,A0030,Event,2024-09-25,Converted
+L00330,A0319,Outbound,2024-06-13,Converted
+L00331,A0084,Inbound,2026-03-14,Converted
+L00332,A0007,Inbound,2026-04-10,Converted
+L00333,A0095,Event,2026-04-09,Converted
+L00334,A0039,Inbound,2025-02-18,Converted
+L00335,A0486,Partner,2024-12-03,Converted
+L00336,A0066,Paid Search,2026-03-12,Converted
+L00337,A0379,Inbound,2025-08-29,Converted
+L00338,A0334,Partner,2024-10-18,Converted
+L00339,A0423,Outbound,2025-08-14,Converted
+L00340,A0007,Partner,2026-03-14,Converted
+L00341,A0461,Paid Search,2024-10-06,Converted
+L00342,A0213,Inbound,2024-08-03,Converted
+L00343,A0279,Paid Search,2025-01-05,Converted
+L00344,A0204,Inbound,2026-04-17,Converted
+L00345,A0199,Paid Search,2025-05-12,Converted
+L00346,A0085,Outbound,2025-06-08,Converted
+L00347,A0383,Event,2026-04-28,Converted
+L00348,A0140,Referral,2025-09-05,Converted
+L00349,A0035,Outbound,2025-03-19,Converted
+L00350,A0260,Referral,2025-08-19,Converted
+L00351,A0009,Partner,2025-05-05,Converted
+L00352,A0330,Paid Search,2025-06-24,Converted
+L00353,A0055,Referral,2025-11-04,Converted
+L00354,A0296,Inbound,2025-03-19,Converted
+L00355,A0372,Partner,2024-07-14,Converted
+L00356,A0118,Event,2026-02-28,Converted
+L00357,A0231,Referral,2024-12-27,Converted
+L00358,A0493,Paid Search,2025-09-04,Converted
+L00359,A0334,Referral,2024-10-20,Converted
+L00360,A0108,Paid Search,2026-03-11,Converted
+L00361,A0423,Event,2025-09-23,Converted
+L00362,A0253,Referral,2025-06-10,Converted
+L00363,A0010,Partner,2024-10-21,Converted
+L00364,A0267,Outbound,2026-04-07,Converted
+L00365,A0232,Partner,2025-06-27,Converted
+L00366,A0134,Outbound,2024-11-30,Converted
+L00367,A0156,Outbound,2024-05-25,Converted
+L00368,A0395,Inbound,2025-09-06,Converted
+L00369,A0032,Inbound,2025-05-24,Converted
+L00370,A0467,Partner,2025-09-16,Converted
+L00371,A0404,Inbound,2024-12-12,Converted
+L00372,A0128,Event,2024-07-18,Converted
+L00373,A0440,Paid Search,2024-05-01,Converted
+L00374,A0028,Partner,2025-01-29,Converted
+L00375,A0434,Inbound,2024-12-26,Converted
+L00376,A0446,Outbound,2026-05-18,Converted
+L00377,A0369,Inbound,2024-09-07,Converted
+L00378,A0274,Outbound,2026-01-03,Converted
+L00379,A0101,Paid Search,2024-12-06,Converted
+L00380,A0298,Outbound,2024-08-26,Converted
+L00381,A0043,Partner,2026-05-10,Converted
+L00382,A0324,Paid Search,2024-11-01,Converted
+L00383,A0131,Paid Search,2024-08-26,Converted
+L00384,A0337,Paid Search,2025-01-07,Converted
+L00385,A0108,Inbound,2024-10-20,Converted
+L00386,A0125,Partner,2025-08-01,Converted
+L00387,A0107,Inbound,2024-06-06,Converted
+L00388,A0167,Inbound,2025-12-29,Converted
+L00389,A0336,Referral,2024-10-18,Converted
+L00390,A0066,Partner,2024-08-23,Converted
+L00391,A0141,Referral,2025-12-30,Converted
+L00392,A0246,Outbound,2026-05-16,Converted
+L00393,A0082,Event,2026-04-03,Converted
+L00394,A0355,Event,2024-09-19,Converted
+L00395,A0375,Partner,2026-04-05,Converted
+L00396,A0384,Partner,2025-09-14,Converted
+L00397,A0198,Inbound,2024-10-01,Converted
+L00398,A0478,Partner,2026-01-20,Converted
+L00399,A0479,Paid Search,2026-04-30,Converted
+L00400,A0302,Inbound,2025-06-05,Converted
+L00401,A0324,Inbound,2025-02-01,Converted
+L00402,A0245,Paid Search,2025-06-30,Converted
+L00403,A0214,Referral,2026-02-24,Converted
+L00404,A0042,Partner,2026-04-20,Converted
+L00405,A0125,Inbound,2024-05-12,Converted
+L00406,A0285,Paid Search,2025-09-18,Converted
+L00407,A0232,Outbound,2025-06-09,Converted
+L00408,A0404,Inbound,2026-03-11,Converted
+L00409,A0130,Outbound,2025-06-06,Converted
+L00410,A0239,Referral,2025-12-16,Converted
+L00411,A0346,Inbound,2024-05-01,Converted
+L00412,A0105,Inbound,2025-10-19,Converted
+L00413,A0059,Referral,2025-07-26,Converted
+L00414,A0101,Referral,2024-05-01,Converted
+L00415,A0369,Event,2026-02-06,Converted
+L00416,A0409,Outbound,2025-05-29,Converted
+L00417,A0237,Outbound,2025-07-08,Converted
+L00418,A0097,Partner,2025-04-02,Converted
+L00419,A0471,Paid Search,2026-03-01,Converted
+L00420,A0242,Outbound,2025-06-08,Converted
+L00421,A0131,Event,2026-04-28,Converted
+L00422,A0057,Paid Search,2025-03-20,Converted
+L00423,A0427,Partner,2024-05-20,Converted
+L00424,A0305,Inbound,2024-09-06,Converted
+L00425,A0355,Paid Search,2024-09-11,Converted
+L00426,A0485,Referral,2025-03-25,Converted
+L00427,A0181,Inbound,2026-04-21,Converted
+L00428,A0476,Paid Search,2025-07-16,Converted
+L00429,A0170,Referral,2025-06-02,Converted
+L00430,A0316,Partner,2026-03-11,Converted
+L00431,A0157,Paid Search,2026-01-04,Converted
+L00432,A0395,Partner,2025-06-04,Converted
+L00433,A0360,Referral,2026-03-30,Converted
+L00434,A0171,Outbound,2025-12-09,Converted
+L00435,A0056,Inbound,2025-04-18,Converted
+L00436,A0369,Paid Search,2025-11-08,Converted
+L00437,A0117,Referral,2026-04-17,Converted
+L00438,A0164,Paid Search,2026-04-17,Converted
+L00439,A0415,Inbound,2025-07-31,Converted
+L00440,A0202,Referral,2025-11-16,Converted
+L00441,A0366,Inbound,2025-08-08,Converted
+L00442,A0107,Referral,2025-05-04,Converted
+L00443,A0021,Event,2025-02-14,Converted
+L00444,A0025,Inbound,2025-09-10,Converted
+L00445,A0287,Inbound,2025-07-20,Converted
+L00446,A0334,Event,2025-12-31,Converted
+L00447,A0336,Referral,2024-05-01,Converted
+L00448,A0478,Paid Search,2025-10-02,Converted
+L00449,A0266,Inbound,2025-11-14,Converted
+L00450,A0246,Event,2025-09-30,Converted
+L00451,A0143,Inbound,2025-06-09,Converted
+L00452,A0150,Inbound,2025-01-10,Converted
+L00453,A0255,Referral,2025-02-18,Converted
+L00454,A0457,Referral,2026-02-04,Converted
+L00455,A0285,Partner,2024-08-17,Converted
+L00456,A0212,Referral,2026-01-05,Converted
+L00457,A0137,Referral,2026-01-22,Converted
+L00458,A0282,Outbound,2025-10-22,Converted
+L00459,A0442,Referral,2026-04-10,Converted
+L00460,A0480,Partner,2024-05-01,Converted
+L00461,A0352,Inbound,2024-06-12,Converted
+L00462,A0177,Event,2024-10-19,Converted
+L00463,A0469,Inbound,2025-01-28,Converted
+L00464,A0359,Partner,2026-01-31,Converted
+L00465,A0099,Event,2025-10-30,Converted
+L00466,A0342,Partner,2024-06-17,Converted
+L00467,A0441,Referral,2024-05-01,Converted
+L00468,A0214,Outbound,2025-06-18,Converted
+L00469,A0380,Outbound,2025-09-27,Converted
+L00470,A0404,Outbound,2024-12-29,Converted
+L00471,A0313,Outbound,2026-04-27,Converted
+L00472,A0417,Referral,2026-03-02,Converted
+L00473,A0017,Inbound,2024-08-08,Converted
+L00474,A0306,Event,2024-05-27,Converted
+L00475,A0433,Partner,2025-07-20,Converted
+L00476,A0392,Paid Search,2024-07-04,Converted
+L00477,A0297,Event,2024-12-24,Converted
+L00478,A0399,Referral,2026-02-05,Converted
+L00479,A0235,Referral,2025-09-03,Converted
+L00480,A0280,Paid Search,2026-01-31,Converted
+L00481,A0491,Outbound,2026-04-01,Converted
+L00482,A0439,Paid Search,2026-01-28,Converted
+L00483,A0385,Event,2025-06-11,Converted
+L00484,A0016,Partner,2025-12-16,Converted
+L00485,A0110,Outbound,2024-12-24,Converted
+L00486,A0416,Outbound,2026-02-28,Converted
+L00487,A0331,Inbound,2026-04-16,Converted
+L00488,A0463,Event,2025-04-08,Converted
+L00489,A0382,Referral,2025-03-26,Converted
+L00490,A0064,Paid Search,2026-02-23,Converted
+L00491,A0308,Referral,2026-04-19,Converted
+L00492,A0263,Partner,2025-11-04,Converted
+L00493,A0102,Inbound,2025-04-13,Converted
+L00494,A0376,Referral,2024-05-11,Converted
+L00495,A0184,Outbound,2025-07-10,Converted
+L00496,A0251,Inbound,2026-03-21,Converted
+L00497,A0020,Paid Search,2025-02-19,Converted
+L00498,A0377,Paid Search,2025-02-10,Converted
+L00499,A0290,Outbound,2024-09-13,Converted
+L00500,A0393,Partner,2026-03-22,Converted
+L00501,A0215,Referral,2024-05-20,Converted
+L00502,A0005,Paid Search,2025-06-04,Converted
+L00503,A0164,Referral,2024-09-11,Converted
+L00504,A0196,Event,2025-05-16,Converted
+L00505,A0153,Outbound,2026-04-02,Converted
+L00506,A0117,Outbound,2025-09-30,Converted
+L00507,A0455,Paid Search,2025-05-31,Converted
+L00508,A0436,Outbound,2024-08-31,Converted
+L00509,A0101,Outbound,2026-04-12,Converted
+L00510,A0246,Paid Search,2026-01-27,Converted
+L00511,A0405,Event,2025-06-15,Converted
+L00512,A0350,Partner,2026-02-20,Converted
+L00513,A0109,Paid Search,2026-03-10,Converted
+L00514,A0206,Paid Search,2024-05-01,Converted
+L00515,A0375,Inbound,2025-06-06,Converted
+L00516,A0375,Inbound,2024-12-04,Converted
+L00517,A0010,Inbound,2025-05-23,Converted
+L00518,A0180,Paid Search,2026-04-08,Converted
+L00519,A0406,Inbound,2025-05-04,Converted
+L00520,A0384,Inbound,2024-05-01,Converted
+L00521,A0032,Inbound,2026-05-13,Converted
+L00522,A0408,Partner,2025-10-09,Converted
+L00523,A0087,Inbound,2025-07-27,Converted
+L00524,A0034,Paid Search,2026-03-28,Converted
+L00525,A0462,Paid Search,2026-04-04,Converted
+L00526,A0347,Event,2026-04-04,Converted
+L00527,A0321,Paid Search,2024-11-13,Converted
+L00528,A0063,Inbound,2026-05-14,Converted
+L00529,A0250,Partner,2024-11-19,Converted
+L00530,A0159,Outbound,2026-02-19,Converted
+L00531,A0103,Partner,2026-02-22,Converted
+L00532,A0092,Referral,2026-03-04,Converted
+L00533,A0103,Paid Search,2024-11-28,Converted
+L00534,A0156,Referral,2024-12-20,Converted
+L00535,A0432,Event,2026-04-08,Converted
+L00536,A0078,Referral,2026-04-03,Converted
+L00537,A0077,Event,2025-07-18,Converted
+L00538,A0235,Event,2025-04-15,Converted
+L00539,A0193,Partner,2024-05-13,Converted
+L00540,A0082,Paid Search,2025-03-18,Converted
+L00541,A0193,Paid Search,2025-03-24,Converted
+L00542,A0303,Inbound,2024-10-10,Converted
+L00543,A0354,Outbound,2026-03-26,Converted
+L00544,A0484,Referral,2025-06-17,Converted
+L00545,A0389,Inbound,2025-05-21,Converted
+L00546,A0387,Event,2025-07-02,Converted
+L00547,A0100,Outbound,2024-11-20,Converted
+L00548,A0492,Outbound,2024-08-12,Converted
+L00549,A0139,Inbound,2024-08-09,Converted
+L00550,A0494,Event,2026-03-16,Converted
+L00551,A0186,Event,2025-03-21,Converted
+L00552,A0404,Inbound,2024-08-10,Converted
+L00553,A0266,Partner,2025-12-10,Converted
+L00554,A0320,Referral,2025-03-13,Converted
+L00555,A0214,Referral,2026-02-21,Converted
+L00556,A0393,Partner,2025-01-26,Converted
+L00557,A0242,Event,2024-07-22,Converted
+L00558,A0452,Inbound,2025-07-17,Converted
+L00559,A0268,Paid Search,2026-03-05,Converted
+L00560,A0322,Outbound,2025-05-09,Converted
+L00561,A0371,Partner,2024-08-16,Converted
+L00562,A0268,Referral,2025-04-03,Converted
+L00563,A0054,Paid Search,2025-01-25,Converted
+L00564,A0142,Referral,2026-02-12,Converted
+L00565,A0424,Inbound,2026-04-07,Converted
+L00566,A0359,Paid Search,2026-02-02,Converted
+L00567,A0408,Event,2026-04-17,Converted
+L00568,A0036,Inbound,2025-11-04,Converted
+L00569,A0425,Outbound,2024-08-16,Converted
+L00570,A0368,Partner,2026-02-16,Converted
+L00571,A0421,Partner,2026-03-14,Converted
+L00572,A0326,Inbound,2025-05-31,Converted
+L00573,A0478,Partner,2026-04-24,Converted
+L00574,A0326,Inbound,2024-08-23,Converted
+L00575,A0321,Paid Search,2025-08-26,Converted
+L00576,A0323,Outbound,2024-05-29,Converted
+L00577,A0269,Inbound,2025-09-20,Converted
+L00578,A0091,Inbound,2025-03-08,Converted
+L00579,A0129,Partner,2026-04-09,Converted
+L00580,A0330,Referral,2026-03-23,Converted
+L00581,A0157,Paid Search,2025-09-19,Converted
+L00582,A0071,Event,2026-04-08,Converted
+L00583,A0312,Event,2024-09-17,Converted
+L00584,A0072,Referral,2024-10-06,Converted
+L00585,A0210,Outbound,2026-03-09,Converted
+L00586,A0136,Partner,2025-03-08,Converted
+L00587,A0390,Partner,2024-07-13,Converted
+L00588,A0062,Event,2024-07-01,Converted
+L00589,A0050,Paid Search,2026-03-26,Converted
+L00590,A0395,Inbound,2026-04-13,Converted
+L00591,A0078,Paid Search,2024-06-06,Converted
+L00592,A0220,Referral,2025-06-21,Converted
+L00593,A0153,Partner,2024-06-30,Converted
+L00594,A0278,Event,2025-09-22,Converted
+L00595,A0349,Paid Search,2024-05-01,Converted
+L00596,A0476,Event,2026-04-07,Converted
+L00597,A0085,Partner,2026-02-26,Converted
+L00598,A0257,Partner,2024-07-31,Converted
+L00599,A0059,Event,2025-12-29,Converted
+L00600,A0258,Inbound,2025-08-18,Converted
+L00601,A0231,Event,2024-10-10,Converted
+L00602,A0258,Outbound,2026-01-16,Converted
+L00603,A0188,Referral,2024-07-20,Converted
+L00604,A0003,Inbound,2025-02-11,Converted
+L00605,A0334,Referral,2026-02-11,Converted
+L00606,A0383,Partner,2025-05-24,Converted
+L00607,A0064,Event,2026-03-08,Converted
+L00608,A0299,Outbound,2024-06-24,Converted
+L00609,A0384,Paid Search,2025-06-11,Converted
+L00610,A0351,Inbound,2025-12-23,Converted
+L00611,A0097,Referral,2024-05-24,Converted
+L00612,A0214,Outbound,2024-07-26,Converted
+L00613,A0160,Outbound,2025-03-10,Converted
+L00614,A0127,Paid Search,2026-03-14,Converted
+L00615,A0406,Referral,2024-12-14,Converted
+L00616,A0315,Partner,2024-10-12,Converted
+L00617,A0274,Inbound,2024-11-18,Converted
+L00618,A0356,Event,2026-04-16,Converted
+L00619,A0034,Outbound,2026-01-22,Converted
+L00620,A0145,Paid Search,2026-02-20,Converted
+L00621,A0376,Outbound,2025-01-18,Converted
+L00622,A0440,Partner,2025-09-28,Converted
+L00623,A0060,Partner,2026-02-02,Converted
+L00624,A0026,Event,2024-05-01,Converted
+L00625,A0353,Partner,2025-02-03,Converted
+L00626,A0366,Partner,2026-04-12,Converted
+L00627,A0129,Outbound,2024-11-22,Converted
+L00628,A0198,Event,2024-09-21,Converted
+L00629,A0285,Paid Search,2024-09-30,Converted
+L00630,A0214,Referral,2026-03-11,Converted
+L00631,A0011,Paid Search,2026-02-17,Converted
+L00632,A0470,Outbound,2026-03-07,Converted
+L00633,A0223,Referral,2024-05-15,Converted
+L00634,A0273,Inbound,2026-03-03,Converted
+L00635,A0214,Event,2025-05-19,Converted
+L00636,A0141,Inbound,2024-05-04,Converted
+L00637,A0213,Partner,2025-04-02,Converted
+L00638,A0331,Inbound,2024-05-01,Converted
+L00639,A0224,Inbound,2024-08-04,Converted
+L00640,A0177,Paid Search,2025-12-27,Converted
+L00641,A0210,Referral,2024-12-14,Converted
+L00642,A0375,Referral,2024-05-01,Converted
+L00643,A0175,Inbound,2026-02-15,Converted
+L00644,A0457,Partner,2024-09-09,Converted
+L00645,A0483,Partner,2024-06-12,Converted
+L00646,A0040,Event,2026-04-10,Converted
+L00647,A0264,Inbound,2026-01-30,Converted
+L00648,A0031,Event,2026-05-02,Converted
+L00649,A0475,Event,2026-04-27,Converted
+L00650,A0261,Paid Search,2024-11-27,Converted
+L00651,A0347,Referral,2024-09-20,Converted
+L00652,A0098,Outbound,2025-04-05,Converted
+L00653,A0006,Inbound,2024-12-13,Converted
+L00654,A0242,Partner,2026-02-10,Converted
+L00655,A0196,Inbound,2025-03-01,Converted
+L00656,A0192,Inbound,2024-09-01,Converted
+L00657,A0108,Paid Search,2026-02-19,Converted
+L00658,A0428,Partner,2025-05-16,Converted
+L00659,A0480,Partner,2024-08-17,Converted
+L00660,A0250,Referral,2026-03-02,Converted
+L00661,A0177,Paid Search,2026-03-16,Converted
+L00662,A0486,Partner,2026-03-11,Converted
+L00663,A0477,Partner,2024-12-14,Converted
+L00664,A0029,Outbound,2026-02-22,Converted
+L00665,A0200,Event,2026-05-01,Converted
+L00666,A0322,Paid Search,2024-07-22,Converted
+L00667,A0499,Referral,2025-02-05,Converted
+L00668,A0285,Outbound,2025-06-12,Converted
+L00669,A0212,Inbound,2025-01-08,Converted
+L00670,A0108,Partner,2026-02-17,Converted
+L00671,A0241,Partner,2025-06-27,Converted
+L00672,A0447,Partner,2024-08-12,Converted
+L00673,A0369,Inbound,2026-02-25,Converted
+L00674,A0002,Partner,2026-04-09,Converted
+L00675,A0211,Partner,2025-04-07,Converted
+L00676,A0008,Paid Search,2025-09-17,Converted
+L00677,A0177,Event,2026-03-30,Converted
+L00678,A0187,Outbound,2025-01-04,Converted
+L00679,A0498,Inbound,2025-12-24,Converted
+L00680,A0317,Outbound,2025-06-19,Converted
+L00681,A0235,Paid Search,2026-03-17,Converted
+L00682,A0112,Partner,2025-06-26,Converted
+L00683,A0008,Outbound,2026-04-13,Converted
+L00684,A0278,Partner,2025-12-02,Converted
+L00685,A0160,Referral,2025-09-19,Converted
+L00686,A0131,Event,2024-07-31,Converted
+L00687,A0354,Referral,2024-08-10,Converted
+L00688,A0111,Referral,2025-05-04,Converted
+L00689,A0320,Inbound,2024-08-25,Converted
+L00690,A0423,Inbound,2024-05-01,Converted
+L00691,A0188,Partner,2024-10-29,Converted
+L00692,A0428,Referral,2026-04-19,Converted
+L00693,A0128,Paid Search,2025-09-08,Converted
+L00694,A0015,Outbound,2024-12-28,Converted
+L00695,A0326,Outbound,2025-05-26,Converted
+L00696,A0444,Inbound,2025-12-01,Converted
+L00697,A0224,Event,2026-04-09,Converted
+L00698,A0100,Partner,2025-07-30,Converted
+L00699,A0205,Inbound,2025-04-22,Converted
+L00700,A0123,Inbound,2025-03-08,Converted
+L00701,A0284,Outbound,2025-01-10,Converted
+L00702,A0359,Outbound,2026-01-22,Converted
+L00703,A0250,Referral,2025-12-14,Converted
+L00704,A0392,Inbound,2026-03-10,Converted
+L00705,A0264,Outbound,2025-06-08,Converted
+L00706,A0157,Partner,2025-08-05,Converted
+L00707,A0015,Outbound,2025-07-04,Converted
+L00708,A0452,Inbound,2026-03-25,Converted
+L00709,A0153,Referral,2025-01-21,Converted
+L00710,A0160,Inbound,2026-03-09,Converted
+L00711,A0489,Event,2025-01-18,Converted
+L00712,A0324,Inbound,2024-06-15,Converted
+L00713,A0053,Paid Search,2026-04-14,Converted
+L00714,A0053,Outbound,2025-12-22,Converted
+L00715,A0344,Outbound,2024-08-08,Converted
+L00716,A0331,Event,2024-07-01,Converted
+L00717,A0027,Outbound,2025-06-22,Converted
+L00718,A0247,Inbound,2024-08-05,Converted
+L00719,A0267,Inbound,2025-05-22,Converted
+L00720,A0103,Inbound,2025-12-29,Converted
+L00721,A0239,Outbound,2025-03-06,Converted
+L00722,A0450,Partner,2025-03-25,Converted
+L00723,A0441,Referral,2026-04-14,Converted
+L00724,A0055,Paid Search,2024-12-08,Converted
+L00725,A0402,Event,2024-12-31,Converted
+L00726,A0446,Outbound,2026-05-07,Converted
+L00727,A0206,Referral,2024-05-14,Converted
+L00728,A0045,Outbound,2026-04-15,Converted
+L00729,A0295,Inbound,2025-03-06,Converted
+L00730,A0174,Referral,2024-09-16,Converted
+L00731,A0244,Paid Search,2024-11-18,Converted
+L00732,A0177,Referral,2025-01-11,Converted
+L00733,A0136,Event,2025-02-17,Converted
+L00734,A0406,Referral,2025-01-01,Converted
+L00735,A0403,Outbound,2025-05-24,Converted
+L00736,A0231,Referral,2026-04-15,Converted
+L00737,A0348,Event,2025-03-27,Converted
+L00738,A0479,Referral,2024-11-25,Converted
+L00739,A0147,Paid Search,2024-05-01,Converted
+L00740,A0028,Referral,2024-07-18,Converted
+L00741,A0293,Referral,2025-09-29,Converted
+L00742,A0320,Paid Search,2025-07-29,Converted
+L00743,A0061,Event,2025-08-30,Converted
+L00744,A0093,Inbound,2025-06-24,Converted
+L00745,A0011,Event,2025-09-03,Converted
+L00746,A0051,Event,2025-04-29,Converted
+L00747,A0213,Outbound,2024-05-01,Converted
+L00748,A0022,Partner,2025-08-10,Converted
+L00749,A0252,Inbound,2024-05-21,Converted
+L00750,A0282,Inbound,2026-03-09,Converted
+L00751,A0482,Paid Search,2026-02-23,Converted
+L00752,A0293,Inbound,2024-09-23,Converted
+L00753,A0380,Paid Search,2024-07-20,Converted
+L00754,A0033,Paid Search,2024-06-13,Converted
+L00755,A0161,Outbound,2025-11-01,Converted
+L00756,A0101,Partner,2024-06-15,Converted
+L00757,A0049,Referral,2026-03-09,Converted
+L00758,A0456,Referral,2025-11-03,Converted
+L00759,A0401,Inbound,2025-11-26,Converted
+L00760,A0026,Paid Search,2024-12-17,Converted
+L00761,A0038,Referral,2025-08-28,Converted
+L00762,A0292,Event,2025-01-08,Converted
+L00763,A0367,Paid Search,2026-03-25,Converted
+L00764,A0404,Event,2026-04-09,Converted
+L00765,A0065,Event,2024-11-03,Converted
+L00766,A0114,Referral,2026-03-23,Converted
+L00767,A0215,Event,2025-12-26,Converted
+L00768,A0046,Partner,2025-11-30,Converted
+L00769,A0125,Outbound,2025-02-09,Converted
+L00770,A0065,Partner,2024-06-29,Converted
+L00771,A0449,Outbound,2025-10-03,Converted
+L00772,A0271,Inbound,2026-04-30,Converted
+L00773,A0153,Partner,2024-09-18,Converted
+L00774,A0058,Paid Search,2025-05-07,Converted
+L00775,A0248,Referral,2024-11-13,Converted
+L00776,A0382,Outbound,2026-03-05,Converted
+L00777,A0311,Event,2024-05-21,Converted
+L00778,A0361,Referral,2026-04-09,Converted
+L00779,A0191,Inbound,2025-01-23,Converted
+L00780,A0198,Inbound,2026-01-18,Converted
+L00781,A0424,Referral,2024-05-05,Converted
+L00782,A0290,Outbound,2024-06-21,Converted
+L00783,A0114,Inbound,2024-11-11,Converted
+L00784,A0343,Partner,2024-12-14,Converted
+L00785,A0423,Inbound,2024-12-18,Converted
+L00786,A0119,Event,2026-03-11,Converted
+L00787,A0142,Event,2026-02-28,Converted
+L00788,A0185,Outbound,2026-01-23,Converted
+L00789,A0157,Paid Search,2025-03-22,Converted
+L00790,A0364,Paid Search,2024-11-09,Converted
+L00791,A0237,Partner,2025-11-20,Converted
+L00792,A0116,Event,2025-07-01,Converted
+L00793,A0327,Outbound,2026-02-22,Converted
+L00794,A0338,Inbound,2025-03-23,Converted
+L00795,A0248,Inbound,2026-04-16,Converted
+L00796,A0132,Inbound,2024-08-08,Converted
+L00797,A0084,Inbound,2026-03-26,Converted
+L00798,A0169,Paid Search,2024-08-12,Converted
+L00799,A0178,Paid Search,2025-06-18,Converted
+L00800,A0295,Event,2025-11-19,Converted
+L00801,A0255,Event,2026-02-25,Converted
+L00802,A0290,Partner,2025-03-09,Converted
+L00803,A0366,Outbound,2025-02-21,Converted
+L00804,A0060,Partner,2025-02-01,Converted
+L00805,A0071,Referral,2024-05-01,Converted
+L00806,A0098,Event,2025-01-05,Converted
+L00807,A0459,Outbound,2026-03-24,Converted
+L00808,A0059,Referral,2024-07-03,Converted
+L00809,A0257,Outbound,2025-06-12,Converted
+L00810,A0421,Inbound,2026-01-15,Converted
+L00811,A0189,Paid Search,2025-08-26,Converted
+L00812,A0476,Referral,2024-06-04,Converted
+L00813,A0132,Referral,2025-08-03,Converted
+L00814,A0147,Inbound,2025-04-10,Converted
+L00815,A0144,Referral,2024-10-05,Converted
+L00816,A0442,Outbound,2024-12-06,Converted
+L00817,A0108,Paid Search,2025-03-08,Converted
+L00818,A0131,Event,2026-01-20,Converted
+L00819,A0111,Referral,2024-07-10,Converted
+L00820,A0011,Inbound,2025-10-05,Converted
+L00821,A0106,Outbound,2025-05-24,Converted
+L00822,A0277,Referral,2025-10-13,Converted
+L00823,A0013,Referral,2024-08-08,Converted
+L00824,A0043,Paid Search,2025-06-27,Converted
+L00825,A0271,Event,2024-10-23,Converted
+L00826,A0230,Inbound,2025-04-21,Converted
+L00827,A0242,Partner,2024-05-01,Converted
+L00828,A0289,Inbound,2025-07-24,Converted
+L00829,A0042,Inbound,2026-04-25,Converted
+L00830,A0237,Event,2026-02-18,Converted
+L00831,A0345,Paid Search,2024-10-24,Converted
+L00832,A0161,Paid Search,2024-06-23,Converted
+L00833,A0188,Partner,2024-09-17,Converted
+L00834,A0443,Event,2026-03-26,Converted
+L00835,A0059,Partner,2026-02-22,Converted
+L00836,A0146,Event,2025-04-13,Converted
+L00837,A0361,Outbound,2025-08-26,Converted
+L00838,A0003,Inbound,2025-08-04,Converted
+L00839,A0176,Outbound,2024-10-25,Converted
+L00840,A0184,Outbound,2026-01-02,Converted
+L00841,A0090,Referral,2026-04-22,Converted
+L00842,A0369,Inbound,2024-05-01,Converted
+L00843,A0074,Referral,2024-06-12,Converted
+L00844,A0251,Event,2025-04-27,Converted
+L00845,A0303,Referral,2026-03-07,Converted
+L00846,A0395,Inbound,2026-05-10,Converted
+L00847,A0336,Partner,2025-05-13,Converted
+L00848,A0181,Referral,2025-04-24,Converted
+L00849,A0321,Paid Search,2024-12-28,Converted
+L00850,A0432,Paid Search,2024-09-11,Converted
+L00851,A0448,Partner,2024-06-25,Converted
+L00852,A0158,Partner,2026-04-30,Converted
+L00853,A0425,Inbound,2025-04-05,Converted
+L00854,A0031,Event,2025-01-15,Converted
+L00855,A0138,Referral,2024-05-01,Converted
+L00856,A0419,Outbound,2024-07-24,Converted
+L00857,A0483,Inbound,2025-04-17,Converted
+L00858,A0322,Event,2024-09-07,Converted
+L00859,A0283,Outbound,2024-10-08,Converted
+L00860,A0182,Event,2024-09-12,Converted
+L00861,A0269,Paid Search,2025-01-27,Converted
+L00862,A0415,Outbound,2024-12-19,Converted
+L00863,A0259,Referral,2025-03-01,Converted
+L00864,A0053,Event,2025-08-06,Converted
+L00865,A0082,Referral,2025-07-02,Converted
+L00866,A0127,Paid Search,2025-02-15,Converted
+L00867,A0451,Inbound,2025-11-03,Converted
+L00868,A0483,Outbound,2026-02-02,Converted
+L00869,A0486,Inbound,2025-07-16,Converted
+L00870,A0151,Inbound,2026-04-08,Converted
+L00871,A0278,Paid Search,2024-07-04,Converted
+L00872,A0416,Paid Search,2026-03-28,Converted
+L00873,A0387,Inbound,2025-11-26,Converted
+L00874,A0111,Paid Search,2025-03-10,Converted
+L00875,A0323,Event,2025-07-12,Converted
+L00876,A0194,Event,2024-10-18,Converted
+L00877,A0174,Inbound,2026-02-08,Converted
+L00878,A0344,Outbound,2026-04-16,Converted
+L00879,A0402,Paid Search,2026-04-03,Converted
+L00880,A0192,Outbound,2025-12-07,Converted
+L00881,A0025,Partner,2026-04-23,Converted
+L00882,A0169,Event,2024-10-10,Converted
+L00883,A0298,Referral,2025-01-02,Converted
+L00884,A0073,Partner,2026-01-05,Converted
+L00885,A0285,Paid Search,2025-12-02,Converted
+L00886,A0169,Paid Search,2024-09-22,Converted
+L00887,A0483,Referral,2025-12-17,Converted
+L00888,A0287,Paid Search,2024-10-03,Converted
+L00889,A0340,Inbound,2025-05-15,Converted
+L00890,A0160,Paid Search,2024-05-25,Converted
+L00891,A0165,Paid Search,2025-03-20,Converted
+L00892,A0250,Partner,2025-05-03,Converted
+L00893,A0484,Event,2026-02-04,Converted
+L00894,A0158,Event,2024-09-06,Converted
+L00895,A0487,Referral,2026-03-23,Converted
+L00896,A0049,Paid Search,2024-10-17,Converted
+L00897,A0177,Partner,2025-03-23,Converted
+L00898,A0481,Event,2025-05-09,Converted
+L00899,A0414,Referral,2026-04-19,Converted
+L00900,A0087,Referral,2025-06-18,Converted
+L00901,A0500,Referral,2025-03-16,Converted
+L00902,A0046,Event,2025-05-21,Converted
+L00903,A0120,Inbound,2026-03-22,Converted
+L00904,A0289,Referral,2024-09-24,Converted
+L00905,A0455,Partner,2026-02-01,Converted
+L00906,A0498,Referral,2026-02-22,Converted
+L00907,A0268,Paid Search,2026-02-09,Converted
+L00908,A0200,Partner,2024-08-24,Converted
+L00909,A0379,Referral,2025-04-12,Converted
+L00910,A0133,Paid Search,2025-08-29,Converted
+L00911,A0226,Outbound,2024-08-16,Converted
+L00912,A0186,Referral,2024-09-01,Converted
+L00913,A0372,Partner,2025-01-15,Converted
+L00914,A0075,Referral,2025-09-09,Converted
+L00915,A0427,Partner,2026-02-10,Converted
+L00916,A0335,Referral,2024-09-11,Converted
+L00917,A0250,Event,2026-04-23,Converted
+L00918,A0314,Partner,2025-10-25,Converted
+L00919,A0129,Outbound,2026-03-01,Converted
+L00920,A0133,Outbound,2024-08-08,Converted
+L00921,A0239,Event,2026-03-27,Converted
+L00922,A0221,Referral,2025-12-12,Converted
+L00923,A0444,Outbound,2026-01-17,Converted
+L00924,A0165,Outbound,2026-03-03,Converted
+L00925,A0155,Outbound,2026-03-22,Converted
+L00926,A0033,Paid Search,2025-03-04,Converted
+L00927,A0116,Paid Search,2025-08-18,Converted
+L00928,A0162,Partner,2026-02-27,Converted
+L00929,A0327,Event,2025-01-03,Converted
+L00930,A0158,Inbound,2024-05-01,Converted
+L00931,A0229,Paid Search,2026-02-16,Converted
+L00932,A0192,Event,2025-12-19,Converted
+L00933,A0362,Outbound,2026-02-01,Converted
+L00934,A0029,Inbound,2024-07-20,Converted
+L00935,A0207,Outbound,2024-10-21,Converted
+L00936,A0287,Partner,2024-05-16,Converted
+L00937,A0370,Outbound,2024-10-04,Converted
+L00938,A0486,Event,2024-08-08,Converted
+L00939,A0199,Referral,2026-03-05,Converted
+L00940,A0437,Referral,2025-03-31,Converted
+L00941,A0488,Partner,2024-06-20,Converted
+L00942,A0384,Outbound,2024-09-26,Converted
+L00943,A0391,Referral,2025-06-13,Converted
+L00944,A0162,Event,2025-02-22,Converted
+L00945,A0178,Outbound,2024-09-13,Converted
+L00946,A0020,Referral,2026-03-26,Converted
+L00947,A0496,Partner,2024-05-17,Converted
+L00948,A0013,Event,2024-05-20,Converted
+L00949,A0047,Inbound,2024-08-17,Converted
+L00950,A0303,Outbound,2024-06-29,Converted
+L00951,A0004,Partner,2026-02-16,Converted
+L00952,A0424,Partner,2025-05-31,Converted
+L00953,A0071,Paid Search,2024-09-26,Converted
+L00954,A0434,Partner,2025-06-20,Converted
+L00955,A0371,Event,2024-10-10,Converted
+L00956,A0133,Paid Search,2025-08-20,Converted
+L00957,A0382,Inbound,2025-04-06,Converted
+L00958,A0492,Event,2026-01-21,Converted
+L00959,A0450,Event,2025-12-17,Converted
+L00960,A0416,Referral,2024-09-07,Converted
+L00961,A0308,Paid Search,2025-02-09,Converted
+L00962,A0494,Inbound,2025-04-04,Converted
+L00963,A0400,Referral,2024-05-03,Converted
+L00964,A0006,Event,2025-11-15,Converted
+L00965,A0059,Event,2025-03-23,Converted
+L00966,A0387,Paid Search,2025-10-07,Converted
+L00967,A0272,Partner,2024-08-21,Converted
+L00968,A0493,Outbound,2026-02-18,Converted
+L00969,A0367,Event,2026-04-06,Converted
+L00970,A0116,Referral,2024-09-04,Converted
+L00971,A0077,Event,2025-05-25,Converted
+L00972,A0161,Outbound,2025-10-07,Converted
+L00973,A0030,Referral,2024-12-22,Converted
+L00974,A0036,Event,2025-12-05,Converted
+L00975,A0381,Referral,2024-07-28,Converted
+L00976,A0228,Event,2026-04-09,Converted
+L00977,A0234,Inbound,2025-01-18,Converted
+L00978,A0302,Event,2025-08-20,Converted
+L00979,A0363,Inbound,2025-06-09,Converted
+L00980,A0122,Referral,2024-07-08,Converted
+L00981,A0334,Partner,2024-07-30,Converted
+L00982,A0120,Event,2026-04-19,Converted
+L00983,A0262,Referral,2025-07-01,Converted
+L00984,A0013,Event,2026-02-14,Converted
+L00985,A0139,Referral,2025-01-09,Converted
+L00986,A0325,Event,2025-09-16,Converted
+L00987,A0114,Referral,2026-02-18,Converted
+L00988,A0428,Outbound,2026-04-04,Converted
+L00989,A0291,Referral,2025-10-28,Converted
+L00990,A0047,Paid Search,2026-04-10,Converted
+L00991,A0461,Partner,2025-12-27,Converted
+L00992,A0222,Outbound,2024-05-01,Converted
+L00993,A0221,Event,2024-05-01,Converted
+L00994,A0097,Paid Search,2025-11-22,Converted
+L00995,A0186,Partner,2025-04-24,Converted
+L00996,A0124,Referral,2025-08-30,Converted
+L00997,A0175,Partner,2025-07-12,Converted
+L00998,A0296,Referral,2025-06-26,Converted
+L00999,A0032,Event,2024-12-04,Converted
+L01000,A0353,Paid Search,2025-02-05,Converted
+L01001,A0254,Partner,2025-12-19,Converted
+L01002,A0294,Outbound,2025-06-13,Converted
+L01003,A0380,Inbound,2024-08-07,Converted
+L01004,A0194,Event,2024-10-13,Converted
+L01005,A0354,Outbound,2025-06-01,Converted
+L01006,A0376,Inbound,2026-02-11,Converted
+L01007,A0001,Referral,2024-05-01,Converted
+L01008,A0311,Event,2026-02-01,Converted
+L01009,A0221,Referral,2025-07-26,Converted
+L01010,A0061,Referral,2024-09-22,Converted
+L01011,A0499,Partner,2026-04-10,Converted
+L01012,A0071,Partner,2026-03-01,Converted
+L01013,A0455,Referral,2024-06-27,Converted
+L01014,A0379,Partner,2024-10-29,Converted
+L01015,A0012,Paid Search,2025-02-17,Converted
+L01016,A0474,Outbound,2025-09-24,Converted
+L01017,A0014,Paid Search,2024-05-24,Converted
+L01018,A0350,Paid Search,2024-12-06,Converted
+L01019,A0307,Inbound,2024-08-07,Converted
+L01020,A0493,Inbound,2024-06-03,Converted
+L01021,A0212,Paid Search,2026-02-25,Converted
+L01022,A0346,Referral,2025-08-24,Converted
+L01023,A0225,Partner,2024-08-14,Converted
+L01024,A0472,Outbound,2025-05-06,Converted
+L01025,A0381,Inbound,2026-02-26,Converted
+L01026,A0115,Event,2024-06-21,Converted
+L01027,A0385,Inbound,2026-03-03,Converted
+L01028,A0077,Partner,2026-03-31,Converted
+L01029,A0253,Partner,2025-07-20,Converted
+L01030,A0279,Event,2026-03-26,Converted
+L01031,A0467,Inbound,2026-03-04,Converted
+L01032,A0030,Referral,2026-01-29,Converted
+L01033,A0469,Referral,2025-07-01,Converted
+L01034,A0494,Inbound,2026-04-12,Converted
+L01035,A0484,Inbound,2025-06-25,Converted
+L01036,A0114,Event,2025-05-22,Converted
+L01037,A0169,Referral,2024-12-23,Converted
+L01038,A0365,Referral,2026-04-15,Converted
+L01039,A0327,Outbound,2026-05-14,Converted
+L01040,A0469,Paid Search,2024-10-20,Converted
+L01041,A0078,Event,2026-02-26,Converted
+L01042,A0159,Inbound,2026-03-17,Converted
+L01043,A0005,Outbound,2025-02-20,Converted
+L01044,A0182,Paid Search,2026-04-04,Converted
+L01045,A0451,Referral,2025-06-11,Converted
+L01046,A0424,Inbound,2025-07-25,Converted
+L01047,A0191,Referral,2026-04-15,Converted
+L01048,A0486,Outbound,2026-03-05,Converted
+L01049,A0459,Outbound,2026-04-13,Converted
+L01050,A0475,Partner,2026-03-23,Converted
+L01051,A0209,Partner,2025-01-06,Converted
+L01052,A0325,Paid Search,2025-03-22,Converted
+L01053,A0380,Inbound,2024-07-31,Converted
+L01054,A0236,Paid Search,2025-04-24,Converted
+L01055,A0204,Event,2025-11-02,Converted
+L01056,A0043,Paid Search,2026-03-05,Converted
+L01057,A0054,Partner,2024-12-21,Converted
+L01058,A0436,Inbound,2025-12-23,Converted
+L01059,A0100,Event,2024-07-30,Converted
+L01060,A0194,Outbound,2025-08-18,Converted
+L01061,A0433,Inbound,2024-10-09,Converted
+L01062,A0487,Paid Search,2026-03-03,Converted
+L01063,A0198,Event,2026-01-30,Converted
+L01064,A0266,Inbound,2024-10-07,Converted
+L01065,A0173,Inbound,2026-03-26,Converted
+L01066,A0373,Outbound,2026-03-09,Converted
+L01067,A0420,Paid Search,2026-03-27,Converted
+L01068,A0294,Partner,2025-02-25,Converted
+L01069,A0193,Event,2026-03-22,Converted
+L01070,A0409,Event,2024-12-05,Converted
+L01071,A0075,Outbound,2025-02-18,Converted
+L01072,A0218,Inbound,2026-02-28,Converted
+L01073,A0145,Partner,2025-06-28,Converted
+L01074,A0310,Paid Search,2025-03-20,Converted
+L01075,A0032,Referral,2024-12-03,Converted
+L01076,A0171,Referral,2025-02-11,Converted
+L01077,A0407,Paid Search,2025-02-18,Converted
+L01078,A0312,Event,2024-12-28,Converted
+L01079,A0097,Outbound,2024-05-28,Converted
+L01080,A0242,Partner,2026-03-23,Converted
+L01081,A0095,Paid Search,2024-10-11,Converted
+L01082,A0410,Referral,2024-05-22,Converted
+L01083,A0455,Paid Search,2025-11-29,Converted
+L01084,A0354,Partner,2024-05-12,Converted
+L01085,A0277,Event,2026-03-07,Converted
+L01086,A0162,Referral,2026-02-11,Converted
+L01087,A0028,Referral,2024-09-12,Converted
+L01088,A0118,Paid Search,2025-06-03,Converted
+L01089,A0321,Inbound,2024-11-16,Converted
+L01090,A0323,Inbound,2024-12-12,Converted
+L01091,A0069,Referral,2026-05-22,Converted
+L01092,A0208,Event,2024-12-19,Converted
+L01093,A0415,Referral,2026-01-08,Converted
+L01094,A0101,Referral,2025-05-28,Converted
+L01095,A0336,Paid Search,2025-05-23,Converted
+L01096,A0374,Event,2025-02-09,Converted
+L01097,A0422,Outbound,2024-10-09,Converted
+L01098,A0493,Partner,2026-03-18,Converted
+L01099,A0443,Outbound,2025-02-02,Converted
+L01100,A0027,Event,2026-03-29,Converted
+L01101,A0012,Partner,2024-12-24,Converted
+L01102,A0460,Inbound,2026-04-28,Converted
+L01103,A0228,Paid Search,2024-05-17,Converted
+L01104,A0015,Inbound,2024-05-01,Converted
+L01105,A0385,Outbound,2024-12-15,Converted
+L01106,A0436,Partner,2026-04-15,Converted
+L01107,A0218,Event,2024-05-28,Converted
+L01108,A0082,Event,2024-08-15,Converted
+L01109,A0234,Event,2025-08-13,Converted
+L01110,A0069,Referral,2024-09-22,Converted
+L01111,A0430,Inbound,2024-09-02,Converted
+L01112,A0041,Inbound,2026-04-04,Converted
+L01113,A0003,Event,2026-03-08,Converted
+L01114,A0469,Paid Search,2025-03-27,Converted
+L01115,A0078,Event,2025-09-20,Converted
+L01116,A0378,Inbound,2024-11-08,Converted
+L01117,A0061,Event,2025-01-05,Converted
+L01118,A0151,Referral,2025-11-22,Converted
+L01119,A0250,Paid Search,2025-10-04,Converted
+L01120,A0311,Paid Search,2025-04-21,Converted
+L01121,A0044,Event,2026-01-28,Converted
+L01122,A0018,Inbound,2024-11-29,Converted
+L01123,A0468,Paid Search,2025-11-03,Converted
+L01124,A0059,Outbound,2026-04-03,Converted
+L01125,A0055,Inbound,2025-08-23,Converted
+L01126,A0387,Outbound,2025-11-15,Converted
+L01127,A0051,Event,2026-04-17,Converted
+L01128,A0398,Event,2025-04-14,Converted
+L01129,A0140,Event,2024-12-11,Converted
+L01130,A0438,Event,2026-02-25,Converted
+L01131,A0034,Outbound,2025-11-08,Converted
+L01132,A0151,Inbound,2025-10-02,Converted
+L01133,A0441,Referral,2024-11-20,Converted
+L01134,A0277,Inbound,2026-02-13,Converted
+L01135,A0239,Event,2025-05-16,Converted
+L01136,A0216,Event,2026-02-21,Converted
+L01137,A0064,Referral,2026-02-03,Converted
+L01138,A0387,Inbound,2024-06-12,Converted
+L01139,A0141,Partner,2026-03-18,Converted
+L01140,A0379,Event,2025-12-08,Converted
+L01141,A0488,Partner,2026-01-15,Converted
+L01142,A0464,Referral,2025-02-14,Converted
+L01143,A0132,Outbound,2024-08-30,Converted
+L01144,A0103,Outbound,2025-01-11,Converted
+L01145,A0444,Event,2024-12-25,Converted
+L01146,A0063,Paid Search,2026-02-15,Converted
+L01147,A0128,Referral,2026-04-10,Converted
+L01148,A0214,Outbound,2025-03-06,Converted
+L01149,A0181,Referral,2025-01-31,Converted
+L01150,A0344,Partner,2024-05-01,Converted
+L01151,A0360,Paid Search,2025-12-01,Converted
+L01152,A0012,Referral,2024-10-19,Converted
+L01153,A0490,Outbound,2025-06-04,Converted
+L01154,A0140,Event,2025-12-09,Converted
+L01155,A0223,Referral,2025-05-21,Converted
+L01156,A0395,Partner,2025-12-25,Converted
+L01157,A0301,Outbound,2024-11-13,Converted
+L01158,A0116,Paid Search,2026-03-30,Converted
+L01159,A0401,Paid Search,2025-08-16,Converted
+L01160,A0115,Partner,2024-10-03,Converted
+L01161,A0423,Referral,2026-03-05,Converted
+L01162,A0126,Partner,2024-09-03,Converted
+L01163,A0034,Referral,2024-10-07,Converted
+L01164,A0404,Paid Search,2024-07-23,Converted
+L01165,A0381,Partner,2024-12-15,Converted
+L01166,A0384,Inbound,2025-05-26,Converted
+L01167,A0067,Outbound,2025-01-09,Converted
+L01168,A0321,Event,2026-02-26,Converted
+L01169,A0400,Partner,2025-05-05,Converted
+L01170,A0375,Paid Search,2026-03-12,Converted
+L01171,A0150,Outbound,2025-05-14,Converted
+L01172,A0320,Outbound,2024-08-24,Converted
+L01173,A0220,Event,2024-11-15,Converted
+L01174,A0462,Inbound,2026-01-30,Converted
+L01175,A0021,Inbound,2025-09-18,Converted
+L01176,A0030,Paid Search,2025-07-10,Converted
+L01177,A0026,Inbound,2026-03-29,Converted
+L01178,A0034,Outbound,2025-06-12,Converted
+L01179,A0192,Event,2024-08-30,Converted
+L01180,A0214,Partner,2026-02-17,Converted
+L01181,A0133,Inbound,2026-02-14,Converted
+L01182,A0364,Referral,2026-02-20,Converted
+L01183,A0418,Paid Search,2024-12-21,Converted
+L01184,A0151,Inbound,2025-02-13,Converted
+L01185,A0441,Referral,2026-03-09,Converted
+L01186,A0150,Event,2024-07-01,Converted
+L01187,A0237,Partner,2024-11-24,Converted
+L01188,A0203,Referral,2025-03-28,Converted
+L01189,A0042,Inbound,2024-07-28,Converted
+L01190,A0067,Inbound,2025-04-26,Converted
+L01191,A0155,Paid Search,2026-01-05,Converted
+L01192,A0449,Partner,2025-01-12,Converted
+L01193,A0232,Referral,2025-09-06,Converted
+L01194,A0345,Paid Search,2026-03-10,Converted
+L01195,A0353,Outbound,2026-03-25,Converted
+L01196,A0040,Paid Search,2024-08-26,Converted
+L01197,A0120,Outbound,2025-10-08,Converted
+L01198,A0183,Outbound,2024-12-18,Converted
+L01199,A0355,Partner,2026-03-17,Converted
+L01200,A0083,Outbound,2024-09-18,Converted
+L01201,A0302,Event,2024-05-01,Converted
+L01202,A0172,Outbound,2025-09-11,Converted
+L01203,A0253,Paid Search,2025-12-19,Converted
+L01204,A0020,Outbound,2025-08-06,Converted
+L01205,A0032,Partner,2026-04-25,Converted
+L01206,A0133,Outbound,2026-02-04,Converted
+L01207,A0477,Referral,2024-06-27,Converted
+L01208,A0435,Partner,2025-12-02,Converted
+L01209,A0107,Paid Search,2026-02-22,Converted
+L01210,A0215,Partner,2026-02-21,Converted
+L01211,A0366,Paid Search,2024-09-27,Converted
+L01212,A0499,Partner,2024-08-30,Converted
+L01213,A0136,Inbound,2025-08-21,Converted
+L01214,A0395,Partner,2026-05-06,Converted
+L01215,A0384,Event,2025-10-15,Converted
+L01216,A0427,Outbound,2025-06-01,Converted
+L01217,A0349,Outbound,2025-08-23,Converted
+L01218,A0095,Paid Search,2026-03-20,Converted
+L01219,A0232,Event,2024-07-26,Converted
+L01220,A0363,Outbound,2026-05-04,Converted
+L01221,A0430,Partner,2026-03-17,Converted
+L01222,A0491,Inbound,2025-02-28,Converted
+L01223,A0069,Partner,2026-04-08,Converted
+L01224,A0384,Outbound,2025-12-10,Converted
+L01225,A0271,Referral,2025-10-04,Converted
+L01226,A0466,Inbound,2025-04-01,Converted
+L01227,A0003,Inbound,2025-06-01,Converted
+L01228,A0470,Partner,2024-09-23,Converted
+L01229,A0236,Partner,2025-09-16,Converted
+L01230,A0398,Referral,2024-06-14,Converted
+L01231,A0069,Outbound,2024-12-13,Converted
+L01232,A0303,Outbound,2024-12-07,Converted
+L01233,A0060,Paid Search,2025-01-04,Converted
+L01234,A0067,Paid Search,2026-02-11,Converted
+L01235,A0104,Event,2025-04-14,Converted
+L01236,A0332,Partner,2024-09-25,Converted
+L01237,A0219,Outbound,2024-05-26,Converted
+L01238,A0140,Event,2025-09-15,Converted
+L01239,A0152,Inbound,2025-08-12,Converted
+L01240,A0118,Outbound,2026-05-01,Converted
+L01241,A0128,Referral,2025-06-11,Converted
+L01242,A0443,Partner,2026-02-06,Converted
+L01243,A0314,Event,2026-03-04,Converted
+L01244,A0361,Event,2026-04-03,Converted
+L01245,A0301,Outbound,2024-10-30,Converted
+L01246,A0267,Referral,2026-02-23,Converted
+L01247,A0069,Inbound,2025-10-23,Converted
+L01248,A0111,Event,2024-05-01,Converted
+L01249,A0447,Paid Search,2024-07-16,Converted
+L01250,A0023,Paid Search,2024-05-01,Converted
+L01251,A0045,Paid Search,2025-06-17,Converted
+L01252,A0370,Paid Search,2024-10-07,Converted
+L01253,A0098,Outbound,2026-02-06,Converted
+L01254,A0103,Partner,2026-04-19,Converted
+L01255,A0190,Paid Search,2025-06-27,Converted
+L01256,A0106,Paid Search,2024-09-12,Converted
+L01257,A0451,Paid Search,2026-03-31,Converted
+L01258,A0225,Referral,2026-03-18,Converted
+L01259,A0418,Partner,2025-08-12,Converted
+L01260,A0115,Partner,2026-04-14,Converted
+L01261,A0259,Partner,2026-02-25,Converted
+L01262,A0272,Outbound,2025-10-01,Converted
+L01263,A0275,Inbound,2024-08-09,Converted
+L01264,A0222,Paid Search,2025-03-13,Converted
+L01265,A0006,Inbound,2024-05-09,Converted
+L01266,A0372,Event,2025-08-27,Converted
+L01267,A0316,Paid Search,2025-02-18,Converted
+L01268,A0147,Event,2026-04-26,Converted
+L01269,A0382,Referral,2025-08-19,Converted
+L01270,A0332,Paid Search,2024-07-04,Converted
+L01271,A0062,Referral,2025-02-28,Converted
+L01272,A0188,Outbound,2024-05-26,Converted
+L01273,A0310,Inbound,2026-05-11,Converted
+L01274,A0024,Partner,2024-07-29,Converted
+L01275,A0482,Outbound,2026-03-29,Converted
+L01276,A0094,Inbound,2026-03-14,Converted
+L01277,A0261,Outbound,2025-02-25,Converted
+L01278,A0359,Outbound,2026-04-17,Converted
+L01279,A0042,Event,2025-05-22,Converted
+L01280,A0022,Outbound,2025-03-24,Converted
+L01281,A0365,Referral,2025-01-21,Converted
+L01282,A0012,Outbound,2025-08-20,Converted
+L01283,A0233,Inbound,2024-05-01,Converted
+L01284,A0459,Outbound,2026-02-14,Converted
+L01285,A0111,Referral,2025-12-04,Converted
+L01286,A0304,Outbound,2024-10-16,Converted
+L01287,A0442,Partner,2026-04-26,Converted
+L01288,A0390,Paid Search,2026-02-15,Converted
+L01289,A0015,Paid Search,2024-08-21,Converted
+L01290,A0167,Partner,2025-12-22,Converted
+L01291,A0341,Outbound,2026-03-12,Converted
+L01292,A0036,Outbound,2025-01-12,Converted
+L01293,A0116,Outbound,2026-04-17,Converted
+L01294,A0079,Event,2024-12-12,Converted
+L01295,A0348,Paid Search,2025-06-17,Converted
+L01296,A0247,Paid Search,2026-02-25,Converted
+L01297,A0214,Partner,2024-05-21,Converted
+L01298,A0410,Partner,2024-06-21,Converted
+L01299,A0128,Referral,2026-04-06,Converted
+L01300,A0424,Paid Search,2025-12-22,Converted
+L01301,A0482,Event,2026-02-15,Converted
+L01302,A0369,Referral,2026-01-25,Converted
+L01303,A0346,Paid Search,2025-10-21,Converted
+L01304,A0008,Referral,2025-05-06,Converted
+L01305,A0277,Outbound,2025-07-06,Converted
+L01306,A0268,Referral,2024-12-17,Converted
+L01307,A0387,Outbound,2024-10-18,Converted
+L01308,A0410,Referral,2026-03-18,Converted
+L01309,A0496,Event,2025-05-19,Converted
+L01310,A0375,Paid Search,2026-03-08,Converted
+L01311,A0181,Paid Search,2025-11-05,Converted
+L01312,A0449,Referral,2026-03-04,Converted
+L01313,A0074,Paid Search,2025-07-11,Converted
+L01314,A0204,Inbound,2025-08-07,Converted
+L01315,A0404,Paid Search,2026-03-02,Converted
+L01316,A0294,Event,2024-05-29,Converted
+L01317,A0112,Partner,2025-05-29,Converted
+L01318,A0102,Partner,2026-04-07,Converted
+L01319,A0188,Inbound,2025-12-25,Converted
+L01320,A0089,Inbound,2026-03-15,Converted
+L01321,A0009,Partner,2024-09-13,Converted
+L01322,A0364,Referral,2024-09-14,Converted
+L01323,A0363,Paid Search,2024-09-03,Converted
+L01324,A0199,Event,2024-11-05,Converted
+L01325,A0179,Referral,2026-03-21,Converted
+L01326,A0040,Referral,2026-03-15,Converted
+L01327,A0001,Event,2025-02-18,Converted
+L01328,A0173,Outbound,2025-10-19,Converted
+L01329,A0433,Event,2026-03-30,Converted
+L01330,A0143,Event,2024-07-16,Converted
+L01331,A0396,Referral,2026-02-26,Converted
+L01332,A0440,Referral,2024-07-25,Converted
+L01333,A0086,Paid Search,2026-05-01,Converted
+L01334,A0122,Inbound,2025-02-22,Converted
+L01335,A0012,Event,2025-07-03,Converted
+L01336,A0118,Event,2026-02-28,Converted
+L01337,A0086,Paid Search,2024-06-30,Converted
+L01338,A0495,Partner,2024-07-07,Converted
+L01339,A0284,Event,2026-04-24,Converted
+L01340,A0274,Partner,2025-03-30,Converted
+L01341,A0217,Partner,2025-02-01,Converted
+L01342,A0368,Event,2025-01-21,Converted
+L01343,A0457,Event,2024-11-20,Converted
+L01344,A0329,Referral,2024-06-06,Converted
+L01345,A0231,Partner,2025-12-21,Converted
+L01346,A0418,Referral,2024-05-01,Converted
+L01347,A0342,Partner,2024-05-01,Converted
+L01348,A0310,Outbound,2024-08-23,Converted
+L01349,A0188,Inbound,2025-12-14,Converted
+L01350,A0124,Referral,2025-05-21,Converted
+L01351,A0287,Outbound,2026-03-09,Converted
+L01352,A0089,Outbound,2026-02-11,Converted
+L01353,A0344,Paid Search,2026-03-28,Converted
+L01354,A0185,Referral,2025-05-27,Converted
+L01355,A0144,Partner,2026-01-19,Converted
+L01356,A0417,Outbound,2024-10-11,Converted
+L01357,A0183,Paid Search,2024-07-27,Converted
+L01358,A0310,Event,2024-07-09,Converted
+L01359,A0009,Partner,2026-05-02,Converted
+L01360,A0397,Partner,2025-12-16,Converted
+L01361,A0031,Inbound,2026-02-04,Converted
+L01362,A0429,Inbound,2026-03-15,Converted
+L01363,A0397,Paid Search,2024-08-16,Converted
+L01364,A0140,Referral,2025-03-07,Converted
+L01365,A0060,Partner,2024-05-24,Converted
+L01366,A0401,Referral,2024-07-03,Converted
+L01367,A0496,Outbound,2026-03-07,Converted
+L01368,A0261,Outbound,2026-03-09,Converted
+L01369,A0426,Event,2025-09-03,Converted
+L01370,A0225,Paid Search,2026-02-06,Converted
+L01371,A0352,Paid Search,2026-02-24,Converted
+L01372,A0053,Partner,2025-12-31,Converted
+L01373,A0030,Event,2025-06-11,Converted
+L01374,A0267,Paid Search,2026-02-27,Converted
+L01375,A0374,Partner,2025-05-12,Converted
+L01376,A0256,Event,2026-02-24,Converted
+L01377,A0091,Outbound,2024-06-18,Converted
+L01378,A0328,Inbound,2026-03-29,Converted
+L01379,A0455,Referral,2026-02-19,Converted
+L01380,A0276,Partner,2024-11-28,Converted
+L01381,A0134,Paid Search,2025-09-04,Converted
+L01382,A0471,Paid Search,2026-04-02,Converted
+L01383,A0424,Inbound,2025-07-18,Converted
+L01384,A0380,Referral,2025-03-20,Converted
+L01385,A0075,Paid Search,2026-02-19,Converted
+L01386,A0095,Paid Search,2025-08-03,Converted
+L01387,A0432,Referral,2025-04-02,Converted
+L01388,A0031,Outbound,2026-03-03,Converted
+L01389,A0462,Inbound,2025-02-21,Converted
+L01390,A0418,Paid Search,2026-05-10,Converted
+L01391,A0322,Outbound,2025-04-14,Converted
+L01392,A0239,Referral,2026-01-14,Converted
+L01393,A0042,Inbound,2024-08-29,Converted
+L01394,A0060,Inbound,2026-03-09,Converted
+L01395,A0058,Referral,2024-06-02,Converted
+L01396,A0372,Outbound,2026-03-22,Converted
+L01397,A0191,Inbound,2026-01-21,Converted
+L01398,A0051,Partner,2026-01-07,Converted
+L01399,A0164,Outbound,2024-05-01,Converted
+L01400,A0191,Referral,2024-05-01,Converted
+L01401,A0390,Inbound,2024-11-19,Converted
+L01402,A0164,Outbound,2026-03-14,Converted
+L01403,A0372,Event,2026-02-26,Converted
+L01404,A0031,Partner,2024-06-27,Converted
+L01405,A0141,Paid Search,2025-01-10,Converted
+L01406,A0356,Partner,2025-12-26,Converted
+L01407,A0320,Event,2026-04-24,Converted
+L01408,A0339,Partner,2024-12-06,Converted
+L01409,A0231,Outbound,2024-08-25,Converted
+L01410,A0404,Paid Search,2025-07-15,Converted
+L01411,A0273,Referral,2025-07-21,Converted
+L01412,A0435,Inbound,2024-06-21,Converted
+L01413,A0124,Partner,2025-01-24,Converted
+L01414,A0201,Event,2025-07-06,Converted
+L01415,A0352,Event,2025-11-23,Converted
+L01416,A0304,Partner,2026-03-28,Converted
+L01417,A0177,Inbound,2026-04-26,Converted
+L01418,A0134,Inbound,2025-12-23,Converted
+L01419,A0243,Referral,2026-02-11,Converted
+L01420,A0358,Outbound,2025-01-09,Converted
+L01421,A0499,Referral,2025-12-06,Converted
+L01422,A0411,Inbound,2026-01-01,Converted
+L01423,A0220,Event,2025-02-15,Converted
+L01424,A0144,Event,2024-12-02,Converted
+L01425,A0345,Event,2025-10-23,Converted
+L01426,A0008,Inbound,2026-02-25,Converted
+L01427,A0271,Paid Search,2026-01-24,Converted
+L01428,A0314,Event,2026-04-22,Converted
+L01429,A0351,Partner,2025-12-08,Converted
+L01430,A0419,Partner,2026-05-18,Converted
+L01431,A0465,Referral,2024-08-07,Converted
+L01432,A0487,Outbound,2024-06-29,Converted
+L01433,A0047,Referral,2024-07-05,Converted
+L01434,A0079,Paid Search,2026-02-23,Converted
+L01435,A0253,Referral,2025-07-18,Converted
+L01436,A0059,Event,2026-03-31,Converted
+L01437,A0248,Referral,2026-02-12,Converted
+L01438,A0466,Outbound,2026-05-12,Converted
+L01439,A0320,Event,2024-12-16,Converted
+L01440,A0222,Referral,2024-09-16,Converted
+L01441,A0274,Event,2024-11-07,Converted
+L01442,A0021,Event,2024-08-27,Converted
+L01443,A0032,Referral,2026-02-19,Converted
+L01444,A0321,Outbound,2026-04-06,Converted
+L01445,A0360,Outbound,2024-05-26,Converted
+L01446,A0351,Inbound,2026-03-03,Converted
+L01447,A0159,Partner,2024-05-01,Converted
+L01448,A0466,Referral,2025-11-23,Converted
+L01449,A0454,Inbound,2024-09-06,Converted
+L01450,A0136,Outbound,2025-02-17,Converted
+L01451,A0212,Referral,2026-02-19,Converted
+L01452,A0345,Inbound,2025-02-01,Converted
+L01453,A0091,Event,2025-01-03,Converted
+L01454,A0031,Event,2026-04-26,Converted
+L01455,A0051,Inbound,2025-04-20,Converted
+L01456,A0404,Partner,2024-05-22,Converted
+L01457,A0452,Paid Search,2025-06-02,Converted
+L01458,A0132,Event,2026-03-16,Converted
+L01459,A0226,Inbound,2026-02-24,Converted
+L01460,A0429,Event,2024-08-13,Converted
+L01461,A0055,Inbound,2024-05-25,Converted
+L01462,A0094,Partner,2025-07-07,Converted
+L01463,A0068,Outbound,2024-07-06,Converted
+L01464,A0426,Inbound,2026-02-08,Converted
+L01465,A0295,Outbound,2024-08-31,Converted
+L01466,A0471,Partner,2026-03-25,Converted
+L01467,A0406,Referral,2024-06-08,Converted
+L01468,A0114,Referral,2025-09-26,Converted
+L01469,A0487,Inbound,2026-04-14,Converted
+L01470,A0348,Inbound,2026-04-11,Converted
+L01471,A0327,Inbound,2024-11-11,Converted
+L01472,A0224,Event,2026-04-02,Converted
+L01473,A0387,Outbound,2026-01-13,Converted
+L01474,A0417,Paid Search,2025-08-05,Converted
+L01475,A0304,Outbound,2026-02-19,Converted
+L01476,A0490,Partner,2025-01-05,Converted
+L01477,A0006,Event,2024-06-09,Converted
+L01478,A0173,Outbound,2025-04-15,Converted
+L01479,A0440,Referral,2025-08-02,Converted
+L01480,A0326,Referral,2026-02-07,Converted
+L01481,A0481,Referral,2026-03-11,Converted
+L01482,A0300,Inbound,2024-08-12,Converted
+L01483,A0117,Outbound,2025-10-17,Converted
+L01484,A0114,Partner,2024-08-02,Converted
+L01485,A0196,Partner,2026-02-20,Converted
+L01486,A0356,Inbound,2024-06-05,Converted
+L01487,A0346,Partner,2024-05-01,Converted
+L01488,A0339,Event,2025-02-12,Converted
+L01489,A0118,Referral,2026-02-08,Converted
+L01490,A0392,Partner,2025-02-18,Converted
+L01491,A0396,Inbound,2025-07-29,Converted
+L01492,A0372,Event,2026-04-01,Converted
+L01493,A0047,Paid Search,2025-02-23,Converted
+L01494,A0494,Event,2025-05-02,Converted
+L01495,A0387,Referral,2025-01-30,Converted
+L01496,A0311,Event,2025-09-16,Converted
+L01497,A0449,Inbound,2025-08-14,Converted
+L01498,A0402,Inbound,2025-11-08,Converted
+L01499,A0067,Inbound,2026-04-02,Converted
+L01500,A0277,Partner,2026-05-03,Converted
+L01501,A0256,Partner,2024-08-29,Open
+L01502,A0229,Paid Search,2026-03-19,Disqualified
+L01503,A0245,Event,2024-11-06,Disqualified
+L01504,A0049,Paid Search,2026-02-20,Disqualified
+L01505,A0141,Referral,2025-12-28,Open
+L01506,A0069,Outbound,2024-10-14,Open
+L01507,A0472,Event,2025-12-23,Open
+L01508,A0027,Paid Search,2025-01-26,Disqualified
+L01509,A0184,Partner,2024-08-16,Disqualified
+L01510,A0174,Outbound,2025-09-10,Disqualified
+L01511,A0023,Event,2025-09-30,Open
+L01512,A0423,Inbound,2025-05-11,Open
+L01513,A0001,Referral,2026-05-22,Open
+L01514,A0317,Outbound,2026-04-22,Disqualified
+L01515,A0206,Partner,2025-08-14,Open
+L01516,A0414,Outbound,2025-08-25,Disqualified
+L01517,A0252,Partner,2026-01-16,Open
+L01518,A0361,Paid Search,2024-05-06,Open
+L01519,A0243,Referral,2025-10-12,Open
+L01520,A0345,Paid Search,2025-01-02,Open
+L01521,A0497,Inbound,2025-11-07,Disqualified
+L01522,A0398,Event,2025-09-06,Open
+L01523,A0394,Partner,2026-02-16,Disqualified
+L01524,A0475,Inbound,2025-12-10,Open
+L01525,A0001,Outbound,2025-08-18,Disqualified
+L01526,A0055,Paid Search,2024-07-28,Open
+L01527,A0214,Paid Search,2024-06-14,Disqualified
+L01528,A0114,Paid Search,2025-07-26,Open
+L01529,A0285,Outbound,2024-06-03,Open
+L01530,A0405,Referral,2026-03-28,Open
+L01531,A0479,Outbound,2026-04-18,Disqualified
+L01532,A0327,Partner,2025-12-09,Disqualified
+L01533,A0281,Outbound,2025-02-25,Open
+L01534,A0323,Paid Search,2025-10-17,Open
+L01535,A0297,Referral,2025-06-27,Open
+L01536,A0298,Outbound,2025-08-27,Disqualified
+L01537,A0207,Paid Search,2026-01-30,Disqualified
+L01538,A0258,Inbound,2025-08-29,Open
+L01539,A0156,Referral,2024-12-05,Disqualified
+L01540,A0363,Inbound,2025-01-20,Open
+L01541,A0077,Paid Search,2026-03-11,Disqualified
+L01542,A0111,Outbound,2025-08-23,Disqualified
+L01543,A0107,Partner,2026-05-16,Open
+L01544,A0129,Paid Search,2025-01-03,Open
+L01545,A0460,Event,2024-07-01,Open
+L01546,A0137,Referral,2024-06-09,Disqualified
+L01547,A0224,Referral,2024-12-11,Disqualified
+L01548,A0499,Partner,2025-11-06,Disqualified
+L01549,A0274,Partner,2025-03-22,Disqualified
+L01550,A0192,Partner,2026-02-05,Disqualified
+L01551,A0149,Partner,2025-11-05,Open
+L01552,A0167,Event,2025-07-29,Disqualified
+L01553,A0353,Event,2025-08-03,Disqualified
+L01554,A0177,Event,2025-06-11,Open
+L01555,A0283,Paid Search,2024-05-10,Disqualified
+L01556,A0271,Outbound,2025-03-29,Open
+L01557,A0247,Paid Search,2026-05-19,Open
+L01558,A0496,Inbound,2024-12-26,Open
+L01559,A0042,Inbound,2025-10-02,Disqualified
+L01560,A0048,Partner,2024-05-20,Open
+L01561,A0403,Paid Search,2025-07-30,Disqualified
+L01562,A0027,Paid Search,2024-10-20,Disqualified
+L01563,A0204,Referral,2024-12-26,Open
+L01564,A0460,Outbound,2024-07-25,Disqualified
+L01565,A0500,Partner,2026-03-14,Open
+L01566,A0219,Outbound,2025-12-01,Open
+L01567,A0481,Inbound,2025-07-02,Disqualified
+L01568,A0350,Inbound,2025-03-24,Open
+L01569,A0108,Paid Search,2024-11-04,Disqualified
+L01570,A0174,Paid Search,2026-04-03,Disqualified
+L01571,A0130,Referral,2026-01-23,Open
+L01572,A0220,Inbound,2025-09-17,Open
+L01573,A0222,Outbound,2024-09-10,Open
+L01574,A0276,Partner,2026-04-26,Disqualified
+L01575,A0338,Referral,2024-12-23,Disqualified
+L01576,A0415,Inbound,2025-06-07,Open
+L01577,A0339,Outbound,2025-03-08,Disqualified
+L01578,A0007,Paid Search,2025-12-14,Open
+L01579,A0139,Inbound,2024-06-02,Disqualified
+L01580,A0215,Referral,2026-04-16,Disqualified
+L01581,A0143,Inbound,2025-03-04,Disqualified
+L01582,A0455,Partner,2026-03-01,Open
+L01583,A0308,Partner,2025-11-10,Open
+L01584,A0380,Outbound,2025-05-18,Disqualified
+L01585,A0171,Inbound,2025-06-02,Open
+L01586,A0030,Partner,2025-12-05,Disqualified
+L01587,A0007,Inbound,2025-12-06,Open
+L01588,A0458,Paid Search,2024-06-30,Open
+L01589,A0194,Event,2025-01-25,Open
+L01590,A0348,Outbound,2025-09-03,Disqualified
+L01591,A0348,Inbound,2024-12-10,Disqualified
+L01592,A0286,Outbound,2025-12-16,Disqualified
+L01593,A0494,Partner,2024-05-22,Open
+L01594,A0246,Event,2024-10-08,Open
+L01595,A0005,Inbound,2025-04-22,Disqualified
+L01596,A0037,Outbound,2025-05-24,Open
+L01597,A0066,Event,2025-02-17,Open
+L01598,A0269,Outbound,2024-07-02,Disqualified
+L01599,A0331,Referral,2024-10-01,Open
+L01600,A0111,Outbound,2024-08-06,Open
+L01601,A0369,Inbound,2024-06-10,Disqualified
+L01602,A0447,Partner,2024-06-17,Open
+L01603,A0003,Paid Search,2025-11-05,Disqualified
+L01604,A0208,Outbound,2024-05-15,Open
+L01605,A0452,Inbound,2025-06-07,Open
+L01606,A0398,Referral,2024-05-07,Open
+L01607,A0340,Partner,2025-08-11,Open
+L01608,A0439,Referral,2025-11-08,Open
+L01609,A0429,Partner,2024-07-29,Open
+L01610,A0369,Paid Search,2025-03-16,Open
+L01611,A0024,Partner,2025-01-02,Open
+L01612,A0403,Outbound,2024-05-09,Disqualified
+L01613,A0071,Event,2025-10-16,Open
+L01614,A0128,Partner,2024-05-26,Disqualified
+L01615,A0064,Partner,2024-08-26,Open
+L01616,A0173,Inbound,2026-05-01,Disqualified
+L01617,A0004,Outbound,2026-04-18,Disqualified
+L01618,A0050,Paid Search,2026-05-13,Disqualified
+L01619,A0034,Partner,2025-10-20,Disqualified
+L01620,A0262,Partner,2026-05-11,Open
+L01621,A0184,Inbound,2024-08-17,Disqualified
+L01622,A0252,Outbound,2025-05-16,Open
+L01623,A0276,Paid Search,2025-03-17,Disqualified
+L01624,A0232,Partner,2024-10-19,Disqualified
+L01625,A0048,Referral,2024-06-15,Disqualified
+L01626,A0376,Paid Search,2024-12-29,Open
+L01627,A0383,Paid Search,2024-12-08,Open
+L01628,A0490,Referral,2024-10-06,Disqualified
+L01629,A0291,Partner,2025-10-04,Open
+L01630,A0481,Outbound,2024-06-24,Disqualified
+L01631,A0498,Inbound,2026-05-10,Disqualified
+L01632,A0082,Inbound,2025-11-16,Open
+L01633,A0148,Inbound,2024-12-21,Open
+L01634,A0473,Inbound,2024-07-30,Open
+L01635,A0244,Outbound,2024-12-03,Disqualified
+L01636,A0463,Partner,2024-08-21,Open
+L01637,A0487,Partner,2025-12-13,Disqualified
+L01638,A0099,Inbound,2024-09-07,Disqualified
+L01639,A0368,Inbound,2026-02-09,Open
+L01640,A0026,Partner,2026-04-13,Open
+L01641,A0427,Inbound,2025-07-24,Open
+L01642,A0426,Inbound,2024-08-14,Open
+L01643,A0359,Inbound,2024-09-11,Disqualified
+L01644,A0209,Partner,2025-06-21,Open
+L01645,A0099,Paid Search,2024-06-28,Open
+L01646,A0397,Outbound,2025-07-25,Open
+L01647,A0178,Partner,2024-08-07,Disqualified
+L01648,A0113,Paid Search,2026-04-01,Open
+L01649,A0081,Referral,2025-06-30,Disqualified
+L01650,A0407,Partner,2024-07-15,Open
+L01651,A0190,Referral,2024-10-10,Disqualified
+L01652,A0478,Outbound,2024-05-30,Open
+L01653,A0422,Paid Search,2025-02-07,Open
+L01654,A0194,Inbound,2025-12-03,Open
+L01655,A0435,Partner,2025-07-04,Open
+L01656,A0251,Event,2025-11-22,Disqualified
+L01657,A0485,Event,2025-06-07,Open
+L01658,A0377,Partner,2025-05-28,Open
+L01659,A0198,Inbound,2025-12-06,Disqualified
+L01660,A0197,Event,2025-03-07,Disqualified
+L01661,A0390,Paid Search,2025-03-04,Disqualified
+L01662,A0221,Event,2024-11-18,Disqualified
+L01663,A0303,Outbound,2024-12-17,Disqualified
+L01664,A0172,Outbound,2026-01-10,Open
+L01665,A0227,Inbound,2024-10-20,Open
+L01666,A0217,Partner,2024-07-30,Open
+L01667,A0074,Outbound,2025-06-25,Disqualified
+L01668,A0460,Paid Search,2026-03-02,Disqualified
+L01669,A0161,Paid Search,2024-08-12,Disqualified
+L01670,A0426,Referral,2024-06-10,Disqualified
+L01671,A0247,Partner,2026-04-04,Disqualified
+L01672,A0370,Partner,2024-09-29,Disqualified
+L01673,A0363,Partner,2026-04-29,Open
+L01674,A0301,Paid Search,2025-01-25,Open
+L01675,A0280,Paid Search,2024-09-15,Disqualified
+L01676,A0482,Outbound,2025-08-15,Disqualified
+L01677,A0094,Event,2024-06-28,Open
+L01678,A0118,Outbound,2024-11-24,Disqualified
+L01679,A0018,Paid Search,2024-07-19,Open
+L01680,A0418,Partner,2025-10-24,Open
+L01681,A0014,Partner,2025-01-29,Open
+L01682,A0234,Paid Search,2026-04-07,Disqualified
+L01683,A0135,Outbound,2025-08-08,Open
+L01684,A0357,Paid Search,2025-01-30,Disqualified
+L01685,A0472,Partner,2025-04-09,Disqualified
+L01686,A0181,Outbound,2025-05-15,Disqualified
+L01687,A0496,Outbound,2025-05-31,Disqualified
+L01688,A0298,Referral,2024-07-05,Open
+L01689,A0453,Inbound,2024-10-29,Open
+L01690,A0185,Referral,2024-05-09,Disqualified
+L01691,A0463,Partner,2025-03-10,Disqualified
+L01692,A0408,Outbound,2025-06-13,Disqualified
+L01693,A0162,Partner,2025-12-11,Open
+L01694,A0152,Event,2024-08-24,Disqualified
+L01695,A0120,Event,2025-02-07,Open
+L01696,A0184,Paid Search,2024-08-30,Open
+L01697,A0193,Partner,2025-02-17,Open
+L01698,A0334,Outbound,2025-11-09,Disqualified
+L01699,A0124,Partner,2025-06-30,Disqualified
+L01700,A0151,Outbound,2025-03-13,Open
+L01701,A0405,Event,2025-06-27,Open
+L01702,A0386,Outbound,2026-03-29,Disqualified
+L01703,A0015,Referral,2026-05-19,Open
+L01704,A0471,Paid Search,2024-10-19,Open
+L01705,A0061,Event,2025-11-14,Open
+L01706,A0459,Referral,2025-03-22,Open
+L01707,A0182,Partner,2025-02-11,Disqualified
+L01708,A0089,Partner,2025-09-30,Disqualified
+L01709,A0130,Partner,2026-02-26,Disqualified
+L01710,A0250,Inbound,2024-11-15,Disqualified
+L01711,A0082,Referral,2026-03-24,Open
+L01712,A0265,Paid Search,2026-05-30,Disqualified
+L01713,A0112,Event,2025-08-07,Open
+L01714,A0215,Paid Search,2025-06-21,Open
+L01715,A0235,Inbound,2024-07-03,Disqualified
+L01716,A0024,Paid Search,2026-04-18,Open
+L01717,A0077,Event,2025-11-01,Open
+L01718,A0464,Event,2026-02-24,Disqualified
+L01719,A0493,Inbound,2024-10-03,Open
+L01720,A0342,Paid Search,2024-07-07,Open
+L01721,A0160,Referral,2024-11-16,Open
+L01722,A0014,Outbound,2025-12-09,Disqualified
+L01723,A0062,Partner,2025-06-12,Disqualified
+L01724,A0314,Inbound,2024-10-16,Disqualified
+L01725,A0100,Outbound,2026-01-28,Open
+L01726,A0355,Referral,2025-06-05,Open
+L01727,A0361,Referral,2024-11-07,Disqualified
+L01728,A0316,Event,2025-01-08,Open
+L01729,A0360,Partner,2025-04-26,Disqualified
+L01730,A0430,Paid Search,2024-12-27,Open
+L01731,A0076,Paid Search,2025-07-28,Open
+L01732,A0308,Partner,2026-01-08,Disqualified
+L01733,A0001,Event,2025-08-29,Disqualified
+L01734,A0415,Paid Search,2024-12-14,Disqualified
+L01735,A0113,Outbound,2025-07-12,Open
+L01736,A0176,Inbound,2025-06-11,Open
+L01737,A0025,Partner,2024-06-16,Disqualified
+L01738,A0195,Event,2024-09-01,Disqualified
+L01739,A0404,Paid Search,2024-11-21,Open
+L01740,A0050,Event,2024-10-07,Open
+L01741,A0178,Partner,2025-11-18,Open
+L01742,A0482,Paid Search,2026-02-07,Disqualified
+L01743,A0354,Partner,2025-09-17,Disqualified
+L01744,A0421,Event,2026-04-25,Disqualified
+L01745,A0268,Outbound,2025-06-17,Open
+L01746,A0163,Paid Search,2024-09-12,Open
+L01747,A0490,Partner,2026-04-08,Disqualified
+L01748,A0071,Inbound,2026-04-30,Disqualified
+L01749,A0318,Paid Search,2025-02-24,Open
+L01750,A0077,Referral,2026-03-18,Disqualified
+L01751,A0284,Paid Search,2026-03-12,Disqualified
+L01752,A0316,Outbound,2026-05-22,Disqualified
+L01753,A0203,Event,2026-01-23,Disqualified
+L01754,A0169,Event,2024-06-20,Disqualified
+L01755,A0122,Partner,2026-05-10,Open
+L01756,A0400,Inbound,2026-02-23,Open
+L01757,A0028,Event,2025-09-16,Open
+L01758,A0414,Inbound,2026-03-17,Open
+L01759,A0429,Partner,2024-09-02,Disqualified
+L01760,A0162,Inbound,2026-03-07,Open
+L01761,A0388,Outbound,2026-03-08,Open
+L01762,A0393,Referral,2024-12-21,Disqualified
+L01763,A0361,Referral,2025-05-31,Open
+L01764,A0366,Paid Search,2024-06-16,Open
+L01765,A0126,Inbound,2024-10-26,Disqualified
+L01766,A0330,Event,2025-07-13,Disqualified
+L01767,A0134,Inbound,2026-03-21,Open
+L01768,A0215,Inbound,2026-03-18,Open
+L01769,A0361,Referral,2024-12-03,Disqualified
+L01770,A0226,Event,2024-11-06,Open
+L01771,A0402,Paid Search,2024-05-19,Open
+L01772,A0218,Inbound,2024-05-16,Open
+L01773,A0434,Event,2024-09-17,Disqualified
+L01774,A0045,Outbound,2024-11-23,Disqualified
+L01775,A0376,Event,2026-01-26,Open
+L01776,A0266,Referral,2025-06-20,Open
+L01777,A0478,Event,2024-07-15,Open
+L01778,A0246,Event,2024-07-21,Disqualified
+L01779,A0493,Outbound,2025-07-23,Disqualified
+L01780,A0338,Inbound,2025-04-13,Disqualified
+L01781,A0482,Referral,2025-08-30,Disqualified
+L01782,A0211,Outbound,2026-02-12,Disqualified
+L01783,A0471,Paid Search,2026-04-16,Disqualified
+L01784,A0102,Referral,2026-02-05,Disqualified
+L01785,A0165,Outbound,2025-10-07,Disqualified
+L01786,A0393,Referral,2024-11-03,Open
+L01787,A0073,Inbound,2025-12-22,Open
+L01788,A0422,Paid Search,2025-09-10,Disqualified
+L01789,A0137,Outbound,2026-02-15,Open
+L01790,A0461,Event,2026-04-29,Open
+L01791,A0071,Partner,2025-08-19,Open
+L01792,A0155,Referral,2025-07-20,Open
+L01793,A0149,Event,2025-08-04,Disqualified
+L01794,A0443,Inbound,2024-11-23,Open
+L01795,A0174,Paid Search,2024-06-04,Open
+L01796,A0166,Inbound,2025-01-06,Open
+L01797,A0350,Event,2024-06-08,Disqualified
+L01798,A0194,Outbound,2025-07-11,Disqualified
+L01799,A0482,Event,2024-08-21,Disqualified
+L01800,A0283,Event,2025-12-04,Disqualified
+L01801,A0112,Outbound,2026-04-12,Open
+L01802,A0233,Inbound,2025-05-12,Open
+L01803,A0081,Inbound,2025-06-28,Disqualified
+L01804,A0214,Outbound,2024-07-20,Disqualified
+L01805,A0308,Partner,2026-01-26,Disqualified
+L01806,A0421,Paid Search,2026-01-17,Open
+L01807,A0462,Event,2025-07-20,Open
+L01808,A0487,Paid Search,2025-02-24,Disqualified
+L01809,A0154,Outbound,2024-07-14,Disqualified
+L01810,A0153,Inbound,2025-12-05,Disqualified
+L01811,A0295,Paid Search,2025-01-04,Disqualified
+L01812,A0473,Outbound,2025-12-14,Open
+L01813,A0114,Partner,2025-06-24,Open
+L01814,A0263,Paid Search,2026-03-05,Disqualified
+L01815,A0086,Outbound,2025-12-29,Open
+L01816,A0211,Referral,2025-09-01,Disqualified
+L01817,A0110,Referral,2025-10-28,Disqualified
+L01818,A0442,Referral,2025-02-01,Open
+L01819,A0079,Partner,2025-12-06,Open
+L01820,A0031,Outbound,2025-09-03,Disqualified
+L01821,A0240,Outbound,2025-10-14,Open
+L01822,A0144,Paid Search,2025-06-27,Open
+L01823,A0237,Referral,2024-09-06,Open
+L01824,A0006,Outbound,2025-12-02,Open
+L01825,A0153,Partner,2024-09-29,Disqualified
+L01826,A0112,Inbound,2024-05-29,Open
+L01827,A0369,Event,2024-09-17,Disqualified
+L01828,A0103,Partner,2025-04-07,Disqualified
+L01829,A0433,Referral,2025-12-31,Open
+L01830,A0166,Event,2026-03-25,Disqualified
+L01831,A0482,Referral,2025-07-15,Disqualified
+L01832,A0040,Referral,2024-12-10,Disqualified
+L01833,A0131,Event,2025-03-02,Open
+L01834,A0348,Event,2024-12-13,Open
+L01835,A0112,Referral,2025-05-15,Open
+L01836,A0103,Partner,2024-11-12,Disqualified
+L01837,A0079,Paid Search,2024-09-16,Open
+L01838,A0125,Outbound,2025-02-24,Open
+L01839,A0204,Referral,2024-05-20,Open
+L01840,A0332,Paid Search,2025-06-30,Disqualified
+L01841,A0347,Paid Search,2025-06-10,Disqualified
+L01842,A0271,Inbound,2025-11-17,Disqualified
+L01843,A0495,Referral,2026-04-28,Disqualified
+L01844,A0071,Partner,2025-05-26,Disqualified
+L01845,A0480,Inbound,2026-03-01,Open
+L01846,A0332,Event,2025-02-17,Open
+L01847,A0132,Partner,2025-03-06,Open
+L01848,A0160,Inbound,2025-11-01,Disqualified
+L01849,A0418,Partner,2024-10-15,Open
+L01850,A0280,Partner,2025-07-07,Open
+L01851,A0091,Paid Search,2026-05-18,Disqualified
+L01852,A0462,Inbound,2024-11-22,Open
+L01853,A0498,Referral,2024-12-26,Open
+L01854,A0009,Outbound,2025-12-09,Disqualified
+L01855,A0108,Partner,2024-12-22,Open
+L01856,A0099,Event,2025-07-26,Open
+L01857,A0347,Paid Search,2025-07-13,Disqualified
+L01858,A0183,Paid Search,2025-07-23,Disqualified
+L01859,A0071,Event,2026-01-15,Open
+L01860,A0407,Outbound,2024-06-28,Open
+L01861,A0321,Outbound,2024-07-20,Disqualified
+L01862,A0087,Outbound,2025-12-17,Disqualified
+L01863,A0130,Event,2024-12-27,Open
+L01864,A0136,Partner,2024-09-12,Open
+L01865,A0271,Event,2025-12-17,Disqualified
+L01866,A0399,Partner,2024-05-17,Open
+L01867,A0359,Partner,2026-03-09,Disqualified
+L01868,A0147,Partner,2024-06-29,Open
+L01869,A0440,Event,2025-01-21,Disqualified
+L01870,A0274,Paid Search,2024-08-13,Disqualified
+L01871,A0239,Referral,2025-09-20,Open
+L01872,A0131,Inbound,2026-01-06,Disqualified
+L01873,A0092,Outbound,2025-05-31,Open
+L01874,A0271,Referral,2025-07-26,Open
+L01875,A0339,Referral,2025-04-13,Disqualified
+L01876,A0466,Outbound,2025-03-21,Disqualified
+L01877,A0402,Referral,2026-04-05,Open
+L01878,A0198,Referral,2026-04-30,Open
+L01879,A0254,Paid Search,2025-01-09,Open
+L01880,A0314,Event,2024-07-18,Disqualified
+L01881,A0050,Inbound,2024-06-18,Open
+L01882,A0229,Referral,2024-12-28,Disqualified
+L01883,A0492,Referral,2026-05-31,Disqualified
+L01884,A0335,Partner,2024-07-15,Open
+L01885,A0025,Paid Search,2025-02-23,Disqualified
+L01886,A0399,Partner,2026-01-03,Open
+L01887,A0052,Partner,2026-01-23,Open
+L01888,A0178,Referral,2026-05-23,Disqualified
+L01889,A0383,Event,2024-10-24,Open
+L01890,A0453,Partner,2025-01-16,Open
+L01891,A0279,Outbound,2024-05-22,Open
+L01892,A0145,Inbound,2025-05-20,Open
+L01893,A0340,Paid Search,2025-01-22,Disqualified
+L01894,A0324,Partner,2024-11-13,Disqualified
+L01895,A0371,Inbound,2025-11-04,Disqualified
+L01896,A0102,Outbound,2025-03-06,Open
+L01897,A0453,Inbound,2025-09-27,Disqualified
+L01898,A0250,Referral,2025-04-04,Open
+L01899,A0233,Paid Search,2024-05-11,Disqualified
+L01900,A0307,Event,2025-10-02,Disqualified
+L01901,A0036,Paid Search,2025-03-17,Open
+L01902,A0341,Event,2026-01-29,Disqualified
+L01903,A0091,Event,2026-03-05,Open
+L01904,A0474,Referral,2025-03-21,Open
+L01905,A0135,Event,2025-09-22,Open
+L01906,A0398,Inbound,2025-05-03,Disqualified
+L01907,A0009,Inbound,2025-06-13,Open
+L01908,A0042,Paid Search,2024-09-15,Open
+L01909,A0185,Paid Search,2024-10-09,Open
+L01910,A0143,Inbound,2025-06-25,Open
+L01911,A0076,Outbound,2026-03-12,Disqualified
+L01912,A0202,Event,2025-08-18,Disqualified
+L01913,A0407,Referral,2024-10-24,Disqualified
+L01914,A0362,Referral,2024-11-01,Open
+L01915,A0189,Event,2025-01-21,Disqualified
+L01916,A0014,Paid Search,2025-04-13,Open
+L01917,A0103,Inbound,2026-03-02,Disqualified
+L01918,A0426,Inbound,2025-12-09,Disqualified
+L01919,A0426,Paid Search,2024-10-08,Open
+L01920,A0322,Outbound,2024-10-03,Open
+L01921,A0415,Paid Search,2025-05-17,Disqualified
+L01922,A0256,Partner,2024-08-24,Disqualified
+L01923,A0270,Partner,2025-11-08,Open
+L01924,A0250,Event,2024-05-09,Open
+L01925,A0292,Referral,2025-01-24,Disqualified
+L01926,A0030,Outbound,2025-03-09,Disqualified
+L01927,A0419,Paid Search,2024-06-13,Disqualified
+L01928,A0089,Partner,2025-09-22,Open
+L01929,A0263,Outbound,2025-03-18,Disqualified
+L01930,A0388,Partner,2026-02-13,Open
+L01931,A0473,Event,2025-03-15,Disqualified
+L01932,A0060,Event,2024-09-10,Open
+L01933,A0330,Inbound,2024-09-22,Disqualified
+L01934,A0219,Inbound,2024-07-16,Open
+L01935,A0009,Paid Search,2024-06-16,Open
+L01936,A0306,Referral,2024-08-24,Open
+L01937,A0243,Referral,2025-12-03,Disqualified
+L01938,A0351,Inbound,2025-08-26,Disqualified
+L01939,A0224,Paid Search,2025-06-21,Disqualified
+L01940,A0298,Referral,2025-12-11,Disqualified
+L01941,A0049,Inbound,2026-04-16,Open
+L01942,A0368,Inbound,2024-12-11,Disqualified
+L01943,A0212,Inbound,2026-04-05,Disqualified
+L01944,A0354,Inbound,2025-04-22,Disqualified
+L01945,A0374,Referral,2024-11-15,Disqualified
+L01946,A0095,Inbound,2025-03-26,Disqualified
+L01947,A0164,Outbound,2025-01-06,Disqualified
+L01948,A0450,Referral,2024-05-02,Disqualified
+L01949,A0277,Inbound,2025-07-02,Disqualified
+L01950,A0308,Referral,2025-11-30,Disqualified
+L01951,A0032,Event,2025-10-29,Disqualified
+L01952,A0083,Event,2025-07-21,Disqualified
+L01953,A0429,Outbound,2025-11-21,Disqualified
+L01954,A0104,Partner,2026-01-15,Disqualified
+L01955,A0337,Partner,2024-11-25,Open
+L01956,A0242,Partner,2024-07-25,Disqualified
+L01957,A0318,Partner,2025-11-07,Disqualified
+L01958,A0376,Paid Search,2024-10-29,Open
+L01959,A0053,Event,2025-03-09,Disqualified
+L01960,A0055,Partner,2024-11-11,Open
+L01961,A0253,Inbound,2024-12-18,Disqualified
+L01962,A0077,Paid Search,2025-10-03,Disqualified
+L01963,A0112,Partner,2025-08-16,Disqualified
+L01964,A0365,Inbound,2025-09-01,Open
+L01965,A0469,Paid Search,2026-04-18,Open
+L01966,A0477,Event,2025-05-30,Open
+L01967,A0022,Paid Search,2026-05-11,Open
+L01968,A0292,Inbound,2025-11-03,Disqualified
+L01969,A0429,Paid Search,2025-01-09,Disqualified
+L01970,A0311,Event,2025-07-30,Disqualified
+L01971,A0059,Partner,2026-04-12,Open
+L01972,A0485,Event,2025-10-29,Disqualified
+L01973,A0271,Outbound,2026-03-08,Open
+L01974,A0368,Inbound,2026-05-04,Disqualified
+L01975,A0076,Event,2025-05-13,Disqualified
+L01976,A0411,Referral,2024-10-22,Disqualified
+L01977,A0177,Paid Search,2024-09-19,Open
+L01978,A0103,Referral,2025-12-29,Disqualified
+L01979,A0477,Event,2024-12-15,Disqualified
+L01980,A0336,Referral,2024-05-10,Disqualified
+L01981,A0370,Partner,2025-12-15,Disqualified
+L01982,A0012,Outbound,2025-08-30,Open
+L01983,A0309,Event,2025-03-08,Open
+L01984,A0219,Referral,2025-09-09,Open
+L01985,A0002,Paid Search,2025-08-12,Open
+L01986,A0340,Outbound,2025-04-26,Disqualified
+L01987,A0426,Outbound,2025-02-07,Open
+L01988,A0255,Paid Search,2025-09-29,Disqualified
+L01989,A0057,Event,2025-02-20,Disqualified
+L01990,A0260,Referral,2024-11-28,Open
+L01991,A0291,Paid Search,2024-08-18,Disqualified
+L01992,A0147,Referral,2024-05-29,Open
+L01993,A0159,Paid Search,2024-10-18,Disqualified
+L01994,A0258,Event,2024-05-11,Open
+L01995,A0086,Partner,2024-06-02,Open
+L01996,A0070,Event,2025-06-11,Open
+L01997,A0277,Partner,2024-05-19,Disqualified
+L01998,A0090,Referral,2025-01-14,Open
+L01999,A0053,Outbound,2025-11-21,Disqualified
+L02000,A0287,Outbound,2026-03-13,Disqualified
+L02001,A0165,Outbound,2025-11-05,Disqualified
+L02002,A0310,Paid Search,2025-01-24,Disqualified
+L02003,A0372,Inbound,2025-04-21,Open
+L02004,A0433,Inbound,2025-08-01,Disqualified
+L02005,A0458,Inbound,2024-12-04,Open
+L02006,A0173,Event,2026-03-27,Open
+L02007,A0297,Partner,2026-01-01,Open
+L02008,A0102,Partner,2025-05-02,Open
+L02009,A0049,Outbound,2025-11-30,Open
+L02010,A0220,Referral,2025-02-26,Open
+L02011,A0285,Referral,2025-09-04,Disqualified
+L02012,A0457,Referral,2025-10-26,Open
+L02013,A0208,Referral,2024-06-05,Open
+L02014,A0316,Outbound,2025-05-17,Disqualified
+L02015,A0062,Outbound,2025-02-27,Open
+L02016,A0485,Inbound,2025-12-31,Disqualified
+L02017,A0197,Outbound,2025-04-17,Disqualified
+L02018,A0280,Partner,2025-05-19,Open
+L02019,A0470,Event,2024-09-07,Open
+L02020,A0456,Referral,2025-07-21,Disqualified
+L02021,A0069,Partner,2024-10-30,Open
+L02022,A0428,Inbound,2024-05-09,Open
+L02023,A0108,Referral,2026-03-07,Open
+L02024,A0397,Outbound,2025-03-11,Open
+L02025,A0195,Referral,2026-04-02,Disqualified
+L02026,A0187,Outbound,2025-07-22,Open
+L02027,A0049,Paid Search,2024-12-24,Disqualified
+L02028,A0157,Event,2024-07-23,Disqualified
+L02029,A0144,Paid Search,2024-12-10,Open
+L02030,A0351,Partner,2026-01-01,Open
+L02031,A0371,Event,2026-03-06,Open
+L02032,A0046,Partner,2026-05-05,Disqualified
+L02033,A0119,Paid Search,2024-09-24,Disqualified
+L02034,A0232,Inbound,2025-02-02,Disqualified
+L02035,A0273,Outbound,2025-04-20,Disqualified
+L02036,A0357,Outbound,2025-03-29,Open
+L02037,A0293,Outbound,2026-03-29,Disqualified
+L02038,A0070,Partner,2024-08-12,Open
+L02039,A0489,Outbound,2025-05-13,Disqualified
+L02040,A0225,Inbound,2024-06-23,Disqualified
+L02041,A0319,Event,2026-01-04,Open
+L02042,A0225,Outbound,2025-08-26,Open
+L02043,A0184,Outbound,2024-09-22,Open
+L02044,A0437,Paid Search,2026-05-20,Open
+L02045,A0417,Partner,2024-08-30,Open
+L02046,A0151,Paid Search,2025-12-06,Open
+L02047,A0130,Partner,2026-01-08,Open
+L02048,A0167,Event,2025-10-30,Open
+L02049,A0098,Referral,2025-07-06,Open
+L02050,A0394,Paid Search,2025-01-01,Disqualified
+L02051,A0261,Referral,2024-11-03,Open
+L02052,A0019,Event,2025-10-30,Disqualified
+L02053,A0407,Referral,2025-04-27,Disqualified
+L02054,A0240,Event,2024-05-10,Open
+L02055,A0278,Outbound,2026-04-01,Open
+L02056,A0091,Event,2025-03-10,Open
+L02057,A0416,Outbound,2025-04-01,Disqualified
+L02058,A0242,Paid Search,2025-10-07,Open
+L02059,A0256,Partner,2025-04-30,Open
+L02060,A0240,Outbound,2025-05-26,Open
+L02061,A0368,Event,2025-05-23,Disqualified
+L02062,A0297,Event,2024-07-06,Disqualified
+L02063,A0113,Paid Search,2024-09-17,Disqualified
+L02064,A0288,Partner,2026-02-04,Disqualified
+L02065,A0131,Partner,2024-06-23,Disqualified
+L02066,A0288,Paid Search,2026-04-07,Open
+L02067,A0025,Referral,2025-04-14,Open
+L02068,A0289,Referral,2024-12-26,Disqualified
+L02069,A0342,Event,2024-08-06,Disqualified
+L02070,A0271,Event,2025-10-17,Open
+L02071,A0144,Referral,2025-06-04,Open
+L02072,A0469,Paid Search,2025-03-01,Disqualified
+L02073,A0470,Partner,2026-01-20,Disqualified
+L02074,A0292,Event,2025-11-26,Disqualified
+L02075,A0186,Paid Search,2025-09-15,Open
+L02076,A0355,Event,2025-10-15,Open
+L02077,A0260,Inbound,2025-12-28,Open
+L02078,A0072,Event,2025-12-19,Open
+L02079,A0270,Referral,2026-03-10,Disqualified
+L02080,A0420,Paid Search,2025-03-03,Disqualified
+L02081,A0094,Referral,2025-08-06,Disqualified
+L02082,A0232,Partner,2025-12-16,Disqualified
+L02083,A0458,Outbound,2025-04-02,Disqualified
+L02084,A0395,Paid Search,2024-11-28,Open
+L02085,A0381,Inbound,2025-06-05,Disqualified
+L02086,A0053,Outbound,2024-12-09,Disqualified
+L02087,A0105,Referral,2025-07-19,Disqualified
+L02088,A0058,Inbound,2025-01-07,Disqualified
+L02089,A0493,Partner,2024-07-21,Open
+L02090,A0459,Referral,2024-05-24,Disqualified
+L02091,A0309,Partner,2026-05-08,Disqualified
+L02092,A0423,Partner,2025-07-30,Open
+L02093,A0024,Outbound,2025-11-25,Disqualified
+L02094,A0463,Referral,2024-12-13,Disqualified
+L02095,A0187,Referral,2026-03-04,Open
+L02096,A0253,Paid Search,2026-05-10,Open
+L02097,A0375,Paid Search,2026-03-16,Open
+L02098,A0064,Event,2024-09-02,Open
+L02099,A0121,Referral,2024-05-11,Open
+L02100,A0429,Inbound,2025-12-09,Disqualified
+L02101,A0154,Referral,2025-03-19,Open
+L02102,A0122,Event,2025-12-09,Open
+L02103,A0266,Paid Search,2024-08-12,Disqualified
+L02104,A0359,Inbound,2025-04-01,Open
+L02105,A0068,Outbound,2025-08-16,Open
+L02106,A0035,Event,2026-04-14,Disqualified
+L02107,A0266,Outbound,2025-06-16,Open
+L02108,A0220,Outbound,2025-04-23,Disqualified
+L02109,A0300,Referral,2024-12-01,Open
+L02110,A0400,Inbound,2024-05-08,Disqualified
+L02111,A0273,Partner,2025-07-15,Open
+L02112,A0317,Outbound,2026-03-13,Open
+L02113,A0326,Partner,2025-05-20,Open
+L02114,A0244,Outbound,2025-04-21,Disqualified
+L02115,A0058,Event,2025-01-08,Open
+L02116,A0340,Inbound,2024-09-15,Disqualified
+L02117,A0456,Event,2024-11-03,Open
+L02118,A0428,Referral,2025-07-06,Disqualified
+L02119,A0326,Event,2025-04-17,Disqualified
+L02120,A0148,Referral,2025-05-22,Disqualified
+L02121,A0129,Paid Search,2026-03-31,Open
+L02122,A0018,Inbound,2026-04-14,Open
+L02123,A0475,Referral,2024-11-26,Open
+L02124,A0437,Referral,2025-03-03,Open
+L02125,A0133,Partner,2024-09-05,Open
+L02126,A0335,Referral,2024-09-16,Open
+L02127,A0107,Outbound,2025-09-11,Open
+L02128,A0212,Partner,2025-10-04,Disqualified
+L02129,A0132,Outbound,2025-02-02,Open
+L02130,A0265,Referral,2025-12-28,Open
+L02131,A0106,Inbound,2025-06-26,Disqualified
+L02132,A0023,Event,2025-01-22,Disqualified
+L02133,A0431,Referral,2026-01-12,Disqualified
+L02134,A0347,Inbound,2024-10-25,Open
+L02135,A0269,Partner,2026-01-19,Disqualified
+L02136,A0383,Partner,2025-04-25,Open
+L02137,A0354,Paid Search,2025-04-02,Disqualified
+L02138,A0447,Inbound,2025-09-15,Open
+L02139,A0133,Outbound,2026-02-17,Disqualified
+L02140,A0404,Partner,2024-08-31,Disqualified
+L02141,A0379,Partner,2025-02-02,Disqualified
+L02142,A0383,Inbound,2025-03-09,Disqualified
+L02143,A0296,Paid Search,2024-07-06,Disqualified
+L02144,A0103,Event,2026-02-27,Disqualified
+L02145,A0481,Outbound,2024-12-26,Open
+L02146,A0142,Event,2024-05-15,Disqualified
+L02147,A0048,Paid Search,2026-01-10,Open
+L02148,A0457,Partner,2025-04-23,Open
+L02149,A0413,Partner,2024-05-24,Open
+L02150,A0064,Inbound,2025-01-26,Disqualified
+L02151,A0485,Partner,2024-07-09,Disqualified
+L02152,A0086,Partner,2024-07-27,Disqualified
+L02153,A0363,Event,2025-08-16,Open
+L02154,A0135,Outbound,2024-05-21,Open
+L02155,A0346,Paid Search,2026-04-22,Open
+L02156,A0283,Inbound,2025-05-16,Disqualified
+L02157,A0121,Referral,2024-07-17,Open
+L02158,A0242,Referral,2024-08-10,Disqualified
+L02159,A0462,Inbound,2025-02-08,Disqualified
+L02160,A0233,Referral,2026-05-24,Disqualified
+L02161,A0076,Event,2025-01-17,Disqualified
+L02162,A0288,Outbound,2024-10-29,Open
+L02163,A0496,Partner,2024-09-25,Open
+L02164,A0007,Paid Search,2026-04-11,Disqualified
+L02165,A0107,Event,2024-08-19,Disqualified
+L02166,A0311,Inbound,2025-03-09,Open
+L02167,A0216,Paid Search,2024-12-07,Open
+L02168,A0006,Referral,2025-08-03,Disqualified
+L02169,A0085,Partner,2024-10-03,Disqualified
+L02170,A0016,Event,2024-12-29,Open
+L02171,A0402,Paid Search,2024-07-11,Disqualified
+L02172,A0099,Partner,2025-12-19,Open
+L02173,A0170,Event,2025-03-17,Open
+L02174,A0048,Outbound,2025-04-07,Disqualified
+L02175,A0282,Inbound,2025-08-16,Open
+L02176,A0231,Outbound,2024-06-05,Disqualified
+L02177,A0086,Inbound,2024-11-26,Disqualified
+L02178,A0191,Inbound,2025-10-04,Open
+L02179,A0038,Event,2024-09-23,Open
+L02180,A0013,Paid Search,2025-03-20,Disqualified
+L02181,A0355,Outbound,2025-06-22,Disqualified
+L02182,A0500,Inbound,2024-10-19,Disqualified
+L02183,A0497,Inbound,2024-05-07,Open
+L02184,A0154,Event,2024-09-26,Disqualified
+L02185,A0380,Outbound,2024-09-12,Open
+L02186,A0073,Referral,2024-05-16,Open
+L02187,A0091,Partner,2025-02-01,Disqualified
+L02188,A0071,Paid Search,2026-03-12,Disqualified
+L02189,A0292,Outbound,2025-07-31,Disqualified
+L02190,A0238,Outbound,2026-01-22,Open
+L02191,A0338,Event,2026-01-31,Open
+L02192,A0048,Partner,2025-08-25,Open
+L02193,A0326,Referral,2025-03-04,Disqualified
+L02194,A0013,Partner,2024-09-15,Open
+L02195,A0173,Paid Search,2025-12-20,Disqualified
+L02196,A0056,Inbound,2024-08-17,Open
+L02197,A0334,Outbound,2025-11-01,Disqualified
+L02198,A0421,Outbound,2025-07-15,Disqualified
+L02199,A0203,Paid Search,2025-02-17,Disqualified
+L02200,A0402,Partner,2025-01-17,Open
+L02201,A0214,Partner,2025-10-09,Disqualified
+L02202,A0064,Event,2024-06-30,Disqualified
+L02203,A0251,Outbound,2025-08-11,Open
+L02204,A0256,Outbound,2026-03-05,Disqualified
+L02205,A0045,Referral,2025-12-07,Open
+L02206,A0146,Partner,2024-09-11,Open
+L02207,A0151,Inbound,2025-12-06,Disqualified
+L02208,A0383,Partner,2024-11-23,Open
+L02209,A0481,Referral,2024-11-19,Disqualified
+L02210,A0490,Outbound,2025-01-31,Disqualified
+L02211,A0136,Partner,2024-06-10,Disqualified
+L02212,A0059,Referral,2025-10-23,Open
+L02213,A0138,Outbound,2026-05-02,Disqualified
+L02214,A0085,Partner,2024-11-21,Disqualified
+L02215,A0246,Partner,2024-09-29,Disqualified
+L02216,A0180,Outbound,2024-11-30,Disqualified
+L02217,A0001,Inbound,2025-11-13,Disqualified
+L02218,A0125,Outbound,2026-05-02,Disqualified
+L02219,A0227,Referral,2026-01-17,Open
+L02220,A0259,Referral,2025-12-03,Disqualified
+L02221,A0061,Inbound,2024-05-03,Open
+L02222,A0478,Partner,2025-05-29,Disqualified
+L02223,A0371,Inbound,2024-12-27,Open
+L02224,A0248,Partner,2026-05-30,Disqualified
+L02225,A0337,Partner,2025-12-13,Disqualified
+L02226,A0371,Referral,2025-06-02,Open
+L02227,A0398,Event,2025-11-08,Disqualified
+L02228,A0476,Partner,2025-11-12,Open
+L02229,A0500,Event,2024-06-11,Open
+L02230,A0461,Paid Search,2025-12-25,Disqualified
+L02231,A0343,Outbound,2024-08-30,Disqualified
+L02232,A0362,Outbound,2025-07-31,Open
+L02233,A0049,Partner,2025-03-22,Open
+L02234,A0303,Referral,2026-04-11,Open
+L02235,A0251,Paid Search,2025-03-13,Open
+L02236,A0010,Referral,2026-03-12,Open
+L02237,A0182,Outbound,2024-12-31,Open
+L02238,A0206,Event,2025-05-20,Disqualified
+L02239,A0304,Outbound,2025-12-17,Disqualified
+L02240,A0137,Event,2025-07-27,Open
+L02241,A0027,Inbound,2024-09-19,Open
+L02242,A0322,Inbound,2024-09-20,Disqualified
+L02243,A0270,Inbound,2025-10-02,Open
+L02244,A0069,Outbound,2025-08-01,Disqualified
+L02245,A0384,Partner,2024-09-30,Disqualified
+L02246,A0196,Inbound,2025-04-20,Disqualified
+L02247,A0036,Outbound,2025-03-29,Disqualified
+L02248,A0234,Paid Search,2025-05-03,Disqualified
+L02249,A0097,Outbound,2024-12-14,Open
+L02250,A0228,Inbound,2024-07-29,Open

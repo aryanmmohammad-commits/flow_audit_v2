@@ -1,0 +1,100 @@
+version: 2
+
+models:
+  - name: stg_accounts
+    columns:
+      - name: account_id
+        tests: [unique, not_null]
+      - name: segment
+        tests:
+          - accepted_values:
+              values: ['SMB', 'Mid-Market', 'Enterprise']
+
+  - name: stg_reps
+    columns:
+      - name: rep_id
+        tests: [unique, not_null]
+      - name: commission_plan_id
+        tests:
+          - relationships:
+              to: ref('stg_commission_plans')
+              field: commission_plan_id
+
+  - name: stg_commission_plans
+    columns:
+      - name: commission_plan_id
+        tests: [unique, not_null]
+
+  - name: stg_leads
+    columns:
+      - name: lead_id
+        tests: [unique, not_null]
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['Converted', 'Open', 'Disqualified']
+
+  - name: stg_opportunities
+    columns:
+      - name: opportunity_id
+        tests: [unique, not_null]
+      - name: account_id
+        tests:
+          - relationships:
+              to: ref('stg_accounts')
+              field: account_id
+      - name: rep_id
+        tests:
+          - relationships:
+              to: ref('stg_reps')
+              field: rep_id
+      - name: stage
+        tests:
+          - accepted_values:
+              values: ['Prospecting','Qualification','Proposal','Negotiation','Closed Won','Closed Lost']
+      # NOTE: no relationships test on lead_id - it is intentionally broken
+      # for some won deals. That break IS the attribution_gap finding.
+
+  - name: stg_opportunity_stage_history
+    columns:
+      - name: history_id
+        tests: [unique, not_null]
+      - name: opportunity_id
+        tests:
+          - relationships:
+              to: ref('stg_opportunities')
+              field: opportunity_id
+
+  - name: stg_contracts
+    columns:
+      - name: contract_id
+        tests: [unique, not_null]
+      - name: opportunity_id
+        tests:
+          - relationships:
+              to: ref('stg_opportunities')
+              field: opportunity_id
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['Active', 'Churned', 'Renewed']
+
+  - name: stg_invoices
+    columns:
+      - name: invoice_id
+        tests: [unique, not_null]
+      - name: contract_id
+        tests:
+          - relationships:
+              to: ref('stg_contracts')
+              field: contract_id
+
+  - name: stg_commissions
+    columns:
+      - name: commission_id
+        tests: [unique, not_null]
+      - name: opportunity_id
+        tests:
+          - relationships:
+              to: ref('stg_opportunities')
+              field: opportunity_id
