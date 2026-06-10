@@ -481,7 +481,7 @@ for c in sample(billable, RATE_UNDERBILLING):
           f"Missing invoice for period {dropped['period_month']}")
 
 # 6e. Silent churn (active contract stops billing 3-5 months ago) -----------
-for cid in churn_targets:
+for cid in sorted(churn_targets):
     c = next(c for c in contracts if c["contract_id"] == cid)
     rows = sorted(inv_of_contract[cid], key=lambda r: r["period_month"])
     drop_n = random.randint(3, 5)

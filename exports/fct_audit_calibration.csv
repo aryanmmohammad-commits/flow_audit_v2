@@ -1,0 +1,7 @@
+leak_type,planted,detected,true_positives,false_positives,false_negatives,precision_rate,recall_rate
+attribution_gap,48,48,48,0,0,1.0,1.0
+commission_overpayment,18,18,18,0,0,1.0,1.0
+duplicate_revenue,137,137,137,0,0,1.0,1.0
+silent_churn,18,18,18,0,0,1.0,1.0
+stalled_deal,22,22,22,0,0,1.0,1.0
+under_billing,24,24,24,0,0,1.0,1.0
