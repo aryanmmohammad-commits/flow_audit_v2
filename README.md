@@ -1,5 +1,10 @@
 # Flow Audit v2 — a revenue reconciliation layer for B2B SaaS
 
+[![dbt build & test](https://github.com/aryanmmohammad-commits/flow_audit_v2/actions/workflows/dbt_ci.yml/badge.svg)](https://github.com/aryanmmohammad-commits/flow_audit_v2/actions/workflows/dbt_ci.yml)
+
+Flow Audit finds the financial truth between systems...
+
+
 Flow Audit finds the financial truth between systems: what was sold (CRM), what was
 contracted, what was billed (invoices), what was paid out (commissions) — and what
 *should* have happened. Money leaks at the seams between those systems: commissions
@@ -10,9 +15,7 @@ a non-technical manager can act on.
 The principle behind it, in one line: *growth comes from removing obstruction in the
 value flow.* Flow Audit turns invisible obstruction into named, priced, fixable leakage.
 
-**Status:** stages 1–2 + exception/calibration hardening complete · `dbt build` green
-(24 models, 52 tests passing).
-
+Status: dual-warehouse (DuckDB + BigQuery) · CI on every push · dbt build green (24 models, 52 tests passing).
 ## The claim, made falsifiable
 
 Synthetic test data is only convincing if the validation cannot be circular. "I planted
