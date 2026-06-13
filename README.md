@@ -2,7 +2,6 @@
 
 [![dbt build & test](https://github.com/aryanmmohammad-commits/flow_audit_v2/actions/workflows/dbt_ci.yml/badge.svg)](https://github.com/aryanmmohammad-commits/flow_audit_v2/actions/workflows/dbt_ci.yml)
 
-Flow Audit finds the financial truth between systems...
 
 
 Flow Audit finds the financial truth between systems: what was sold (CRM), what was
