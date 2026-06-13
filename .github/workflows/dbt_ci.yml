@@ -1,0 +1,38 @@
+name: dbt build & test
+
+# Runs the full Flow Audit pipeline on every push and pull request to main.
+# Uses DuckDB (zero-config, no cloud credentials needed) so CI is free and fast.
+# The green check on each commit = all 21 models built and all data tests passed.
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:        # lets you trigger a run manually from the Actions tab
+
+jobs:
+  build-and-test:
+    name: dbt build (DuckDB)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dbt-duckdb
+        run: |
+          python -m pip install --upgrade pip
+          pip install dbt-duckdb
+
+      - name: dbt deps (install any packages)
+        run: dbt deps --profiles-dir .
+        continue-on-error: true   # safe to skip if packages.yml is empty
+
+      - name: dbt build (seed + run + test)
+        run: dbt build --profiles-dir . --target duckdb

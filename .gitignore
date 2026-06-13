@@ -3,3 +3,4 @@ dbt_packages/
 logs/
 *.duckdb
 __pycache__/
+exports/

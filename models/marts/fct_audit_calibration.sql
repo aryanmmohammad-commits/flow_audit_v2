@@ -7,26 +7,26 @@
 -- (where no ground-truth file exists) it is simply excluded.
 with detected as (
     select 'commission_overpayment' as leak_type,
-           cast(commission_id as varchar) as entity_id
+           cast(commission_id as {{ type_string() }}) as entity_id
     from {{ ref('fct_commission_overpayments') }}
     union all
-    select 'under_billing', cast(contract_id as varchar)
+    select 'under_billing', cast(contract_id as {{ type_string() }})
     from {{ ref('fct_underbilled_contracts') }}
     union all
-    select 'silent_churn', cast(contract_id as varchar)
+    select 'silent_churn', cast(contract_id as {{ type_string() }})
     from {{ ref('fct_silent_churn') }}
     union all
-    select 'duplicate_revenue', cast(invoice_id as varchar)
+    select 'duplicate_revenue', cast(invoice_id as {{ type_string() }})
     from {{ ref('fct_duplicate_invoices') }}
     union all
-    select 'attribution_gap', cast(opportunity_id as varchar)
+    select 'attribution_gap', cast(opportunity_id as {{ type_string() }})
     from {{ ref('fct_attribution_gaps') }}
     union all
-    select 'stalled_deal', cast(opportunity_id as varchar)
+    select 'stalled_deal', cast(opportunity_id as {{ type_string() }})
     from {{ ref('fct_stalled_deals') }}
 ),
 planted as (
-    select leak_type, cast(entity_id as varchar) as entity_id
+    select leak_type, cast(entity_id as {{ type_string() }}) as entity_id
     from {{ ref('ground_truth_leaks') }}
     where leak_type in ('commission_overpayment','under_billing','silent_churn',
                         'duplicate_revenue','attribution_gap','stalled_deal')

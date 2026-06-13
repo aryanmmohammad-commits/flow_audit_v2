@@ -26,14 +26,12 @@ select
     c.end_date,
     c.acv,
     round(c.acv / 12.0, 2) as monthly_amount,
-    date_diff('month',
-        date_trunc('month', c.start_date),
-        date_trunc('month', least(c.end_date, date '{{ var("as_of_date") }}'))
-    ) + 1 as months_expected,
-    round((c.acv / 12.0) * (date_diff('month',
-        date_trunc('month', c.start_date),
-        date_trunc('month', least(c.end_date, date '{{ var("as_of_date") }}'))
-    ) + 1), 2) as amount_expected,
+    {{ date_diff_unit('month',
+        "date_trunc('month', c.start_date)",
+        "date_trunc('month', least(c.end_date, date '" ~ var('as_of_date') ~ "'))") }} + 1 as months_expected,
+    round((c.acv / 12.0) * ({{ date_diff_unit('month',
+        "date_trunc('month', c.start_date)",
+        "date_trunc('month', least(c.end_date, date '" ~ var('as_of_date') ~ "'))") }} + 1), 2) as amount_expected,
     coalesce(b.amount_billed, 0) as amount_billed,
     coalesce(a.approved_reduction, 0) as approved_reduction,
     li.last_invoice_month

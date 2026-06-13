@@ -8,4 +8,4 @@ select
 from {{ ref('int_contract_billing_expected') }}
 where status = 'Active'
   and end_date > date '{{ var("as_of_date") }}'
-  and last_invoice_month < cast(date '{{ var("as_of_date") }}' - interval 90 day as date)
+  and last_invoice_month < {{ date_offset("date '" ~ var('as_of_date') ~ "'", 90, 'day') }}
