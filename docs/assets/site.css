@@ -4,7 +4,7 @@
 :root{
   --void:#04060f; --space:#070b1a; --space-2:#0a1024; --deep:#0c1430;
   --blue:#1f4fa3; --blue-bright:#3a72d4; --blue-soft:#6f9be0;
-  --orange:#f0852e; --orange-2:#ff9d45; --amber:#ffb869; --ember:#e2641d;
+  --orange:#d98a3f; --orange-2:#e6a45c; --amber:#e8b878; --ember:#c8702c;
   --green:#96e8ac;
   --star:#eaf2ff; --paper:#eef1f8; --mist:#aab6cf; --faint:#6f7d9c;
   --line:rgba(140,160,210,.16); --line-2:rgba(140,160,210,.10);
@@ -81,7 +81,7 @@ h2{font-family:var(--serif);font-weight:300;font-size:clamp(27px,4vw,42px);line-
 .photo{width:260px;height:300px;border-radius:14px;border:1px solid var(--line);background:linear-gradient(160deg,#0d2036,#06101d);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
 .photo img{width:100%;height:100%;object-fit:cover;display:block}
 .photo .ph{display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--faint)}
-.photo .ph .mono-ch{font-family:var(--serif);font-size:64px;color:var(--amber);line-height:1;text-shadow:0 0 30px rgba(240,133,46,.4)}
+.photo .ph .mono-ch{font-family:var(--serif);font-size:64px;color:var(--amber);line-height:1;text-shadow:none}
 .photo .ph .hint{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase}
 @media(max-width:720px){.ab-hero .wrap{grid-template-columns:1fr;gap:34px}.photo{width:180px;height:210px;order:-1}.photo .ph .mono-ch{font-size:44px}}
 

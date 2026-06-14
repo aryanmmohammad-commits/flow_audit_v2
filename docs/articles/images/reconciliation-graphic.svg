@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 300" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two systems reconciled, with the unexplained gap surfaced and priced">
+  <defs>
+    <linearGradient id="ln" x1="0" y1="0" x2="720" y2="0">
+      <stop offset="0" stop-color="#5f7196" stop-opacity=".5"/>
+      <stop offset=".5" stop-color="#d98a3f"/>
+      <stop offset="1" stop-color="#5f7196" stop-opacity=".5"/>
+    </linearGradient>
+    <radialGradient id="gp" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#e6a45c" stop-opacity=".9"/>
+      <stop offset="100%" stop-color="#d98a3f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- left system: what was recorded -->
+  <g>
+    <rect x="40" y="70" width="190" height="160" rx="10" stroke="#5f7196" stroke-width="1" fill="rgba(140,160,210,.04)"/>
+    <text x="60" y="100" font-family="'Space Grotesk',sans-serif" font-size="12" letter-spacing="1" fill="#8a99bd">SYSTEM A — RECORDED</text>
+    <g font-family="'Space Grotesk',sans-serif" font-size="13" fill="#cdd6e8">
+      <rect x="60" y="118" width="150" height="22" rx="4" fill="rgba(140,160,210,.06)"/>
+      <text x="70" y="133">contract · active</text>
+      <rect x="60" y="148" width="150" height="22" rx="4" fill="rgba(140,160,210,.06)"/>
+      <text x="70" y="163">invoiced · 12 / 12</text>
+      <rect x="60" y="178" width="150" height="22" rx="4" fill="rgba(140,160,210,.06)"/>
+      <text x="70" y="193">commission · paid</text>
+    </g>
+  </g>
+
+  <!-- right system: what is true -->
+  <g>
+    <rect x="490" y="70" width="190" height="160" rx="10" stroke="#5f7196" stroke-width="1" fill="rgba(140,160,210,.04)"/>
+    <text x="510" y="100" font-family="'Space Grotesk',sans-serif" font-size="12" letter-spacing="1" fill="#8a99bd">SYSTEM B — ACTUAL</text>
+    <g font-family="'Space Grotesk',sans-serif" font-size="13" fill="#cdd6e8">
+      <rect x="510" y="118" width="150" height="22" rx="4" fill="rgba(140,160,210,.06)"/>
+      <text x="520" y="133">billing · stopped</text>
+      <rect x="510" y="148" width="150" height="22" rx="4" fill="rgba(140,160,210,.06)"/>
+      <text x="520" y="163">invoiced · 9 / 12</text>
+      <rect x="510" y="178" width="150" height="22" rx="4" fill="rgba(140,160,210,.06)"/>
+      <text x="520" y="193">plan rate · exceeded</text>
+    </g>
+  </g>
+
+  <!-- reconciliation line through the gap -->
+  <line x1="230" y1="150" x2="490" y2="150" stroke="url(#ln)" stroke-width="1.5"/>
+
+  <!-- the gap, surfaced and priced -->
+  <circle cx="360" cy="150" r="46" fill="url(#gp)"/>
+  <circle cx="360" cy="150" r="30" stroke="#e6a45c" stroke-width="1.2" fill="#0a1024"/>
+  <text x="360" y="146" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="17" fill="#e8b878">€</text>
+  <text x="360" y="166" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="9" letter-spacing="1" fill="#8a99bd">THE GAP</text>
+
+  <text x="360" y="262" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="12" letter-spacing=".5" fill="#8a99bd">unexplained variance — found, classified, priced</text>
+</svg>
