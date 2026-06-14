@@ -72,13 +72,14 @@
   .rift{margin-top:78px;opacity:0;animation:rise 1.1s .9s ease forwards}
   .rift .cap{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:24px}
   .rift .cap b{color:var(--orange);font-weight:500}
-  .iv{display:grid;grid-template-columns:1fr 150px 1fr;align-items:center;max-width:700px}
+  .iv{display:grid;grid-template-columns:1fr 64px 1fr;align-items:stretch;max-width:680px;gap:0}
   .iv .sys{border:1px solid var(--line);border-radius:11px;padding:20px 18px;background:linear-gradient(180deg,rgba(140,160,210,.05),rgba(140,160,210,.01));backdrop-filter:blur(2px)}
   .iv .sys .n{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-soft);font-weight:500}
   .iv .sys .d{font-size:13px;color:var(--faint);margin-top:5px}
-  .iv .gap{position:relative;height:96px}
-  .iv .gaplabel{position:absolute;left:50%;top:-20px;transform:translateX(-50%);font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);white-space:nowrap;text-shadow:0 0 16px rgba(240,133,46,.6)}
-  @media(max-width:560px){.iv{grid-template-columns:1fr;max-width:340px;gap:0}.iv .gap{height:74px}.iv .gap svg{transform:rotate(90deg)}}
+  .iv .between{position:relative;display:flex;align-items:center;justify-content:center}
+  .iv .between::before{content:"";position:absolute;top:50%;left:8px;right:8px;height:1px;background:linear-gradient(90deg,transparent,rgba(140,160,210,.3),transparent)}
+  .iv .vs{position:relative;z-index:1;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);background:var(--void);padding:4px 7px;border:1px solid var(--line);border-radius:20px}
+  @media(max-width:560px){.iv{grid-template-columns:1fr;max-width:340px;gap:12px}.iv .between{height:34px}.iv .between::before{left:50%;right:auto;top:8px;bottom:8px;width:1px;height:auto}}
 
   /* section shell */
   section{padding:92px 0;position:relative}
@@ -89,6 +90,18 @@
   .body-lg strong{color:var(--paper);font-weight:500}
   .body-lg em{color:var(--orange-2);font-style:italic}
 
+  /* stats / proof band */
+  .proof{padding:54px 0 16px;position:relative}
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0}
+  .pf{text-align:center}
+  .pf .pv{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5vw,52px);line-height:1;color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .pf .pv .c{color:var(--orange-2);font-size:.5em;vertical-align:.35em;margin-right:.04em}
+  .pf .pv .u{color:var(--orange-2);font-size:.6em;vertical-align:.05em;margin-left:.02em}
+  .pf .pl{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--faint);margin-top:13px;line-height:1.5;text-transform:uppercase}
+  .proof-note{text-align:center;font-family:var(--mono);font-size:12.5px;color:var(--mist);margin-top:22px}
+  .proof-note a{color:var(--orange-2);text-decoration:none}
+  .proof-note a:hover{text-decoration:underline}
+  @media(max-width:680px){.proof-grid{grid-template-columns:1fr 1fr;gap:30px 18px;padding:32px 0}}
   .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
 
   /* thesis chain */
@@ -154,7 +167,7 @@
 
 <div class="bar"><div class="wrap">
   <div class="brand">
-    <svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="17" cy="17" r="15.4" stroke="#5f7196" stroke-width="1.1" opacity=".55"/><circle cx="17" cy="1.6" r="1.5" fill="#e2a44a"/><text x="17" y="22.3" text-anchor="middle" font-family="'Space Grotesk',-apple-system,sans-serif" font-size="14.5" font-weight="600" letter-spacing="-.3" fill="#eef1f8">SP</text></svg>
+    <svg class="mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="17" cy="17" r="15.4" stroke="#5f7196" stroke-width="1.1" opacity=".55"/><circle cx="17" cy="1.6" r="1.5" fill="#e2a44a"/><text x="17" y="22.3" text-anchor="middle" font-family="'Space Grotesk',-apple-system,sans-serif" font-size="14.5" font-weight="600" letter-spacing="-.3" fill="#eef1f8">SF</text></svg>
     SPATIUM&nbsp;FLOW
   </div>
   <nav>
@@ -173,7 +186,7 @@
   <circle cx="200" cy="200" r="150" stroke="#5f7196" stroke-width="1" opacity=".38"/>
   <circle cx="200" cy="200" r="118" stroke="#5f7196" stroke-width="1" opacity=".2" stroke-dasharray="3 8"/>
   <circle cx="200" cy="50" r="3" fill="#e6a45c"/>
-  <text x="200" y="234" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="118" font-weight="300" letter-spacing="-2" fill="#eef1f8" opacity=".9">SP</text>
+  <text x="200" y="234" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="118" font-weight="300" letter-spacing="-2" fill="#eef1f8" opacity=".9">SF</text>
 </svg>
 </div><div class="wrap">
   <div class="eyebrow">Operational analytics for the value chain</div>
@@ -188,28 +201,21 @@
     <div class="cap">spatium &nbsp;·&nbsp; <b>latin: the space between</b></div>
     <div class="iv">
       <div class="sys"><div class="n">System A</div><div class="d">What one source records as true</div></div>
-      <div class="gap">
-        <div class="gaplabel">value leaks here</div>
-        <svg viewBox="0 0 150 96" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
-          <defs>
-            <linearGradient id="flow" x1="0" y1="0" x2="150" y2="0">
-              <stop offset="0" stop-color="#3a72d4"/><stop offset=".5" stop-color="#f0852e"/><stop offset="1" stop-color="#3a72d4"/>
-            </linearGradient>
-            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
-              <stop offset="0" stop-color="#ffb869" stop-opacity=".9"/><stop offset="1" stop-color="#f0852e" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-          <ellipse cx="75" cy="48" rx="30" ry="18" fill="url(#glow)"/>
-          <line x1="0" y1="48" x2="150" y2="48" stroke="url(#flow)" stroke-width="2"/>
-          <path d="M72 48 q5 16 -3 27" stroke="#f0852e" stroke-width="1.6" fill="none" opacity=".9"/>
-          <path d="M80 48 q6 13 2 24" stroke="#ffb869" stroke-width="1.2" fill="none" opacity=".6"/>
-          <circle cx="75" cy="48" r="3" fill="#ffb869"/>
-        </svg>
-      </div>
+      <div class="between"><span class="vs">vs</span></div>
       <div class="sys"><div class="n">System B</div><div class="d">What the next source records as true</div></div>
     </div>
   </div>
 </div></header>
+
+<section class="proof"><div class="wrap reveal">
+  <div class="proof-grid">
+    <div class="pf"><div class="pv"><span class="c">€</span>4.6M</div><div class="pl">Leakage surfaced<br>in one demo run</div></div>
+    <div class="pf"><div class="pv">100<span class="u">%</span></div><div class="pl">Detection precision<br>&amp; recall, calibrated</div></div>
+    <div class="pf"><div class="pv">267</div><div class="pl">Distinct leaks found<br>across six types</div></div>
+    <div class="pf"><div class="pv">0</div><div class="pl">False alarms<br>and zero misses</div></div>
+  </div>
+  <div class="proof-note">Proven against a ground-truth ledger — not asserted. <a href="flow-audit/">See the calibration &rarr;</a></div>
+</div></section>
 
 <section id="thesis"><div class="wrap reveal">
   <div class="lab">The thesis</div>
