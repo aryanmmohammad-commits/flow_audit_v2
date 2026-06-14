@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The €4.6M no one is looking at — Spatium Flow</title>
+<meta name="description" content="What I learned building a revenue-leak detector that has to prove it isn't lying.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="../assets/site.css" rel="stylesheet">
+</head>
+<body>
+<canvas id="sky"></canvas>
+<div class="page">
+<div class="bar"><div class="wrap">
+  <a class="brand" href="../">
+    <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="16" cy="16" r="13.2" stroke="#6f9be0" stroke-width="1.1" opacity=".85"/><circle cx="16" cy="16" r="8.6" stroke="#6f9be0" stroke-width=".9" opacity=".5"/>
+      <g stroke="#6f9be0" stroke-width="1" opacity=".7"><line x1="16" y1="2.8" x2="16" y2="6"/><line x1="16" y1="26" x2="16" y2="29.2"/><line x1="2.8" y1="16" x2="6" y2="16"/><line x1="26" y1="16" x2="29.2" y2="16"/></g>
+      <line x1="7.2" y1="24.8" x2="24.8" y2="7.2" stroke="#f0852e" stroke-width="1.3"/><circle cx="16" cy="16" r="2.4" fill="#ffb869"/>
+    </svg>SPATIUM&nbsp;FLOW
+  </a>
+  <nav><a href="../">Home</a><a href="../flow-audit/">Product</a><a href="./" class="on">Articles</a><a href="../about/">About</a></nav>
+</div></div>
+
+<header class="head"><div class="narrow">
+  <div class="kicker"><a href="./">Articles</a> &nbsp;·&nbsp; The Leak</div>
+  <h1>The €4.6M no one is looking at</h1>
+  <p class="dek">What I learned building a revenue-leak detector that has to prove it isn't lying.</p>
+  <div class="byline">By <b>Aryan Mohammaddoost</b> &nbsp;·&nbsp; June 2026 &nbsp;·&nbsp; 4 min read</div>
+</div></header>
+
+<article><div class="narrow">
+  <p>Revenue doesn't vanish in a single dramatic event. It <em>leaks</em> — quietly, at the seams between systems that are each, on their own terms, working perfectly.</p>
+  <p>A deal closes in the CRM. A contract is signed in another system. Invoices go out from a third. Commissions are paid from a fourth. Every one of them is internally correct. And yet, between them, money slips through gaps no single system is responsible for watching: a contract still marked active long after billing quietly stopped, an invoice that double-counts a period, a commission paid above the plan rate with no approval behind it.</p>
+  <p>I built <strong>Flow Audit</strong> to find those gaps and put a number on them. On a single synthetic 500-account book, it surfaced <strong>€4.6M</strong> in leakage and revenue-at-risk across six distinct leak types — each one traced to specific records, each one priced.</p>
+  <figure>
+    <img src="images/flow-audit-dashboard.png" alt="The Flow Audit dashboard showing total detected leakage">
+    <figcaption>Flow Audit — total detected leakage, broken out by type and explorable down to the record.</figcaption>
+  </figure>
+  <h2>The hard part wasn't finding leaks. It was not crying wolf.</h2>
+  <p>Here is the thing I underestimated. A detector that flags "problems" is worthless the moment it flags something legitimate — because the first time a finance lead opens your report, finds an approved credit sitting in your "leak" list, and realizes you didn't account for it, they stop trusting the whole thing. And they're right to.</p>
+  <p>Approved credits, negotiated spiffs, commission accelerators — on the raw data, these look <em>identical</em> to leaks. The difference isn't in the numbers; it's in whether someone with authority signed off. So the real work wasn't detection. It was teaching the system to consult the approval registers and define leakage as <strong>unexplained variance only</strong> — the gap that no one authorized.</p>
+  <blockquote>Being right isn't enough. You have to be able to prove you're right — and prove it falsifiably.</blockquote>
+  <h2>So I made it prove itself.</h2>
+  <p>Instead of asserting the detection worked, I built a calibration layer to test it. I planted <strong>267 known leaks</strong> into the data alongside <strong>37 legitimate exceptions</strong>, and made the system tell them apart — then measured the result against that ground truth.</p>
+  <p>It caught every planted leak and correctly ignored every approved exception: <strong>100% precision, 100% recall — zero false alarms, zero misses.</strong> Not because I said so, but because a test that could have failed, didn't. The audit, audited.</p>
+  <h2>What I took from it</h2>
+  <p>In analytics engineering, the dashboards people <em>trust</em> and the ones they quietly ignore differ on exactly this point: can the thing prove it isn't lying? A number with a falsifiable test behind it changes a conversation. A number without one is just an opinion in a nicer font.</p>
+  <p>Growth comes from removing obstruction in the value flow. But first you have to <em>see</em> the obstruction — and prove it's really there.</p>
+  <div class="sign">Written by <b>Aryan Mohammaddoost</b>, analytics engineer and founder of Spatium Flow. Flow Audit is live — <a href="../flow-audit/" style="color:var(--orange-2)">explore the diagnostic &rarr;</a></div>
+  <a class="back" href="./">&larr; All articles</a>
+</div></article>
+
+<footer class="foot"><div class="wrap">
+  <div class="who">Spatium Flow &nbsp;·&nbsp; <span>analytics for the spaces between systems</span></div>
+  <div class="contact" style="margin-top:18px"><a class="cbtn" href="../">Home</a><a class="cbtn" href="../about/">About</a><a class="cbtn" href="https://github.com/aryanmmohammad-commits" target="_blank" rel="noopener">GitHub &rarr;</a></div>
+  <div class="base"><span>© 2026 Spatium Flow</span><span>Growth comes from removing obstruction in the value flow.</span></div>
+</div></footer>
+</div>
+<script src="../assets/sky.js"></script>
+</body>
+</html>

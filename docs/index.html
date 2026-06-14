@@ -3,343 +3,393 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Flow Audit — Revenue Leakage Diagnostic</title>
+<title>Spatium Flow — analytics for the spaces between systems</title>
+<meta name="description" content="Spatium Flow builds the analytics that find where value leaks between the systems of the value chain — and prices every gap. Flow Audit is our first product.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#0B2236; --navy-2:#103049; --ink:#0a1722;
-    --teal:#1aa0ad; --teal-dim:#15808c; --gold:#d4a23c; --gold-dim:#bb8a2a;
-    --paper:#f5f2ea; --paper-2:#ece7da; --line:#d9d2c2;
-    --risk:#c2682f; --over:#9d5fb0; --cash:#1aa0ad;
-    --txt:#10202e; --muted:#5d6b76; --muted-2:#8a949c;
-    --mono:'SFMono-Regular',ui-monospace,'Cascadia Mono','Menlo',monospace;
-    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-    --serif:'Georgia','Times New Roman',serif;
+    /* deep space */
+    --void:#04060f; --space:#070b1a; --space-2:#0a1024; --deep:#0c1430;
+    --blue:#1f4fa3; --blue-bright:#3a72d4; --blue-soft:#6f9be0;
+    --orange:#f0852e; --orange-2:#ff9d45; --amber:#ffb869; --ember:#e2641d;
+    --star:#eaf2ff; --paper:#eef1f8; --mist:#aab6cf; --faint:#6f7d9c;
+    --line:rgba(140,160,210,.16); --line-2:rgba(140,160,210,.10);
+    --mono:'Space Grotesk',ui-monospace,'Cascadia Mono',Menlo,monospace;
+    --sans:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{scroll-behavior:smooth}
-  body{background:var(--paper);color:var(--txt);font-family:var(--sans);
-       font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  body{background:var(--void);color:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;position:relative}
   a{color:inherit}
+  ::selection{background:var(--orange);color:var(--void)}
 
-  /* ---------- HERO ---------- */
-  .hero{background:var(--navy);color:var(--paper);padding:64px 0 0;position:relative;overflow:hidden}
-  .hero::before{content:"";position:absolute;inset:0;
-    background:radial-gradient(60% 80% at 78% 8%,rgba(26,160,173,.16),transparent 60%),
-               radial-gradient(50% 70% at 10% 100%,rgba(212,162,60,.10),transparent 60%)}
-  .hero .wrap{position:relative}
-  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.22em;text-transform:uppercase;
-    color:var(--gold);margin-bottom:22px}
-  .eyebrow b{color:var(--teal);font-weight:600}
-  h1{font-family:var(--serif);font-weight:400;font-size:clamp(30px,5vw,52px);line-height:1.08;
-    letter-spacing:-.01em;max-width:16ch;margin-bottom:18px}
-  h1 em{font-style:italic;color:var(--gold)}
-  .lede{font-size:clamp(16px,2.1vw,19px);color:#c4d2dd;max-width:54ch;margin-bottom:46px}
+  /* fixed starfield behind everything */
+  #sky{position:fixed;inset:0;z-index:0;display:block;background:
+    radial-gradient(120% 80% at 78% -10%, rgba(240,133,46,.10), transparent 55%),
+    radial-gradient(90% 70% at 12% 108%, rgba(31,79,163,.18), transparent 60%),
+    linear-gradient(180deg,#04060f 0%,#070b1a 40%,#05080f 100%)}
+  .page{position:relative;z-index:1}
 
-  /* headline figure as a reconciling ledger */
-  .ledger{display:grid;grid-template-columns:1fr auto;gap:6px 28px;align-items:end;
-    border-top:1px solid rgba(255,255,255,.14);padding-top:26px;margin-bottom:8px}
-  .ledger .big{grid-column:1;font-family:var(--serif);font-size:clamp(46px,9vw,92px);
-    line-height:.92;letter-spacing:-.02em;color:#fff;font-variant-numeric:tabular-nums}
-  .ledger .big .cur{color:var(--teal);font-size:.5em;vertical-align:.28em;margin-right:.06em}
-  .ledger .lab{grid-column:1;font-family:var(--mono);font-size:12.5px;letter-spacing:.04em;
-    color:var(--muted-2);text-transform:uppercase;margin-top:10px}
-  .ledger .side{grid-column:2;grid-row:1/3;text-align:right;align-self:end;padding-bottom:6px}
-  .ledger .side .n{font-family:var(--mono);font-size:26px;color:var(--gold);font-variant-numeric:tabular-nums}
-  .ledger .side .t{font-family:var(--mono);font-size:11px;letter-spacing:.04em;color:var(--muted-2);
-    text-transform:uppercase;margin-top:2px}
+  /* top bar */
+  .bar{position:absolute;top:0;left:0;right:0;z-index:10}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:28px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:var(--paper);text-decoration:none;font-weight:500}
+  .brand .mark{width:24px;height:24px;flex:none}
+  .bar nav{display:flex;gap:28px;font-family:var(--mono);font-size:12.5px;color:var(--mist);letter-spacing:.02em}
+  .bar nav a{text-decoration:none;transition:color .18s}
+  .bar nav a:hover{color:var(--orange-2)}
+  @media(max-width:660px){.bar nav{display:none}}
 
-  .hero-foot{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;
-    padding:30px 0 26px;font-family:var(--mono);font-size:12.5px;color:#9fb0bc}
-  .pill{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.16);
-    border-radius:999px;padding:6px 13px;color:#cdd9e2}
-  .pill .dot{width:7px;height:7px;border-radius:50%;background:var(--teal)}
-  .pill.gold .dot{background:var(--gold)}
+  /* hero */
+  .hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;position:relative}
+  .hero .wrap{z-index:2}
+  .astro-hero{position:absolute;right:-30px;top:50%;transform:translateY(-50%);width:min(480px,44vw);z-index:1;pointer-events:none;filter:drop-shadow(0 0 40px rgba(240,133,46,.22))}
+  .astro-hero svg{width:100%;height:auto;display:block}
+  .astro-hero .spin{transform-origin:200px 200px;animation:spin 150s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media(max-width:860px){.astro-hero{opacity:.26;right:-140px;width:420px}}
+  @media(prefers-reduced-motion:reduce){.astro-hero .spin{animation:none}}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange);margin-bottom:30px;opacity:0;animation:rise .9s .1s ease forwards}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(38px,7vw,82px);line-height:1.0;letter-spacing:-.02em;max-width:15ch;margin-bottom:30px;text-shadow:0 0 60px rgba(31,79,163,.4)}
+  h1 .ln{display:block;opacity:0;animation:rise 1s ease forwards}
+  h1 .ln:nth-child(1){animation-delay:.18s}
+  h1 .ln:nth-child(2){animation-delay:.34s}
+  h1 em{font-style:italic;font-weight:400;color:var(--orange-2);text-shadow:0 0 44px rgba(240,133,46,.55)}
+  .sub{font-size:clamp(16px,2.1vw,19px);color:var(--mist);max-width:50ch;line-height:1.65;margin-bottom:42px;opacity:0;animation:rise 1s .5s ease forwards}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;opacity:0;animation:rise 1s .66s ease forwards}
+  .btn{font-family:var(--mono);font-size:13px;letter-spacing:.02em;font-weight:500;text-decoration:none;padding:14px 24px;border-radius:9px;transition:transform .16s,box-shadow .16s,background .16s,border-color .16s;display:inline-flex;align-items:center;gap:9px}
+  .btn-primary{background:linear-gradient(135deg,var(--orange),var(--ember));color:#1a0f04;box-shadow:0 0 0 rgba(240,133,46,0)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px -10px rgba(240,133,46,.6)}
+  .btn-ghost{border:1px solid var(--line);color:var(--paper);background:rgba(140,160,210,.04)}
+  .btn-ghost:hover{border-color:var(--blue-soft);color:#fff}
+  .btn .ar{transition:transform .16s}.btn:hover .ar{transform:translateX(3px)}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 
-  /* flow strip — the seams where money leaks */
-  .flow{display:flex;align-items:center;gap:0;margin:2px 0 -1px;padding:18px 0 0;flex-wrap:wrap}
-  .flow .node{font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;
-    color:#cdd9e2;border:1px solid rgba(255,255,255,.18);border-radius:5px;padding:7px 11px;background:rgba(255,255,255,.03)}
-  .flow .seam{flex:0 0 26px;height:1px;background:linear-gradient(90deg,var(--teal),var(--gold));position:relative;margin:0 2px}
-  .flow .seam::after{content:"";position:absolute;top:50%;right:-1px;width:5px;height:5px;border-top:1px solid var(--gold);
-    border-right:1px solid var(--gold);transform:translateY(-50%) rotate(45deg)}
+  /* the SIGNATURE rift — two systems, a glowing orange rift in deep space */
+  .rift{margin-top:78px;opacity:0;animation:rise 1.1s .9s ease forwards}
+  .rift .cap{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:24px}
+  .rift .cap b{color:var(--orange);font-weight:500}
+  .iv{display:grid;grid-template-columns:1fr 150px 1fr;align-items:center;max-width:700px}
+  .iv .sys{border:1px solid var(--line);border-radius:11px;padding:20px 18px;background:linear-gradient(180deg,rgba(140,160,210,.05),rgba(140,160,210,.01));backdrop-filter:blur(2px)}
+  .iv .sys .n{font-family:var(--mono);font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--blue-soft);font-weight:500}
+  .iv .sys .d{font-size:13px;color:var(--faint);margin-top:5px}
+  .iv .gap{position:relative;height:96px}
+  .iv .gaplabel{position:absolute;left:50%;top:-20px;transform:translateX(-50%);font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);white-space:nowrap;text-shadow:0 0 16px rgba(240,133,46,.6)}
+  @media(max-width:560px){.iv{grid-template-columns:1fr;max-width:340px;gap:0}.iv .gap{height:74px}.iv .gap svg{transform:rotate(90deg)}}
 
-  /* ---------- SECTION SHELL ---------- */
-  section{padding:62px 0}
-  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
-  .sec-num{font-family:var(--mono);font-size:12px;color:var(--gold-dim);letter-spacing:.12em}
-  .sec-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(23px,3.4vw,33px);letter-spacing:-.01em}
-  .sec-sub{color:var(--muted);max-width:60ch;margin:0 0 34px;font-size:15.5px}
+  /* section shell */
+  section{padding:92px 0;position:relative}
+  .lab{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+  .lab::before{content:"";width:26px;height:1px;background:var(--orange);opacity:.7}
+  h2{font-family:var(--serif);font-weight:300;font-size:clamp(27px,4vw,42px);line-height:1.1;letter-spacing:-.015em;max-width:18ch;margin-bottom:22px}
+  .body-lg{font-size:17px;color:var(--mist);max-width:60ch;line-height:1.7}
+  .body-lg strong{color:var(--paper);font-weight:500}
+  .body-lg em{color:var(--orange-2);font-style:italic}
 
-  /* ---------- FINDINGS GRID ---------- */
-  .legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:22px;font-family:var(--mono);
-    font-size:12px;color:var(--muted)}
-  .legend span{display:inline-flex;align-items:center;gap:7px}
-  .legend i{width:10px;height:10px;border-radius:2px;display:inline-block}
-  .i-risk{background:var(--risk)} .i-over{background:var(--over)} .i-cash{background:var(--cash)}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
 
-  .leaks{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  .leak{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 20px 18px;
-    cursor:pointer;transition:transform .16s ease,box-shadow .16s ease,border-color .16s;position:relative;text-align:left;
-    font:inherit;color:inherit;width:100%}
-  .leak:hover{transform:translateY(-2px);box-shadow:0 10px 30px -16px rgba(11,34,54,.4);border-color:var(--teal)}
-  .leak:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
-  .leak .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
-  .leak .name{font-weight:600;font-size:16.5px;letter-spacing:-.01em}
-  .leak .cls{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
-    padding:3px 8px;border-radius:4px;white-space:nowrap;color:#fff}
-  .cls.revenue_at_risk{background:var(--risk)} .cls.overstated_revenue{background:var(--over)}
-  .cls.potentially_recoverable_cash{background:var(--cash)}
-  .leak .amt{font-family:var(--serif);font-size:32px;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
-  .leak .amt .c{color:var(--teal-dim);font-size:.55em;vertical-align:.22em;margin-right:.05em}
-  .leak .cnt{font-family:var(--mono);font-size:12px;color:var(--muted-2);margin:7px 0 12px}
-  .leak .blurb{font-size:13.5px;color:var(--muted);line-height:1.5;margin-bottom:14px}
-  .leak .open{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--teal-dim);
-    display:flex;align-items:center;gap:6px}
-  .leak .open .ar{transition:transform .16s}
-  .leak:hover .open .ar{transform:translateX(3px)}
-  .leak .bar{position:absolute;left:0;bottom:0;height:3px;border-radius:0 0 0 10px;background:var(--teal);opacity:.5}
+  /* thesis chain */
+  .chain{display:flex;flex-wrap:wrap;gap:8px;margin-top:38px;align-items:center}
+  .chain .step{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--mist);border:1px solid var(--line);border-radius:7px;padding:9px 14px;background:rgba(140,160,210,.04)}
+  .chain .arr{color:var(--orange);font-size:13px;opacity:.7}
 
-  /* ---------- DRAWER (drill-down) ---------- */
-  .scrim{position:fixed;inset:0;background:rgba(10,23,34,.55);opacity:0;pointer-events:none;
-    transition:opacity .22s;z-index:40;backdrop-filter:blur(2px)}
-  .scrim.on{opacity:1;pointer-events:auto}
-  .drawer{position:fixed;top:0;right:0;height:100%;width:min(680px,94vw);background:var(--paper);
-    box-shadow:-30px 0 60px -30px rgba(0,0,0,.5);transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.1,1);
-    z-index:50;display:flex;flex-direction:column}
-  .drawer.on{transform:translateX(0)}
-  .dr-head{background:var(--navy);color:var(--paper);padding:24px 26px}
-  .dr-head .cls{font-family:var(--mono);font-size:10px;letter-spacing:.05em;text-transform:uppercase;
-    padding:3px 8px;border-radius:4px;color:#fff;display:inline-block;margin-bottom:12px}
-  .dr-head h3{font-family:var(--serif);font-weight:400;font-size:25px;margin-bottom:6px}
-  .dr-head .meta{font-family:var(--mono);font-size:12.5px;color:#9fb0bc}
-  .dr-head .meta b{color:var(--gold)}
-  .dr-head .blurb{color:#c4d2dd;font-size:14px;margin-top:14px;max-width:60ch;line-height:1.55}
-  .dr-close{position:absolute;top:20px;right:22px;background:rgba(255,255,255,.1);border:none;color:#fff;
-    width:32px;height:32px;border-radius:7px;cursor:pointer;font-size:18px;line-height:1}
-  .dr-close:hover{background:rgba(255,255,255,.2)}
-  .dr-body{flex:1;overflow:auto;padding:8px 0 40px}
-  table{width:100%;border-collapse:collapse;font-size:13px}
-  thead th{position:sticky;top:0;background:var(--paper-2);font-family:var(--mono);font-weight:600;
-    font-size:11px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);text-align:left;
-    padding:11px 14px;border-bottom:1px solid var(--line)}
-  thead th.num{text-align:right}
-  tbody td{padding:10px 14px;border-bottom:1px solid var(--paper-2);font-variant-numeric:tabular-nums}
-  tbody td.num{text-align:right;font-family:var(--mono);font-size:12.5px}
-  tbody td.mono{font-family:var(--mono);font-size:12px;color:var(--muted)}
-  tbody td.impact{font-family:var(--mono);font-weight:600;color:var(--navy)}
-  tbody td.reason{font-family:var(--mono);font-size:11px;color:var(--muted-2)}
-  tbody tr:hover{background:#fff}
-  .dr-foot{padding:14px 26px;border-top:1px solid var(--line);font-family:var(--mono);
-    font-size:11.5px;color:var(--muted-2);background:var(--paper-2)}
+  /* product */
+  .pcard{display:grid;grid-template-columns:1.15fr .85fr;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(140,160,210,.05),rgba(140,160,210,.015))}
+  .pcard .left{padding:40px 38px}
+  .pcard .tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-2);margin-bottom:15px}
+  .pcard h3{font-family:var(--serif);font-weight:400;font-size:32px;margin-bottom:15px;color:#fff}
+  .pcard p{font-size:15px;color:var(--mist);line-height:1.65;margin-bottom:28px;max-width:46ch}
+  .pcard .right{border-left:1px solid var(--line);padding:34px 32px;display:flex;flex-direction:column;justify-content:center;background:rgba(4,6,15,.4)}
+  .stat{padding:15px 0;border-bottom:1px solid var(--line-2)}
+  .stat:last-child{border-bottom:none}
+  .stat .v{font-family:var(--serif);font-size:32px;line-height:1;color:var(--orange-2);font-variant-numeric:tabular-nums;text-shadow:0 0 30px rgba(240,133,46,.35)}
+  .stat .v .c{color:var(--blue-soft);font-size:.5em;vertical-align:.3em;margin-right:.06em;text-shadow:none}
+  .stat .v.blue{color:var(--blue-soft);text-shadow:0 0 30px rgba(58,114,212,.4)}
+  .stat .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+  @media(max-width:720px){.pcard{grid-template-columns:1fr}.pcard .right{border-left:none;border-top:1px solid var(--line)}}
 
-  /* ---------- METHOD ---------- */
-  .method{background:var(--navy-2);color:var(--paper)}
-  .method .sec-num{color:var(--gold)}
-  .method .sec-sub{color:#b9c7d2}
-  .method h2{color:#fff}
-  .mgrid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
-  .steps{display:flex;flex-direction:column;gap:0}
-  .step{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:18px 0;border-top:1px solid rgba(255,255,255,.12)}
-  .step:first-child{border-top:none}
-  .step .k{font-family:var(--mono);font-size:12px;color:var(--gold);padding-top:3px}
-  .step .h{font-weight:600;font-size:15.5px;margin-bottom:5px;color:#fff}
-  .step .p{font-size:14px;color:#b9c7d2;line-height:1.55}
-  .step .p code{font-family:var(--mono);font-size:12.5px;background:rgba(26,160,173,.16);
-    color:#7fd6df;padding:1px 6px;border-radius:4px}
+  /* roadmap */
+  .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+  .ritem{border:1px solid var(--line);border-radius:12px;padding:22px 20px;background:rgba(140,160,210,.03)}
+  .ritem .st{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:14px}
+  .ritem.live .st{background:linear-gradient(135deg,var(--orange),var(--ember));color:#1a0f04;font-weight:600}
+  .ritem.next{border-style:dashed;background:transparent}
+  .ritem.next .st{color:var(--blue-soft);border:1px solid var(--line)}
+  .ritem h4{font-size:15.5px;font-weight:600;margin-bottom:7px;letter-spacing:-.01em;color:var(--paper)}
+  .ritem p{font-size:13px;color:var(--faint);line-height:1.5}
+  @media(max-width:760px){.rgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:440px){.rgrid{grid-template-columns:1fr}}
 
-  /* calibration proof card */
-  .proof{background:var(--navy);border:1px solid rgba(212,162,60,.3);border-radius:12px;padding:26px;position:sticky;top:24px}
-  .proof .t{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:6px}
-  .proof .claim{font-family:var(--serif);font-size:18px;line-height:1.4;color:#fff;margin-bottom:22px}
-  .proof .nums{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.12);border-radius:9px;overflow:hidden;margin-bottom:18px}
-  .proof .cell{background:var(--navy);padding:16px 14px;text-align:center}
-  .proof .cell .v{font-family:var(--serif);font-size:30px;color:var(--teal);line-height:1}
-  .proof .cell .v.gold{color:var(--gold)}
-  .proof .cell .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--muted-2);margin-top:7px}
-  .proof .note{font-size:13px;color:#b9c7d2;line-height:1.55}
-  .proof .note b{color:#fff}
+  /* founder */
+  .founder .inner{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start;max-width:820px}
+  .mono-badge{width:86px;height:86px;border-radius:15px;background:linear-gradient(160deg,var(--deep),var(--void));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none}
+  .mono-badge span{font-family:var(--serif);font-size:36px;color:var(--orange-2);text-shadow:0 0 24px rgba(240,133,46,.4)}
+  .founder h3{font-size:20px;font-weight:600;margin-bottom:4px;letter-spacing:-.01em}
+  .founder .role{font-family:var(--mono);font-size:12.5px;color:var(--orange-2);margin-bottom:18px}
+  .founder p{font-size:15.5px;color:var(--mist);line-height:1.68;max-width:60ch;margin-bottom:16px}
+  .founder .creds{display:flex;flex-wrap:wrap;gap:8px}
+  .founder .creds span{font-family:var(--mono);font-size:11.5px;color:var(--mist);border:1px solid var(--line);border-radius:7px;padding:7px 13px;background:rgba(140,160,210,.04)}
+  @media(max-width:560px){.founder .inner{grid-template-columns:1fr}}
 
-  /* ---------- FOOTER ---------- */
-  .foot{background:var(--ink);color:#9fb0bc;padding:46px 0;font-size:14px}
-  .foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px;align-items:center}
-  .foot .who{font-family:var(--serif);font-size:18px;color:var(--paper)}
-  .foot .who span{color:var(--gold)}
-  .foot .links{display:flex;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:13px}
-  .foot .links a{border:1px solid rgba(255,255,255,.16);border-radius:7px;padding:9px 15px;
-    text-decoration:none;transition:border-color .15s,color .15s}
-  .foot .links a:hover{border-color:var(--teal);color:#fff}
-  .foot .tag{width:100%;font-family:var(--mono);font-size:12px;color:#5d6b76;border-top:1px solid rgba(255,255,255,.08);
-    padding-top:22px;margin-top:8px}
+  /* footer */
+  .foot{border-top:1px solid var(--line);padding:64px 0 44px;background:linear-gradient(180deg,transparent,rgba(4,6,15,.6))}
+  .foot h2{margin-bottom:26px}
+  .foot .contact{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:52px}
+  .foot a.cbtn{font-family:var(--mono);font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:13px 19px;transition:border-color .16s,color .16s,transform .16s;color:var(--mist)}
+  .foot a.cbtn:hover{border-color:var(--blue-soft);color:#fff;transform:translateY(-2px)}
+  .foot a.cbtn.gold{background:linear-gradient(135deg,var(--orange),var(--ember));color:#1a0f04;border-color:transparent;font-weight:600}
+  .foot .base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center;border-top:1px solid var(--line-2);padding-top:30px;font-family:var(--mono);font-size:12px;color:var(--faint)}
 
-  @media(max-width:720px){
-    .leaks{grid-template-columns:1fr}
-    .mgrid{grid-template-columns:1fr;gap:28px}
-    .proof{position:static}
-    .ledger .side{grid-column:1;grid-row:auto;text-align:left;padding-top:14px}
-    .ledger{grid-template-columns:1fr}
-  }
-  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto}}
+  .reveal{opacity:0;transform:translateY(16px)}
+  .reveal.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}.eyebrow,h1 .ln,.sub,.cta-row,.rift{opacity:1!important}}
 </style>
 </head>
 <body>
+<canvas id="sky"></canvas>
+<div class="page">
 
-<header class="hero">
-  <div class="wrap">
-    <div class="eyebrow">Flow Audit v2 &nbsp;·&nbsp; <b>B2B SaaS revenue reconciliation</b></div>
-    <h1>The money was never lost. It <em>leaked</em> at the seams between systems.</h1>
-    <p class="lede">What was sold, what was contracted, what was billed, what was paid out — four systems that should agree and quietly don't. Flow Audit reconciles them and prices every gap. Here is one run against a 500-account synthetic book.</p>
+<div class="bar"><div class="wrap">
+  <div class="brand">
+    <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="16" cy="16" r="13.2" stroke="#6f9be0" stroke-width="1.1" opacity=".85"/>
+      <circle cx="16" cy="16" r="8.6" stroke="#6f9be0" stroke-width=".9" opacity=".5"/>
+      <g stroke="#6f9be0" stroke-width="1" opacity=".7">
+        <line x1="16" y1="2.8" x2="16" y2="6"/><line x1="16" y1="26" x2="16" y2="29.2"/>
+        <line x1="2.8" y1="16" x2="6" y2="16"/><line x1="26" y1="16" x2="29.2" y2="16"/>
+      </g>
+      <line x1="7.2" y1="24.8" x2="24.8" y2="7.2" stroke="#f0852e" stroke-width="1.3"/>
+      <circle cx="16" cy="16" r="2.4" fill="#ffb869"/>
+    </svg>
+    SPATIUM&nbsp;FLOW
+  </div>
+  <nav>
+    <a href="#thesis">Thesis</a>
+    <a href="flow-audit/">Product</a>
+    <a href="articles/">Articles</a>
+    <a href="about/">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</div></div>
 
-    <div class="flow" aria-hidden="true">
-      <span class="node">CRM</span><span class="seam"></span>
-      <span class="node">Contracts</span><span class="seam"></span>
-      <span class="node">Invoices</span><span class="seam"></span>
-      <span class="node">Commissions</span>
+<header class="hero"><div class="astro-hero" aria-hidden="true">
+<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="ah-halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f0852e" stop-opacity=".26"/><stop offset="55%" stop-color="#f0852e" stop-opacity=".05"/><stop offset="100%" stop-color="#f0852e" stop-opacity="0"/></radialGradient>
+    <radialGradient id="ah-core" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff4e2"/><stop offset="40%" stop-color="#ffb869" stop-opacity=".9"/><stop offset="100%" stop-color="#f0852e" stop-opacity="0"/></radialGradient>
+  </defs>
+  <circle cx="200" cy="200" r="185" fill="url(#ah-halo)"/>
+  <g stroke="#f0852e" stroke-width="1" opacity=".2">
+    <line x1="200" y1="200" x2="200" y2="18"/><line x1="200" y1="200" x2="200" y2="382"/><line x1="200" y1="200" x2="18" y2="200"/><line x1="200" y1="200" x2="382" y2="200"/>
+    <line x1="200" y1="200" x2="71" y2="71"/><line x1="200" y1="200" x2="329" y2="71"/><line x1="200" y1="200" x2="71" y2="329"/><line x1="200" y1="200" x2="329" y2="329"/>
+  </g>
+  <g class="spin">
+    <circle cx="200" cy="200" r="160" stroke="#6f9be0" stroke-width="1.3" opacity=".75"/>
+    <circle cx="200" cy="200" r="150" stroke="#6f9be0" stroke-width="7" stroke-dasharray="1.2 9.2" opacity=".32"/>
+    <circle cx="200" cy="200" r="120" stroke="#6f9be0" stroke-width="1" opacity=".5"/>
+    <circle cx="200" cy="200" r="92" stroke="#6f9be0" stroke-width="1" opacity=".4" stroke-dasharray="4 6"/>
+    <g stroke="#6f9be0" stroke-width="1" opacity=".45"><line x1="200" y1="40" x2="200" y2="360"/><line x1="40" y1="200" x2="360" y2="200"/></g>
+    <g fill="#ffb869"><circle cx="200" cy="70" r="2.6"/><circle cx="286" cy="150" r="2.2"/><circle cx="250" cy="290" r="2.4"/><circle cx="120" cy="250" r="2"/><circle cx="135" cy="120" r="2.2"/></g>
+    <g stroke="#f0852e" stroke-width="1" opacity=".5" fill="none"><path d="M200 70 Q255 130 286 150"/><path d="M286 150 Q270 240 250 290"/><path d="M135 120 Q110 190 120 250"/></g>
+  </g>
+  <line x1="70" y1="330" x2="330" y2="70" stroke="#f0852e" stroke-width="2.2" opacity=".9"/>
+  <circle cx="330" cy="70" r="3" fill="#ffb869"/><circle cx="70" cy="330" r="3" fill="#ffb869"/>
+  <circle cx="200" cy="200" r="46" fill="url(#ah-core)"/>
+  <circle cx="200" cy="200" r="5.5" fill="#fff4e2"/>
+</svg>
+</div><div class="wrap">
+  <div class="eyebrow">Operational analytics for the value chain</div>
+  <h1><span class="ln">Value moves through systems.</span><span class="ln">It <em>leaks</em> in the spaces between.</span></h1>
+  <p class="sub">Every business runs on a chain of systems — from first touch to cash collected. In the gaps between them, where no single system is watching, value quietly escapes. Spatium Flow builds the analytics that make those gaps visible, measurable, and recoverable.</p>
+  <div class="cta-row">
+    <a class="btn btn-primary" href="flow-audit/">See Flow Audit running <span class="ar">→</span></a>
+    <a class="btn btn-ghost" href="#thesis">How it works</a>
+  </div>
+
+  <div class="rift">
+    <div class="cap">spatium &nbsp;·&nbsp; <b>latin: the space between</b></div>
+    <div class="iv">
+      <div class="sys"><div class="n">System A</div><div class="d">What one source records as true</div></div>
+      <div class="gap">
+        <div class="gaplabel">value leaks here</div>
+        <svg viewBox="0 0 150 96" preserveAspectRatio="none" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible">
+          <defs>
+            <linearGradient id="flow" x1="0" y1="0" x2="150" y2="0">
+              <stop offset="0" stop-color="#3a72d4"/><stop offset=".5" stop-color="#f0852e"/><stop offset="1" stop-color="#3a72d4"/>
+            </linearGradient>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0" stop-color="#ffb869" stop-opacity=".9"/><stop offset="1" stop-color="#f0852e" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <ellipse cx="75" cy="48" rx="30" ry="18" fill="url(#glow)"/>
+          <line x1="0" y1="48" x2="150" y2="48" stroke="url(#flow)" stroke-width="2"/>
+          <path d="M72 48 q5 16 -3 27" stroke="#f0852e" stroke-width="1.6" fill="none" opacity=".9"/>
+          <path d="M80 48 q6 13 2 24" stroke="#ffb869" stroke-width="1.2" fill="none" opacity=".6"/>
+          <circle cx="75" cy="48" r="3" fill="#ffb869"/>
+        </svg>
+      </div>
+      <div class="sys"><div class="n">System B</div><div class="d">What the next source records as true</div></div>
     </div>
+  </div>
+</div></header>
 
-    <div class="ledger">
-      <div class="big"><span class="cur">€</span>4,619,320</div>
-      <div class="lab">Total leakage &amp; revenue-at-risk detected</div>
-      <div class="side">
-        <div class="n">267</div>
-        <div class="t">discrete findings</div>
+<section id="thesis"><div class="wrap reveal">
+  <div class="lab">The thesis</div>
+  <h2>No single system owns the gap. So no one measures it.</h2>
+  <p class="body-lg">A deal closes in the CRM, a contract is signed, invoices go out, commission is paid. Four systems that should agree — and quietly don't. The same is true across the chain: <strong>marketing to sales, sales to billing, billing to delivery.</strong> Each system is correct on its own terms, yet value slips through the seams between them. Spatium Flow reconciles the systems against each other, finds the unexplained variance, and prices it. One discipline: <strong>find the obstruction in the value flow, and remove it.</strong></p>
+  <div class="chain">
+    <span class="step">Marketing</span><span class="arr">→</span>
+    <span class="step">Sales / CRM</span><span class="arr">→</span>
+    <span class="step">Contracts</span><span class="arr">→</span>
+    <span class="step">Billing</span><span class="arr">→</span>
+    <span class="step">Commissions</span><span class="arr">→</span>
+    <span class="step">Delivery</span>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="product"><div class="wrap">
+  <div class="lab reveal">Product 01 — live</div>
+  <div class="pcard reveal">
+    <div class="left">
+      <div class="tag">Revenue operations</div>
+      <h3>Flow Audit</h3>
+      <p>Our first product finds where B2B SaaS revenue leaks between CRM, contracts, billing, and commissions — silent churn, duplicate revenue, commission overpayment, under-billing, and more — and prices every gap. Built as a tested, documented data pipeline, with detection proven exact against a ground-truth ledger.</p>
+      <a class="btn btn-primary" href="flow-audit/">Explore the live diagnostic <span class="ar">→</span></a>
+    </div>
+    <div class="right">
+      <div class="stat"><div class="v"><span class="c">€</span>4,619,320</div><div class="l">Leakage detected · demo run</div></div>
+      <div class="stat"><div class="v blue">100% / 100%</div><div class="l">Precision &amp; recall, calibrated</div></div>
+      <div class="stat"><div class="v">21 · 52</div><div class="l">dbt models · passing tests</div></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="roadmap"><div class="wrap reveal">
+  <div class="lab">The roadmap</div>
+  <h2>One method, applied wherever value flows.</h2>
+  <p class="body-lg">Flow Audit is the first product, not the last. The same method — reconcile the systems, find the gap, price it — extends across the value chain. Built today; the rest is where Spatium Flow is going.</p>
+  <div class="rgrid">
+    <div class="ritem live"><span class="st">Live</span><h4>Revenue reconciliation</h4><p>Flow Audit — CRM, contracts, billing, commissions.</p></div>
+    <div class="ritem next"><span class="st">Next</span><h4>Pipeline integrity</h4><p>Where forecast diverges from the deals that actually move.</p></div>
+    <div class="ritem next"><span class="st">Next</span><h4>Marketing attribution</h4><p>Where spend disconnects from sourced, traceable revenue.</p></div>
+    <div class="ritem next"><span class="st">Next</span><h4>Fulfilment &amp; delivery</h4><p>Where what was sold drifts from what was delivered.</p></div>
+  </div>
+</div></section>
+
+<div class="wrap"><div class="divider"></div></div>
+
+<section id="founder"><div class="wrap reveal">
+  <div class="lab">The founder</div>
+  <div class="inner">
+    <div class="mono-badge"><span>A</span></div>
+    <div>
+      <h3>Aryan Mohammaddoost</h3>
+      <div class="role">Founder &amp; analytics engineer</div>
+      <p>Spatium Flow is founded by an analytics engineer who spent eight years inside the commercial value chain — customer operations, CRM, SEO, and full commercial builds — before engineering the data layer that measures it. Flow Audit is the distillation of that path: a conviction that revenue isn't lost, it leaks, and that the leak can be found and proven.</p>
+      <div class="creds">
+        <span>SQL · dbt · Python</span>
+        <span>Power BI · DuckDB · BigQuery</span>
+        <span>HubSpot RevOps certified</span>
+        <span>B.Sc. Industrial Engineering</span>
       </div>
     </div>
-
-    <div class="hero-foot">
-      <span class="pill"><span class="dot"></span>21 dbt models</span>
-      <span class="pill"><span class="dot"></span>52 data tests</span>
-      <span class="pill gold"><span class="dot"></span>100% precision &amp; recall</span>
-      <span class="pill">DuckDB · BigQuery-portable</span>
-    </div>
   </div>
-</header>
+</div></section>
 
-<section>
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">01</span><h2>What leaked</h2></div>
-    <p class="sec-sub">Six leak types, each with a euro figure, a count, and an impact class a non-technical manager can act on. Click any card to inspect the actual flagged records.</p>
-    <div class="legend">
-      <span><i class="i-risk"></i>Revenue at risk — forecast that may not convert</span>
-      <span><i class="i-over"></i>Overstated revenue — books count money that isn't real</span>
-      <span><i class="i-cash"></i>Recoverable cash — money owed or paid in error</span>
-    </div>
-    <div class="leaks" id="leaks"></div>
+<footer class="foot" id="contact"><div class="wrap reveal">
+  <div class="lab">Get in touch</div>
+  <h2>Where does value leak in your chain?</h2>
+  <div class="contact">
+    <a class="cbtn gold" href="mailto:aryan.m.mohammad@gmail.com">aryan.m.mohammad@gmail.com</a>
+    <a class="cbtn" href="https://www.linkedin.com/in/aryan-mohammaddoost-990b6631a" target="_blank" rel="noopener">LinkedIn →</a>
+    <a class="cbtn" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">GitHub →</a>
+    <a class="cbtn" href="https://t.me/Ryanmhd98" target="_blank" rel="noopener">Telegram →</a>
   </div>
-</section>
-
-<section class="method">
-  <div class="wrap">
-    <div class="sec-head"><span class="sec-num">02</span><h2>How it finds them</h2></div>
-    <p class="sec-sub">Detection isn't pattern-guessing. Each leak type is a precise reconciliation between two sources of truth, netting out anything finance legitimately approved.</p>
-    <div class="mgrid">
-      <div class="steps">
-        <div class="step"><div class="k">01</div><div><div class="h">Land &amp; stage the four systems</div><div class="p">CRM opportunities, contracts, invoices, and commission ledgers are staged into typed, tested models — one clean grain per source.</div></div></div>
-        <div class="step"><div class="k">02</div><div><div class="h">Reconcile expected vs. actual</div><div class="p">Intermediate models compute what <em>should</em> have happened — expected billing from contract terms, expected commission from plan rate — then compare against what did.</div></div></div>
-        <div class="step"><div class="k">03</div><div><div class="h">Net out approved exceptions</div><div class="p">Finance-approved credits, spiffs and accelerators look exactly like leaks. Detection consults the approval registers; leakage is defined as <code>unexplained variance only</code>.</div></div></div>
-        <div class="step"><div class="k">04</div><div><div class="h">Price it &amp; classify it</div><div class="p">Every finding carries a euro impact, a <code>reason_code</code>, and an impact class — overstated revenue, revenue at risk, or recoverable cash.</div></div></div>
-        <div class="step"><div class="k">05</div><div><div class="h">Audit the audit</div><div class="p">A calibration model joins findings against a ground-truth ledger and computes precision and recall per leak type — so the claim is falsifiable, not asserted.</div></div></div>
-      </div>
-
-      <aside class="proof">
-        <div class="t">The audit, audited</div>
-        <div class="claim">A mixed field of 267 planted leaks and 37 legitimate exceptions. Detection had to tell them apart.</div>
-        <div class="nums">
-          <div class="cell"><div class="v gold">100%</div><div class="l">Precision</div></div>
-          <div class="cell"><div class="v gold">100%</div><div class="l">Recall</div></div>
-          <div class="cell"><div class="v">0</div><div class="l">False positives</div></div>
-          <div class="cell"><div class="v">0</div><div class="l">False negatives</div></div>
-        </div>
-        <div class="note">Every planted leak caught; every approved exception correctly ignored. <b>Zero false alarms, zero misses</b> across all six types — proven by <code style="font-family:var(--mono);font-size:12px;color:#7fd6df">fct_audit_calibration</code>, not by my say-so.</div>
-      </aside>
-    </div>
+  <div class="base">
+    <span>© 2026 Spatium Flow</span>
+    <span>Growth comes from removing obstruction in the value flow.</span>
   </div>
-</section>
+</div></footer>
 
-<footer class="foot">
-  <div class="wrap">
-    <div class="who">Flow Audit v2 &nbsp;·&nbsp; built by <span>Aryan Mohammaddoost</span></div>
-    <div class="links">
-      <a href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">View the source →</a>
-      <a href="https://www.linkedin.com/in/aryan-mohammaddoost-990b6631a" target="_blank" rel="noopener">LinkedIn →</a>
-    </div>
-    <div class="tag">Analytics engineering · SQL · dbt · revenue systems &nbsp;—&nbsp; growth comes from removing obstruction in the value flow.</div>
-  </div>
-</footer>
-
-<div class="scrim" id="scrim"></div>
-<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Leak detail">
-  <div class="dr-head">
-    <button class="dr-close" id="drClose" aria-label="Close">×</button>
-    <span class="cls" id="drCls"></span>
-    <h3 id="drTitle"></h3>
-    <div class="meta"><b id="drAmt"></b> &nbsp;·&nbsp; <span id="drCnt"></span></div>
-    <div class="blurb" id="drBlurb"></div>
-  </div>
-  <div class="dr-body"><table><thead id="drThead"></thead><tbody id="drTbody"></tbody></table></div>
-  <div class="dr-foot" id="drFoot"></div>
-</aside>
+</div>
 
 <script>
-const D = {"meta": {"attribution_gap": {"label": "Attribution gaps", "blurb": "Closed-won deals whose lead source is missing or points to a lead that doesn't exist \u2014 revenue you can't trace back to a channel, so you can't know what to fund.", "cls": "revenue_at_risk"}, "silent_churn": {"label": "Silent churn", "blurb": "Contracts still marked Active and inside term, but billing stopped 90+ days ago. Phantom ARR \u2014 revenue the business still counts that has quietly stopped arriving.", "cls": "overstated_revenue"}, "stalled_deal": {"label": "Stalled deals", "blurb": "Open opportunities sitting in one stage far longer than the healthy threshold. Pipeline that looks alive on the forecast but has gone cold.", "cls": "revenue_at_risk"}, "duplicate_revenue": {"label": "Duplicate revenue", "blurb": "Invoices double-counting the same contract, period, and amount. Revenue booked twice \u2014 the books overstate what was actually billed.", "cls": "overstated_revenue"}, "under_billing": {"label": "Under-billing", "blurb": "Contracts where what was invoiced falls short of what the contract entitles, after netting approved credits. Earned revenue left uncollected.", "cls": "potentially_recoverable_cash"}, "commission_overpayment": {"label": "Commission overpayment", "blurb": "Commissions paid above the rep's plan rate with no approving adjustment on record. Cash out the door that the comp plan never authorized.", "cls": "potentially_recoverable_cash"}}, "classLabel": {"revenue_at_risk": "Revenue at risk", "overstated_revenue": "Overstated revenue", "potentially_recoverable_cash": "Recoverable cash"}, "cols": {"commission_overpayment": [["commission_id", "Commission"], ["rep_id", "Rep"], ["commission_paid", "Paid \u20ac"], ["commission_expected", "Plan \u20ac"], ["euro_impact", "Overpaid \u20ac"], ["reason_code", "Reason"]], "under_billing": [["contract_id", "Contract"], ["account_id", "Account"], ["amount_expected", "Owed \u20ac"], ["amount_billed", "Billed \u20ac"], ["euro_impact", "Shortfall \u20ac"], ["reason_code", "Reason"]], "silent_churn": [["contract_id", "Contract"], ["account_id", "Account"], ["status", "Status"], ["last_invoice_month", "Last invoice"], ["euro_impact", "Phantom ARR \u20ac"], ["reason_code", "Reason"]], "duplicate_revenue": [["invoice_id", "Invoice"], ["contract_id", "Contract"], ["account_id", "Account"], ["period_month", "Period"], ["euro_impact", "Double-counted \u20ac"], ["reason_code", "Reason"]], "attribution_gap": [["opportunity_id", "Opportunity"], ["account_id", "Account"], ["rep_id", "Rep"], ["euro_impact", "Untraced \u20ac"], ["reason_code", "Reason"]], "stalled_deal": [["opportunity_id", "Opportunity"], ["account_id", "Account"], ["rep_id", "Rep"], ["stage", "Stage"], ["days_in_stage", "Days stuck"], ["euro_impact", "At risk \u20ac"], ["reason_code", "Reason"]]}, "summary": [{"leak_type": "attribution_gap", "impact_class": "revenue_at_risk", "leak_count": 48, "euro_impact": 2172510.0}, {"leak_type": "silent_churn", "impact_class": "overstated_revenue", "leak_count": 18, "euro_impact": 904381.7}, {"leak_type": "stalled_deal", "impact_class": "revenue_at_risk", "leak_count": 22, "euro_impact": 874685.0}, {"leak_type": "duplicate_revenue", "impact_class": "overstated_revenue", "leak_count": 137, "euro_impact": 515568.73}, {"leak_type": "under_billing", "impact_class": "potentially_recoverable_cash", "leak_count": 24, "euro_impact": 116007.94}, {"leak_type": "commission_overpayment", "impact_class": "potentially_recoverable_cash", "leak_count": 18, "euro_impact": 36166.44}], "calibration": [{"leak_type": "attribution_gap", "planted": 48, "detected": 48, "true_positives": 48, "false_positives": 0, "false_negatives": 0, "precision_rate": 1.0, "recall_rate": 1.0}, {"leak_type": "commission_overpayment", "planted": 18, "detected": 18, "true_positives": 18, "false_positives": 0, "false_negatives": 0, "precision_rate": 1.0, "recall_rate": 1.0}, {"leak_type": "duplicate_revenue", "planted": 137, "detected": 137, "true_positives": 137, "false_positives": 0, "false_negatives": 0, "precision_rate": 1.0, "recall_rate": 1.0}, {"leak_type": "silent_churn", "planted": 18, "detected": 18, "true_positives": 18, "false_positives": 0, "false_negatives": 0, "precision_rate": 1.0, "recall_rate": 1.0}, {"leak_type": "stalled_deal", "planted": 22, "detected": 22, "true_positives": 22, "false_positives": 0, "false_negatives": 0, "precision_rate": 1.0, "recall_rate": 1.0}, {"leak_type": "under_billing", "planted": 24, "detected": 24, "true_positives": 24, "false_positives": 0, "false_negatives": 0, "precision_rate": 1.0, "recall_rate": 1.0}], "records": {"commission_overpayment": [{"commission_id": "CM00425", "rep_id": "R004", "commission_paid": 16979.0, "commission_expected": 11123.52, "euro_impact": 5855.48, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00469", "rep_id": "R009", "commission_paid": 13021.05, "commission_expected": 7305.6, "euro_impact": 5715.45, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00414", "rep_id": "R005", "commission_paid": 12095.61, "commission_expected": 7761.0, "euro_impact": 4334.61, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00463", "rep_id": "R013", "commission_paid": 10744.72, "commission_expected": 6893.1, "euro_impact": 3851.62, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00406", "rep_id": "R008", "commission_paid": 8935.47, "commission_expected": 5483.36, "euro_impact": 3452.11, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00053", "rep_id": "R003", "commission_paid": 11518.54, "commission_expected": 8637.36, "euro_impact": 2881.18, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00263", "rep_id": "R008", "commission_paid": 8735.24, "commission_expected": 6568.32, "euro_impact": 2166.92, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00218", "rep_id": "R005", "commission_paid": 3262.88, "commission_expected": 1914.2, "euro_impact": 1348.68, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00135", "rep_id": "R009", "commission_paid": 4764.8, "commission_expected": 3444.1, "euro_impact": 1320.7, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00385", "rep_id": "R010", "commission_paid": 2096.26, "commission_expected": 1203.96, "euro_impact": 892.3, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00360", "rep_id": "R004", "commission_paid": 2254.08, "commission_expected": 1404.88, "euro_impact": 849.2, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00283", "rep_id": "R013", "commission_paid": 2171.63, "commission_expected": 1377.3, "euro_impact": 794.33, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00479", "rep_id": "R017", "commission_paid": 1551.63, "commission_expected": 880.48, "euro_impact": 671.15, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00398", "rep_id": "R005", "commission_paid": 1565.24, "commission_expected": 909.2, "euro_impact": 656.04, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00085", "rep_id": "R003", "commission_paid": 2086.39, "commission_expected": 1552.88, "euro_impact": 533.51, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00240", "rep_id": "R010", "commission_paid": 1250.35, "commission_expected": 957.72, "euro_impact": 292.63, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00426", "rep_id": "R010", "commission_paid": 1161.08, "commission_expected": 881.76, "euro_impact": 279.32, "reason_code": "paid_above_plan_rate_unapproved"}, {"commission_id": "CM00556", "rep_id": "R014", "commission_paid": 828.81, "commission_expected": 557.6, "euro_impact": 271.21, "reason_code": "paid_above_plan_rate_unapproved"}], "under_billing": [{"contract_id": "C0554", "account_id": "A0078", "amount_expected": 174608.0, "amount_billed": 152782.0, "euro_impact": 21826.0, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0036", "account_id": "A0089", "amount_expected": 240727.5, "amount_billed": 222210.0, "euro_impact": 18517.5, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0293", "account_id": "A0389", "amount_expected": 156090.0, "amount_billed": 141900.0, "euro_impact": 14190.0, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0376", "account_id": "A0027", "amount_expected": 113592.75, "amount_billed": 100971.36, "euro_impact": 12621.39, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0357", "account_id": "A0160", "amount_expected": 70895.42, "amount_billed": 60767.52, "euro_impact": 10127.9, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0564", "account_id": "A0239", "amount_expected": 66019.33, "amount_billed": 57766.939999999995, "euro_impact": 8252.39, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0506", "account_id": "A0221", "amount_expected": 56580.75, "amount_billed": 50294.0, "euro_impact": 6286.75, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0511", "account_id": "A0493", "amount_expected": 49349.08, "amount_billed": 45552.960000000014, "euro_impact": 3796.12, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0323", "account_id": "A0231", "amount_expected": 11206.4, "amount_billed": 8404.8, "euro_impact": 2801.6, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0211", "account_id": "A0131", "amount_expected": 40907.0, "amount_billed": 38754.0, "euro_impact": 2153.0, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0008", "account_id": "A0332", "amount_expected": 11124.75, "amount_billed": 9270.599999999999, "euro_impact": 1854.15, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0257", "account_id": "A0352", "amount_expected": 13993.6, "amount_billed": 12244.400000000001, "euro_impact": 1749.2, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0491", "account_id": "A0161", "amount_expected": 7008.75, "amount_billed": 5607.0, "euro_impact": 1401.75, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0663", "account_id": "A0457", "amount_expected": 17756.92, "amount_billed": 16391.04, "euro_impact": 1365.88, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0291", "account_id": "A0303", "amount_expected": 17504.5, "amount_billed": 16158.0, "euro_impact": 1346.5, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0260", "account_id": "A0214", "amount_expected": 12021.0, "amount_billed": 10685.36, "euro_impact": 1335.64, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0110", "account_id": "A0364", "amount_expected": 11152.5, "amount_billed": 10037.25, "euro_impact": 1115.25, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0107", "account_id": "A0055", "amount_expected": 6242.5, "amount_billed": 5202.1, "euro_impact": 1040.4, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0193", "account_id": "A0296", "amount_expected": 12121.42, "amount_billed": 11189.039999999999, "euro_impact": 932.38, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0189", "account_id": "A0085", "amount_expected": 8219.25, "amount_billed": 7306.0, "euro_impact": 913.25, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0145", "account_id": "A0381", "amount_expected": 9750.0, "amount_billed": 8937.5, "euro_impact": 812.5, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0699", "account_id": "A0220", "amount_expected": 7550.83, "amount_billed": 6969.96, "euro_impact": 580.87, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0392", "account_id": "A0061", "amount_expected": 4391.33, "amount_billed": 3842.44, "euro_impact": 548.89, "reason_code": "contract_invoice_amount_mismatch"}, {"contract_id": "C0660", "account_id": "A0274", "amount_expected": 5702.67, "amount_billed": 5264.04, "euro_impact": 438.63, "reason_code": "contract_invoice_amount_mismatch"}], "silent_churn": [{"contract_id": "C0715", "account_id": "A0051", "status": "Active", "euro_impact": 231851.0, "last_invoice_month": "2026-02-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0718", "account_id": "A0068", "status": "Active", "euro_impact": 162838.0, "last_invoice_month": "2026-01-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0517", "account_id": "A0253", "status": "Active", "euro_impact": 139044.0, "last_invoice_month": "2026-01-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0594", "account_id": "A0151", "status": "Active", "euro_impact": 67466.0, "last_invoice_month": "2025-12-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0018", "account_id": "A0402", "status": "Active", "euro_impact": 59323.0, "last_invoice_month": "2025-12-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0195", "account_id": "A0493", "status": "Active", "euro_impact": 44755.0, "last_invoice_month": "2025-12-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0643", "account_id": "A0304", "status": "Active", "euro_impact": 33016.0, "last_invoice_month": "2026-01-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0212", "account_id": "A0337", "status": "Active", "euro_impact": 27766.0, "last_invoice_month": "2025-12-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0548", "account_id": "A0218", "status": "Active", "euro_impact": 24775.5, "last_invoice_month": "2026-01-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0086", "account_id": "A0065", "status": "Active", "euro_impact": 23173.2, "last_invoice_month": "2026-01-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0585", "account_id": "A0067", "status": "Active", "euro_impact": 19117.0, "last_invoice_month": "2025-12-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0597", "account_id": "A0203", "status": "Active", "euro_impact": 18917.0, "last_invoice_month": "2026-01-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0176", "account_id": "A0319", "status": "Active", "euro_impact": 10832.0, "last_invoice_month": "2025-12-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0502", "account_id": "A0380", "status": "Active", "euro_impact": 9525.6, "last_invoice_month": "2026-02-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0485", "account_id": "A0308", "status": "Active", "euro_impact": 9092.0, "last_invoice_month": "2026-02-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0422", "account_id": "A0189", "status": "Active", "euro_impact": 8607.0, "last_invoice_month": "2025-12-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0076", "account_id": "A0195", "status": "Active", "euro_impact": 7443.45, "last_invoice_month": "2026-02-01", "reason_code": "active_contract_no_invoice_90d"}, {"contract_id": "C0173", "account_id": "A0069", "status": "Active", "euro_impact": 6839.95, "last_invoice_month": "2026-01-01", "reason_code": "active_contract_no_invoice_90d"}], "duplicate_revenue": [{"invoice_id": "INV007064", "contract_id": "C0542", "account_id": "A0374", "period_month": "2025-08-01", "euro_impact": 24862.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007093", "contract_id": "C0452", "account_id": "A0194", "period_month": "2026-04-01", "euro_impact": 24607.67, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007100", "contract_id": "C0553", "account_id": "A0469", "period_month": "2025-11-01", "euro_impact": 18094.42, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007041", "contract_id": "C0568", "account_id": "A0103", "period_month": "2025-09-01", "euro_impact": 16774.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007036", "contract_id": "C0678", "account_id": "A0374", "period_month": "2026-04-01", "euro_impact": 14600.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007055", "contract_id": "C0368", "account_id": "A0264", "period_month": "2025-09-01", "euro_impact": 14037.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007075", "contract_id": "C0148", "account_id": "A0297", "period_month": "2026-05-01", "euro_impact": 13995.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007016", "contract_id": "C0346", "account_id": "A0006", "period_month": "2025-05-01", "euro_impact": 13419.42, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007070", "contract_id": "C0400", "account_id": "A0292", "period_month": "2025-05-01", "euro_impact": 12413.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007043", "contract_id": "C0083", "account_id": "A0386", "period_month": "2026-04-01", "euro_impact": 12100.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007104", "contract_id": "C0252", "account_id": "A0143", "period_month": "2025-08-01", "euro_impact": 10657.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007020", "contract_id": "C0244", "account_id": "A0021", "period_month": "2025-12-01", "euro_impact": 10015.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006988", "contract_id": "C0244", "account_id": "A0021", "period_month": "2026-04-01", "euro_impact": 10015.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007025", "contract_id": "C0313", "account_id": "A0390", "period_month": "2025-11-01", "euro_impact": 9863.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007079", "contract_id": "C0155", "account_id": "A0475", "period_month": "2025-06-01", "euro_impact": 9565.75, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006984", "contract_id": "C0231", "account_id": "A0305", "period_month": "2025-03-01", "euro_impact": 8892.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007018", "contract_id": "C0340", "account_id": "A0141", "period_month": "2025-04-01", "euro_impact": 8333.17, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007034", "contract_id": "C0564", "account_id": "A0239", "period_month": "2025-11-01", "euro_impact": 8252.42, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007059", "contract_id": "C0393", "account_id": "A0213", "period_month": "2026-05-01", "euro_impact": 7277.67, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007097", "contract_id": "C0309", "account_id": "A0157", "period_month": "2026-01-01", "euro_impact": 6640.75, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007086", "contract_id": "C0298", "account_id": "A0186", "period_month": "2025-08-01", "euro_impact": 6528.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007015", "contract_id": "C0005", "account_id": "A0083", "period_month": "2026-04-01", "euro_impact": 6525.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007096", "contract_id": "C0503", "account_id": "A0354", "period_month": "2026-04-01", "euro_impact": 6467.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007061", "contract_id": "C0185", "account_id": "A0461", "period_month": "2025-06-01", "euro_impact": 6315.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007099", "contract_id": "C0165", "account_id": "A0145", "period_month": "2025-01-01", "euro_impact": 6284.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006980", "contract_id": "C0388", "account_id": "A0028", "period_month": "2025-06-01", "euro_impact": 6198.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007039", "contract_id": "C0570", "account_id": "A0181", "period_month": "2026-03-01", "euro_impact": 6042.75, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006976", "contract_id": "C0533", "account_id": "A0171", "period_month": "2026-03-01", "euro_impact": 6001.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007022", "contract_id": "C0202", "account_id": "A0028", "period_month": "2025-05-01", "euro_impact": 5974.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007108", "contract_id": "C0473", "account_id": "A0488", "period_month": "2025-01-01", "euro_impact": 5929.67, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007082", "contract_id": "C0272", "account_id": "A0377", "period_month": "2026-01-01", "euro_impact": 5707.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007072", "contract_id": "C0359", "account_id": "A0131", "period_month": "2026-01-01", "euro_impact": 5623.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006987", "contract_id": "C0144", "account_id": "A0134", "period_month": "2026-02-01", "euro_impact": 5489.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007000", "contract_id": "C0610", "account_id": "A0499", "period_month": "2025-03-01", "euro_impact": 5443.42, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006991", "contract_id": "C0450", "account_id": "A0111", "period_month": "2025-12-01", "euro_impact": 4990.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007090", "contract_id": "C0017", "account_id": "A0402", "period_month": "2025-06-01", "euro_impact": 4943.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007035", "contract_id": "C0227", "account_id": "A0101", "period_month": "2024-10-01", "euro_impact": 4776.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007101", "contract_id": "C0560", "account_id": "A0140", "period_month": "2026-02-01", "euro_impact": 4710.17, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007049", "contract_id": "C0040", "account_id": "A0080", "period_month": "2026-02-01", "euro_impact": 4632.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007028", "contract_id": "C0504", "account_id": "A0001", "period_month": "2024-09-01", "euro_impact": 4556.33, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007037", "contract_id": "C0504", "account_id": "A0001", "period_month": "2025-05-01", "euro_impact": 4556.33, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007029", "contract_id": "C0662", "account_id": "A0368", "period_month": "2026-01-01", "euro_impact": 4463.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006994", "contract_id": "C0253", "account_id": "A0255", "period_month": "2026-01-01", "euro_impact": 4421.42, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007008", "contract_id": "C0409", "account_id": "A0058", "period_month": "2026-03-01", "euro_impact": 4391.33, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007073", "contract_id": "C0135", "account_id": "A0368", "period_month": "2026-04-01", "euro_impact": 4261.4, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006981", "contract_id": "C0169", "account_id": "A0082", "period_month": "2026-05-01", "euro_impact": 3976.3, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007009", "contract_id": "C0633", "account_id": "A0062", "period_month": "2025-11-01", "euro_impact": 3922.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007063", "contract_id": "C0450", "account_id": "A0111", "period_month": "2026-04-01", "euro_impact": 3808.2, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007002", "contract_id": "C0687", "account_id": "A0058", "period_month": "2025-12-01", "euro_impact": 3756.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007027", "contract_id": "C0463", "account_id": "A0186", "period_month": "2025-03-01", "euro_impact": 3647.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007074", "contract_id": "C0463", "account_id": "A0186", "period_month": "2025-12-01", "euro_impact": 3647.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007088", "contract_id": "C0025", "account_id": "A0323", "period_month": "2026-04-01", "euro_impact": 3536.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007067", "contract_id": "C0454", "account_id": "A0169", "period_month": "2025-07-01", "euro_impact": 3284.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007051", "contract_id": "C0419", "account_id": "A0060", "period_month": "2025-09-01", "euro_impact": 3162.17, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006983", "contract_id": "C0334", "account_id": "A0060", "period_month": "2026-05-01", "euro_impact": 2889.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007032", "contract_id": "C0092", "account_id": "A0231", "period_month": "2025-06-01", "euro_impact": 2519.17, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007031", "contract_id": "C0045", "account_id": "A0426", "period_month": "2026-05-01", "euro_impact": 2444.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006989", "contract_id": "C0211", "account_id": "A0131", "period_month": "2024-11-01", "euro_impact": 2153.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006992", "contract_id": "C0652", "account_id": "A0204", "period_month": "2026-03-01", "euro_impact": 2064.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007026", "contract_id": "C0559", "account_id": "A0387", "period_month": "2026-05-01", "euro_impact": 1906.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006993", "contract_id": "C0682", "account_id": "A0380", "period_month": "2025-07-01", "euro_impact": 1660.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007003", "contract_id": "C0607", "account_id": "A0133", "period_month": "2026-05-01", "euro_impact": 1633.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007038", "contract_id": "C0632", "account_id": "A0332", "period_month": "2025-01-01", "euro_impact": 1626.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007050", "contract_id": "C0104", "account_id": "A0159", "period_month": "2026-03-01", "euro_impact": 1617.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007024", "contract_id": "C0104", "account_id": "A0159", "period_month": "2025-11-01", "euro_impact": 1617.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007107", "contract_id": "C0374", "account_id": "A0344", "period_month": "2026-02-01", "euro_impact": 1604.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007017", "contract_id": "C0545", "account_id": "A0443", "period_month": "2026-01-01", "euro_impact": 1580.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007045", "contract_id": "C0002", "account_id": "A0302", "period_month": "2025-10-01", "euro_impact": 1520.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006982", "contract_id": "C0002", "account_id": "A0302", "period_month": "2026-02-01", "euro_impact": 1520.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007109", "contract_id": "C0002", "account_id": "A0302", "period_month": "2026-03-01", "euro_impact": 1520.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007054", "contract_id": "C0138", "account_id": "A0336", "period_month": "2026-02-01", "euro_impact": 1468.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007006", "contract_id": "C0648", "account_id": "A0410", "period_month": "2025-11-01", "euro_impact": 1458.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007102", "contract_id": "C0410", "account_id": "A0191", "period_month": "2025-09-01", "euro_impact": 1434.67, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007081", "contract_id": "C0677", "account_id": "A0030", "period_month": "2025-12-01", "euro_impact": 1424.67, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007044", "contract_id": "C0300", "account_id": "A0393", "period_month": "2025-11-01", "euro_impact": 1395.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007033", "contract_id": "C0342", "account_id": "A0375", "period_month": "2025-02-01", "euro_impact": 1376.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007053", "contract_id": "C0516", "account_id": "A0115", "period_month": "2026-04-01", "euro_impact": 1320.97, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006973", "contract_id": "C0516", "account_id": "A0115", "period_month": "2026-02-01", "euro_impact": 1320.97, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007068", "contract_id": "C0551", "account_id": "A0430", "period_month": "2026-03-01", "euro_impact": 1270.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007047", "contract_id": "C0395", "account_id": "A0033", "period_month": "2025-02-01", "euro_impact": 1252.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007098", "contract_id": "C0492", "account_id": "A0302", "period_month": "2026-03-01", "euro_impact": 1234.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007001", "contract_id": "C0133", "account_id": "A0484", "period_month": "2025-11-01", "euro_impact": 1229.75, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007092", "contract_id": "C0133", "account_id": "A0484", "period_month": "2026-04-01", "euro_impact": 1229.75, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007089", "contract_id": "C0573", "account_id": "A0012", "period_month": "2026-05-01", "euro_impact": 1214.17, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007095", "contract_id": "C0572", "account_id": "A0012", "period_month": "2025-12-01", "euro_impact": 1214.17, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006995", "contract_id": "C0572", "account_id": "A0012", "period_month": "2025-03-01", "euro_impact": 1214.17, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007048", "contract_id": "C0681", "account_id": "A0424", "period_month": "2025-10-01", "euro_impact": 1211.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007085", "contract_id": "C0461", "account_id": "A0379", "period_month": "2026-04-01", "euro_impact": 1208.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007091", "contract_id": "C0402", "account_id": "A0065", "period_month": "2026-05-01", "euro_impact": 1193.61, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007019", "contract_id": "C0552", "account_id": "A0003", "period_month": "2026-05-01", "euro_impact": 1168.17, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007058", "contract_id": "C0037", "account_id": "A0378", "period_month": "2025-04-01", "euro_impact": 1162.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006990", "contract_id": "C0489", "account_id": "A0116", "period_month": "2025-03-01", "euro_impact": 1141.42, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007021", "contract_id": "C0577", "account_id": "A0395", "period_month": "2026-04-01", "euro_impact": 1132.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006998", "contract_id": "C0711", "account_id": "A0136", "period_month": "2025-06-01", "euro_impact": 1122.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006985", "contract_id": "C0526", "account_id": "A0380", "period_month": "2025-09-01", "euro_impact": 1042.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007060", "contract_id": "C0042", "account_id": "A0316", "period_month": "2026-04-01", "euro_impact": 1007.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006997", "contract_id": "C0223", "account_id": "A0125", "period_month": "2024-12-01", "euro_impact": 1000.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007062", "contract_id": "C0026", "account_id": "A0339", "period_month": "2025-03-01", "euro_impact": 998.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007066", "contract_id": "C0026", "account_id": "A0339", "period_month": "2025-06-01", "euro_impact": 998.25, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007080", "contract_id": "C0566", "account_id": "A0132", "period_month": "2024-12-01", "euro_impact": 995.33, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006974", "contract_id": "C0161", "account_id": "A0252", "period_month": "2025-10-01", "euro_impact": 994.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007007", "contract_id": "C0069", "account_id": "A0212", "period_month": "2025-08-01", "euro_impact": 988.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007106", "contract_id": "C0069", "account_id": "A0212", "period_month": "2025-07-01", "euro_impact": 988.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007023", "contract_id": "C0590", "account_id": "A0192", "period_month": "2025-03-01", "euro_impact": 955.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007004", "contract_id": "C0590", "account_id": "A0192", "period_month": "2025-07-01", "euro_impact": 955.08, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007105", "contract_id": "C0081", "account_id": "A0105", "period_month": "2025-10-01", "euro_impact": 947.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007083", "contract_id": "C0727", "account_id": "A0346", "period_month": "2025-02-01", "euro_impact": 943.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006979", "contract_id": "C0472", "account_id": "A0029", "period_month": "2025-04-01", "euro_impact": 884.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007010", "contract_id": "C0472", "account_id": "A0029", "period_month": "2025-05-01", "euro_impact": 884.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007065", "contract_id": "C0472", "account_id": "A0029", "period_month": "2025-10-01", "euro_impact": 884.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007030", "contract_id": "C0666", "account_id": "A0418", "period_month": "2024-11-01", "euro_impact": 853.67, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007013", "contract_id": "C0414", "account_id": "A0116", "period_month": "2026-05-01", "euro_impact": 846.42, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007042", "contract_id": "C0449", "account_id": "A0486", "period_month": "2025-11-01", "euro_impact": 838.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007094", "contract_id": "C0445", "account_id": "A0283", "period_month": "2026-05-01", "euro_impact": 834.56, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007005", "contract_id": "C0720", "account_id": "A0327", "period_month": "2025-02-01", "euro_impact": 806.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007076", "contract_id": "C0520", "account_id": "A0484", "period_month": "2025-12-01", "euro_impact": 767.83, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007078", "contract_id": "C0479", "account_id": "A0071", "period_month": "2026-05-01", "euro_impact": 756.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007040", "contract_id": "C0126", "account_id": "A0142", "period_month": "2026-03-01", "euro_impact": 750.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007087", "contract_id": "C0659", "account_id": "A0086", "period_month": "2026-03-01", "euro_impact": 722.33, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007103", "contract_id": "C0543", "account_id": "A0422", "period_month": "2025-08-01", "euro_impact": 712.67, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007056", "contract_id": "C0543", "account_id": "A0422", "period_month": "2025-04-01", "euro_impact": 712.67, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006999", "contract_id": "C0047", "account_id": "A0276", "period_month": "2025-04-01", "euro_impact": 656.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007052", "contract_id": "C0047", "account_id": "A0276", "period_month": "2025-05-01", "euro_impact": 656.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006975", "contract_id": "C0058", "account_id": "A0116", "period_month": "2025-01-01", "euro_impact": 648.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007069", "contract_id": "C0059", "account_id": "A0116", "period_month": "2026-05-01", "euro_impact": 648.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007014", "contract_id": "C0441", "account_id": "A0448", "period_month": "2025-01-01", "euro_impact": 625.75, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006996", "contract_id": "C0688", "account_id": "A0164", "period_month": "2026-05-01", "euro_impact": 600.42, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007011", "contract_id": "C0102", "account_id": "A0225", "period_month": "2025-03-01", "euro_impact": 596.5, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006978", "contract_id": "C0719", "account_id": "A0406", "period_month": "2024-11-01", "euro_impact": 520.58, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006977", "contract_id": "C0310", "account_id": "A0312", "period_month": "2025-05-01", "euro_impact": 518.17, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007071", "contract_id": "C0142", "account_id": "A0018", "period_month": "2024-10-01", "euro_impact": 512.75, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV006986", "contract_id": "C0465", "account_id": "A0335", "period_month": "2025-10-01", "euro_impact": 505.0, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007012", "contract_id": "C0370", "account_id": "A0015", "period_month": "2025-10-01", "euro_impact": 481.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007077", "contract_id": "C0370", "account_id": "A0015", "period_month": "2026-01-01", "euro_impact": 481.92, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007046", "contract_id": "C0181", "account_id": "A0379", "period_month": "2026-02-01", "euro_impact": 474.67, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007057", "contract_id": "C0274", "account_id": "A0164", "period_month": "2025-04-01", "euro_impact": 448.33, "reason_code": "duplicate_invoice_same_period_amount"}, {"invoice_id": "INV007084", "contract_id": "C0274", "account_id": "A0164", "period_month": "2025-10-01", "euro_impact": 448.33, "reason_code": "duplicate_invoice_same_period_amount"}], "attribution_gap": [{"opportunity_id": "O01115", "account_id": "A0078", "rep_id": "R017", "euro_impact": 261912.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01269", "account_id": "A0382", "rep_id": "R012", "euro_impact": 211443.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00504", "account_id": "A0196", "rep_id": "R004", "euro_impact": 179960.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00485", "account_id": "A0110", "rep_id": "R013", "euro_impact": 148681.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01249", "account_id": "A0447", "rep_id": "R007", "euro_impact": 104505.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O00551", "account_id": "A0186", "rep_id": "R007", "euro_impact": 78337.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O00819", "account_id": "A0111", "rep_id": "R003", "euro_impact": 77384.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01079", "account_id": "A0097", "rep_id": "R005", "euro_impact": 70459.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01132", "account_id": "A0151", "rep_id": "R013", "euro_impact": 68931.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00986", "account_id": "A0325", "rep_id": "R008", "euro_impact": 68542.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00090", "account_id": "A0198", "rep_id": "R001", "euro_impact": 63301.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00706", "account_id": "A0157", "rep_id": "R001", "euro_impact": 60129.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01171", "account_id": "A0150", "rep_id": "R017", "euro_impact": 59609.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O00686", "account_id": "A0131", "rep_id": "R003", "euro_impact": 56235.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O01007", "account_id": "A0001", "rep_id": "R001", "euro_impact": 54676.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O00588", "account_id": "A0062", "rep_id": "R014", "euro_impact": 54503.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01418", "account_id": "A0134", "rep_id": "R008", "euro_impact": 47184.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01020", "account_id": "A0493", "rep_id": "R015", "euro_impact": 45553.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00431", "account_id": "A0157", "rep_id": "R001", "euro_impact": 42554.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00299", "account_id": "A0124", "rep_id": "R008", "euro_impact": 41449.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O01051", "account_id": "A0209", "rep_id": "R007", "euro_impact": 31079.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01194", "account_id": "A0345", "rep_id": "R008", "euro_impact": 22099.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01270", "account_id": "A0332", "rep_id": "R005", "euro_impact": 19512.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O01136", "account_id": "A0216", "rep_id": "R006", "euro_impact": 19265.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00812", "account_id": "A0476", "rep_id": "R014", "euro_impact": 19043.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00887", "account_id": "A0483", "rep_id": "R004", "euro_impact": 18003.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O00537", "account_id": "A0077", "rep_id": "R004", "euro_impact": 16905.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00642", "account_id": "A0375", "rep_id": "R002", "euro_impact": 16519.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O00794", "account_id": "A0338", "rep_id": "R003", "euro_impact": 15910.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00327", "account_id": "A0454", "rep_id": "R005", "euro_impact": 15564.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00070", "account_id": "A0468", "rep_id": "R004", "euro_impact": 15364.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01074", "account_id": "A0310", "rep_id": "R003", "euro_impact": 15020.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O01267", "account_id": "A0316", "rep_id": "R001", "euro_impact": 14910.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00041", "account_id": "A0215", "rep_id": "R007", "euro_impact": 12821.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O00052", "account_id": "A0339", "rep_id": "R014", "euro_impact": 11979.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01022", "account_id": "A0346", "rep_id": "R015", "euro_impact": 11813.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O01179", "account_id": "A0192", "rep_id": "R004", "euro_impact": 11461.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01109", "account_id": "A0234", "rep_id": "R014", "euro_impact": 10692.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00956", "account_id": "A0133", "rep_id": "R001", "euro_impact": 10260.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00060", "account_id": "A0166", "rep_id": "R001", "euro_impact": 9557.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01380", "account_id": "A0276", "rep_id": "R017", "euro_impact": 8874.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00111", "account_id": "A0296", "rep_id": "R007", "euro_impact": 8765.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00098", "account_id": "A0276", "rep_id": "R012", "euro_impact": 7879.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01083", "account_id": "A0455", "rep_id": "R009", "euro_impact": 7418.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00197", "account_id": "A0225", "rep_id": "R004", "euro_impact": 7158.0, "reason_code": "closed_won_dangling_lead_reference"}, {"opportunity_id": "O01274", "account_id": "A0024", "rep_id": "R016", "euro_impact": 7005.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O00583", "account_id": "A0312", "rep_id": "R010", "euro_impact": 6218.0, "reason_code": "closed_won_missing_lead_source"}, {"opportunity_id": "O01448", "account_id": "A0466", "rep_id": "R014", "euro_impact": 6070.0, "reason_code": "closed_won_missing_lead_source"}], "stalled_deal": [{"opportunity_id": "O00895", "account_id": "A0487", "rep_id": "R014", "stage": "Qualification", "days_in_stage": 165, "euro_impact": 225867.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00085", "account_id": "A0475", "rep_id": "R018", "stage": "Prospecting", "days_in_stage": 296, "euro_impact": 123881.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01287", "account_id": "A0442", "rep_id": "R014", "stage": "Negotiation", "days_in_stage": 227, "euro_impact": 89111.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01038", "account_id": "A0365", "rep_id": "R012", "stage": "Negotiation", "days_in_stage": 250, "euro_impact": 71388.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00481", "account_id": "A0491", "rep_id": "R013", "stage": "Proposal", "days_in_stage": 217, "euro_impact": 59306.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01430", "account_id": "A0419", "rep_id": "R012", "stage": "Prospecting", "days_in_stage": 155, "euro_impact": 53007.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00036", "account_id": "A0373", "rep_id": "R008", "stage": "Proposal", "days_in_stage": 197, "euro_impact": 40125.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01086", "account_id": "A0162", "rep_id": "R006", "stage": "Proposal", "days_in_stage": 252, "euro_impact": 31665.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01066", "account_id": "A0373", "rep_id": "R006", "stage": "Prospecting", "days_in_stage": 254, "euro_impact": 25782.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01436", "account_id": "A0059", "rep_id": "R015", "stage": "Prospecting", "days_in_stage": 258, "euro_impact": 19822.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00395", "account_id": "A0375", "rep_id": "R005", "stage": "Qualification", "days_in_stage": 169, "euro_impact": 18477.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00648", "account_id": "A0031", "rep_id": "R001", "stage": "Qualification", "days_in_stage": 293, "euro_impact": 15525.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01243", "account_id": "A0314", "rep_id": "R001", "stage": "Negotiation", "days_in_stage": 266, "euro_impact": 13656.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00868", "account_id": "A0483", "rep_id": "R004", "stage": "Qualification", "days_in_stage": 202, "euro_impact": 13586.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00834", "account_id": "A0443", "rep_id": "R004", "stage": "Qualification", "days_in_stage": 185, "euro_impact": 13113.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00662", "account_id": "A0486", "rep_id": "R001", "stage": "Negotiation", "days_in_stage": 165, "euro_impact": 12999.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01025", "account_id": "A0381", "rep_id": "R015", "stage": "Negotiation", "days_in_stage": 185, "euro_impact": 11470.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01459", "account_id": "A0226", "rep_id": "R014", "stage": "Prospecting", "days_in_stage": 289, "euro_impact": 10054.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00486", "account_id": "A0416", "rep_id": "R007", "stage": "Proposal", "days_in_stage": 180, "euro_impact": 7248.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O00681", "account_id": "A0235", "rep_id": "R007", "stage": "Negotiation", "days_in_stage": 232, "euro_impact": 7038.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01318", "account_id": "A0102", "rep_id": "R013", "stage": "Prospecting", "days_in_stage": 157, "euro_impact": 6330.0, "reason_code": "stage_age_above_threshold"}, {"opportunity_id": "O01458", "account_id": "A0132", "rep_id": "R015", "stage": "Negotiation", "days_in_stage": 263, "euro_impact": 5235.0, "reason_code": "stage_age_above_threshold"}]}, "totals": {"euro": 4619319.81, "count": 267, "planted": 267, "tp": 267, "fp": 0, "fn": 0}};
-
-const euro = n => '€' + Math.round(n).toLocaleString('en-US');
-const euro2 = n => '€' + Number(n).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
-
-// ---- build finding cards (sorted by impact, already sorted in summary) ----
-const order = D.summary.slice().sort((a,b)=>b.euro_impact-a.euro_impact);
-const maxImpact = Math.max(...order.map(s=>s.euro_impact));
-const leaks = document.getElementById('leaks');
-order.forEach(s=>{
-  const m = D.meta[s.leak_type];
-  const pct = (s.euro_impact/maxImpact*100).toFixed(0);
-  const btn = document.createElement('button');
-  btn.className = 'leak';
-  btn.setAttribute('aria-label', 'Inspect '+m.label+' records');
-  btn.innerHTML = `
-    <div class="top">
-      <span class="name">${m.label}</span>
-      <span class="cls ${m.cls}">${D.classLabel[m.cls]}</span>
-    </div>
-    <div class="amt"><span class="c">€</span>${Math.round(s.euro_impact).toLocaleString('en-US')}</div>
-    <div class="cnt">${s.leak_count} records flagged</div>
-    <div class="blurb">${m.blurb}</div>
-    <div class="open">Inspect records <span class="ar">→</span></div>
-    <div class="bar" style="width:${pct}%"></div>`;
-  btn.onclick = ()=>openDrawer(s.leak_type);
-  leaks.appendChild(btn);
-});
-
-// ---- drawer ----
-const scrim=document.getElementById('scrim'), drawer=document.getElementById('drawer');
-function openDrawer(type){
-  const m=D.meta[type], s=D.summary.find(x=>x.leak_type===type), rows=D.records[type], cols=D.cols[type];
-  document.getElementById('drCls').textContent=D.classLabel[m.cls];
-  document.getElementById('drCls').className='cls '+m.cls;
-  document.getElementById('drTitle').textContent=m.label;
-  document.getElementById('drAmt').textContent=euro(s.euro_impact);
-  document.getElementById('drCnt').textContent=s.leak_count+' records';
-  document.getElementById('drBlurb').textContent=m.blurb;
-  const numCols=new Set(['commission_paid','commission_expected','amount_expected','amount_billed','euro_impact','days_in_stage']);
-  const impactCol='euro_impact';
-  document.getElementById('drThead').innerHTML='<tr>'+cols.map(c=>
-     `<th class="${numCols.has(c[0])?'num':''}">${c[1]}</th>`).join('')+'</tr>';
-  document.getElementById('drTbody').innerHTML = rows.map(r=>'<tr>'+cols.map(c=>{
-     const key=c[0]; let v=r[key];
-     if(key===impactCol) return `<td class="num impact">${euro2(v)}</td>`;
-     if(numCols.has(key)) return `<td class="num">${typeof v==='number'? (key==='days_in_stage'? v : euro2(v)) : v}</td>`;
-     if(key==='reason_code') return `<td class="reason">${v}</td>`;
-     return `<td class="mono">${v==null?'—':v}</td>`;
-  }).join('')+'</tr>').join('');
-  document.getElementById('drFoot').textContent = `${rows.length} of ${s.leak_count} records · impact class: ${D.classLabel[m.cls]}`;
-  scrim.classList.add('on'); drawer.classList.add('on');
-  document.body.style.overflow='hidden';
+// ---- starfield: varied stars (white/amber/green) + shooting light-paths ----
+(function(){
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cv = document.getElementById('sky'); const ctx = cv.getContext('2d');
+  let w,h,dpr,stars=[],shoot=[],lastShoot=0;
+  const COL={white:'rgba(234,242,255,',warm:'rgba(255,184,105,',green:'rgba(150,232,172,'};
+  function pick(){const r=Math.random();return r<0.10?'warm':(r<0.19?'green':'white');}
+  function size(){
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    w=cv.width=innerWidth*dpr; h=cv.height=innerHeight*dpr;
+    cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px';
+    const n=Math.round((innerWidth*innerHeight)/8000);
+    stars=Array.from({length:n},()=>{
+      const z=Math.random();
+      return {x:Math.random()*w,y:Math.random()*h,z:z,
+        r:(Math.pow(z,1.5)*2.0+0.25)*dpr,
+        tw:Math.random()*Math.PI*2, tws:0.4+Math.random()*1.8,
+        vx:(Math.pow(z,2)*0.24+0.01)*dpr,   // wide speed variance: near stars much faster
+        c:pick()};
+    });
+  }
+  function spawnShoot(){
+    const r=Math.random();
+    const col = r<0.5?'green':(r<0.72?'warm':'white');   // ~half the paths are green
+    const dir = Math.random()<0.5?1:-1;
+    const ang = (0.18+Math.random()*0.34);
+    const sp = (5.5+Math.random()*5)*dpr;
+    shoot.push({x:Math.random()*w, y:Math.random()*h*0.55,
+      vx:Math.cos(ang)*sp*dir, vy:Math.sin(ang)*sp+sp*0.35,
+      life:0, max:55+Math.random()*45, col});
+  }
+  function draw(t){
+    ctx.clearRect(0,0,w,h);
+    for(const s2 of stars){
+      if(!reduce){s2.x-=s2.vx; if(s2.x<-2)s2.x=w+2;}
+      const tw=reduce?0.7:(0.4+0.5*(0.5+0.5*Math.sin(t*0.001*s2.tws+s2.tw)));
+      const a=tw*(0.35+s2.z*0.65);
+      ctx.beginPath(); ctx.arc(s2.x,s2.y,s2.r,0,6.2832);
+      ctx.fillStyle=COL[s2.c]+a+')';
+      if(s2.z>0.72){ctx.shadowBlur=6*dpr; ctx.shadowColor=COL[s2.c]+'0.8)';} else ctx.shadowBlur=0;
+      ctx.fill();
+    }
+    ctx.shadowBlur=0;
+    if(!reduce){
+      if(t-lastShoot > 2000+Math.random()*2800){lastShoot=t; spawnShoot();}
+      for(let i=shoot.length-1;i>=0;i--){
+        const p=shoot[i]; p.life++; p.x+=p.vx; p.y+=p.vy;
+        const k=1-p.life/p.max; if(k<=0){shoot.splice(i,1);continue;}
+        const tx=p.x-p.vx*6, ty=p.y-p.vy*6;
+        const g=ctx.createLinearGradient(tx,ty,p.x,p.y); const b=COL[p.col];
+        g.addColorStop(0,b+'0)'); g.addColorStop(1,b+(k*0.9)+')');
+        ctx.strokeStyle=g; ctx.lineWidth=1.4*dpr; ctx.lineCap='round';
+        ctx.beginPath(); ctx.moveTo(tx,ty); ctx.lineTo(p.x,p.y); ctx.stroke();
+        ctx.beginPath(); ctx.arc(p.x,p.y,1.5*dpr,0,6.2832); ctx.fillStyle=b+k+')';
+        ctx.shadowBlur=8*dpr; ctx.shadowColor=b+'0.9)'; ctx.fill(); ctx.shadowBlur=0;
+      }
+    }
+    if(!reduce) requestAnimationFrame(draw);
+  }
+  size();
+  if(reduce){draw(0);} else {requestAnimationFrame(draw);}
+  let to; addEventListener('resize',()=>{clearTimeout(to);to=setTimeout(size,150)});
+})();
+// ---- scroll reveal ----
+if(!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)){
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
 }
-function closeDrawer(){scrim.classList.remove('on');drawer.classList.remove('on');document.body.style.overflow='';}
-scrim.onclick=closeDrawer;
-document.getElementById('drClose').onclick=closeDrawer;
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
 </script>
 </body>
 </html>
