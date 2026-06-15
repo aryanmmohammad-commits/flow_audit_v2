@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spatium Flow — revenue integrity for the value chain</title>
-<meta name="description" content="Spatium Flow keeps value traceable as it moves through a business — reconciling systems to find, measure, and explain where revenue leaks. Built on the Law of Value Continuity.">
+<title>Spatium Flow — case studies</title>
+<meta name="description" content="Reproducible revenue-integrity case studies: Flow Audit and a $252K currency-reconciliation finding on public data. Take the data, run the code, reach the same number.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -176,6 +176,22 @@
   .reveal{opacity:0;transform:translateY(16px)}
   .reveal.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}.eyebrow,h1 .ln,.sub,.cta-row{opacity:1!important}}
+
+  /* sub-page additions */
+  .page-hero{padding:120px 0 12px}
+  .case{padding:46px 0}
+  .case + .case{border-top:1px solid var(--line)}
+  .story{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 44px;margin-top:30px}
+  .story h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-2);margin-bottom:9px}
+  .story p{font-size:15px;color:var(--mist);line-height:1.65}
+  @media(max-width:680px){.story{grid-template-columns:1fr;gap:18px}}
+  .evgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
+  .ev{border:1px solid var(--line);border-radius:14px;padding:26px 28px;background:linear-gradient(180deg,rgba(140,160,210,.05),rgba(140,160,210,.015))}
+  .ev .n{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5vw,46px);line-height:1;color:var(--orange-2);text-shadow:0 0 26px rgba(240,133,46,.28);letter-spacing:-.02em}
+  .ev .d{font-size:14.5px;color:var(--mist);line-height:1.6;margin-top:14px}
+  .ev .s{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:14px}
+  @media(max-width:680px){.evgrid{grid-template-columns:1fr}}
+  .srcs{font-size:14px;color:var(--faint);line-height:1.7;max-width:72ch}
 </style>
 </head>
 <body>
@@ -183,197 +199,80 @@
 <div class="page">
 
 <div class="bar"><div class="wrap">
-  <div class="brand">
+  <a class="brand" href="/">
     <svg class="mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.0 2.0 L20.53 11.9 L29.31 6.69 L24.1 15.47 L34.0 18.0 L24.1 20.53 L29.31 29.31 L20.53 24.1 L18.0 34.0 L15.47 24.1 L6.69 29.31 L11.9 20.53 L2.0 18.0 L11.9 15.47 L6.69 6.69 L15.47 11.9 Z" stroke="#ffb869" stroke-width="1.15" stroke-linejoin="round" fill="none" opacity=".95"/><path d="M18.0 10.6 L19.15 15.23 L23.23 12.77 L20.77 16.85 L25.4 18.0 L20.77 19.15 L23.23 23.23 L19.15 20.77 L18.0 25.4 L16.85 20.77 L12.77 23.23 L15.23 19.15 L10.6 18.0 L15.23 16.85 L12.77 12.77 L16.85 15.23 Z" stroke="#f0852e" stroke-width=".9" stroke-linejoin="round" fill="none" opacity=".55"/><circle cx="18" cy="18" r="1.7" fill="#ffd9a8"/></svg>
     SPATIUM&nbsp;FLOW
-  </div>
+  </a>
   <nav>
-    <a href="#law">The Law</a>
-    <a href="#method">Method</a>
-    <a href="case-studies/">Case Studies</a>
-    <a href="research/">Evidence</a>
-    <a href="about/">About</a>
-    <a href="#contact">Contact</a>
+    <a href="/#law">The Law</a>
+    <a href="/#method">Method</a>
+    <a href="/case-studies/" style="color:var(--orange-2)">Case Studies</a>
+    <a href="/research/">Evidence</a>
+    <a href="/about/">About</a>
+    <a href="/#contact">Contact</a>
   </nav>
 </div></div>
 
-<header class="hero"><div class="wrap hero-grid">
-  <div class="hero-text">
-    <div class="eyebrow">Revenue integrity</div>
-    <h1><span class="ln">Value moves through systems.</span><span class="ln">It <em>leaks</em> in the spaces between.</span></h1>
-    <p class="sub">You earned the revenue. Some of it never arrived — and no system can quite tell you where it went. As value moves through a business it changes form at every handoff; where it stops being traceable, it quietly escapes. Spatium Flow finds it, measures it, and proves it.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="case-studies/">See the proof <span class="ar">→</span></a>
-      <a class="btn btn-ghost" href="#method">How it works</a>
-    </div>
-  </div>
-  <div class="hero-emblem">
-<svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="ah-halo" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#f0852e" stop-opacity=".16"/><stop offset="55%" stop-color="#f0852e" stop-opacity=".04"/><stop offset="100%" stop-color="#f0852e" stop-opacity="0"/></radialGradient>
-    <linearGradient id="ah-gold" x1="0" y1="0" x2="400" y2="400"><stop offset="0" stop-color="#ffd9a8"/><stop offset=".5" stop-color="#ff9d45"/><stop offset="1" stop-color="#e2641d"/></linearGradient>
-  </defs>
-  <circle cx="200" cy="200" r="175" fill="url(#ah-halo)"/>
-  <circle cx="200" cy="200" r="168" stroke="#5f7196" stroke-width="1" opacity=".3"/>
-  <path d="M200.0 50.0 L222.96 144.57 L306.07 93.93 L255.43 177.04 L350.0 200.0 L255.43 222.96 L306.07 306.07 L222.96 255.43 L200.0 350.0 L177.04 255.43 L93.93 306.07 L144.57 222.96 L50.0 200.0 L144.57 177.04 L93.93 93.93 L177.04 144.57 Z" stroke="url(#ah-gold)" stroke-width="1.6" stroke-linejoin="round" fill="#f0852e" fill-opacity=".03" opacity=".9"/>
-  <path d="M306.07 93.93 L255.43 177.04 L350.0 200.0 L255.43 222.96 L306.07 306.07 L222.96 255.43 L200.0 350.0 L177.04 255.43 L93.93 306.07 L144.57 222.96 L50.0 200.0 L144.57 177.04 L93.93 93.93 L177.04 144.57 L200.0 50.0 L222.96 144.57 Z" stroke="#6f9be0" stroke-width="1" stroke-linejoin="round" fill="none" opacity=".25"/>
-  <circle cx="200" cy="200" r="74" stroke="#5f7196" stroke-width="1" opacity=".25"/>
-  <text x="200" y="232" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="76" font-weight="300" letter-spacing="-1" fill="#eef1f8" opacity=".95">SF</text>
-</svg></div>
-</div></header>
 
-<section id="law" class="law"><div class="wrap reveal">
-  <div class="lab">The Law of Value Continuity</div>
-  <p class="law-text">When value is created, it must remain <em>traceable</em> as it changes form.<br>If it changes form but cannot be traced, measured, or explained — <em>waste begins.</em></p>
-  <p class="body-lg">This is the principle beneath everything Spatium Flow does. A business rarely loses value in one dramatic moment — it loses it quietly, in the seams between the systems that each hold only a piece of the truth. Keep value traceable across those seams, and the leak has nowhere left to hide.</p>
+<section class="page-hero"><div class="wrap reveal">
+  <div class="lab">Case studies</div>
+  <h2>Proof you can re-run.</h2>
+  <p class="body-lg">Every finding here comes from real data, with the method shown in full. Nothing is asserted that can't be reproduced — take the data, run the code, reach the same number. This is the discipline of revenue integrity: not opinion, <em>evidence</em>.</p>
 </div></section>
 
-<section id="gap" class="gap-explain"><div class="wrap reveal">
-  <div class="lab">Spatium — latin: the space between</div>
-  <h2>The same fact, recorded two ways. Value leaks in the gap.</h2>
-  <p class="body-lg">Across a business, the same deal lives in many systems — and they quietly disagree. Each is right on its own terms; no one is watching the space between them. That space is where revenue escapes. Here is one real example:</p>
-  <div class="gap-demo">
-    <div class="gp-sys">
-      <div class="gp-tag">System A · CRM</div>
-      <div class="gp-claim">Customer is <b>active</b> — €48k / year, contract running.</div>
-    </div>
-    <div class="gp-mid"><span class="gp-arrow">↔</span></div>
-    <div class="gp-sys">
-      <div class="gp-tag">System B · Billing</div>
-      <div class="gp-claim">Invoicing <b>stopped 4 months ago</b>. Nothing collected.</div>
-    </div>
-  </div>
-  <div class="gap-result"><span class="gr-amt">€16,000</span> <span class="gr-txt">of revenue the CRM still counts that the bank never received — a silent leak no single system flags. <b>Spatium Flow finds it, and prices it.</b></span></div>
-</div></section>
-
-<section class="proof"><div class="wrap reveal">
-  <div class="proof-grid">
-    <div class="pf"><div class="pv"><span class="c">€</span>4.6M</div><div class="pl">Leakage surfaced<br>in one demo run</div></div>
-    <div class="pf"><div class="pv">100<span class="u">%</span></div><div class="pl">Detection precision<br>&amp; recall, calibrated</div></div>
-    <div class="pf"><div class="pv">267</div><div class="pl">Distinct leaks found<br>across six types</div></div>
-    <div class="pf"><div class="pv">0</div><div class="pl">False alarms<br>and zero misses</div></div>
-  </div>
-  <div class="proof-note">Proven against a ground-truth ledger — not asserted. <a href="flow-audit/">See the calibration &rarr;</a></div>
-</div></section>
-
-<section id="method"><div class="wrap reveal">
-  <div class="lab">The method</div>
-  <h2>No single system owns the gap. So we reconcile them all.</h2>
-  <p class="body-lg">A deal closes in the CRM, a contract is signed, invoices go out, commission is paid. Four systems that should agree — and quietly don't. The same is true across the chain: <strong>marketing to sales, sales to billing, billing to delivery.</strong> Each system is correct on its own terms, yet value slips through the seams between them. Spatium Flow reconciles the systems against each other, finds the unexplained variance, and prices it. One discipline: <strong>find the obstruction in the value flow, and remove it.</strong></p>
-  <p class="body-lg" style="margin-top:18px">It isn't a one-way line. Your systems form a web — CRM, billing, contracts, payments, delivery, renewals — and a leak in one ripples through the rest. <strong>These systems are the data we work with;</strong> their quiet disagreements are exactly where value hides. We read them together and reconcile them against each other.</p>
-  <div class="constellation"><svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The value chain as eight interconnected systems — each impacts the others">
-  <defs><radialGradient id="hub" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb869" stop-opacity="0.9"/><stop offset="100%" stop-color="#f0852e" stop-opacity="0"/></radialGradient></defs>
-    <line x1="300.0" y1="90.0" x2="448.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300.0" y1="90.0" x2="510.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300.0" y1="90.0" x2="448.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300.0" y1="90.0" x2="300.0" y2="510.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300.0" y1="90.0" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300.0" y1="90.0" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300.0" y1="90.0" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="151.5" x2="510.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="151.5" x2="448.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="151.5" x2="300.0" y2="510.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="151.5" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="151.5" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="151.5" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="510.0" y1="300.0" x2="448.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="510.0" y1="300.0" x2="300.0" y2="510.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="510.0" y1="300.0" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="510.0" y1="300.0" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="510.0" y1="300.0" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="448.5" x2="300.0" y2="510.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="448.5" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="448.5" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="448.5" y1="448.5" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300.0" y1="510.0" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300.0" y1="510.0" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300.0" y1="510.0" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="151.5" y1="448.5" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="151.5" y1="448.5" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="90.0" y1="300.0" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
-    <line x1="300" y1="300" x2="300.0" y2="90.0" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
-    <circle cx="300.0" cy="90.0" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
-    <circle cx="300.0" cy="90.0" r="2.4" fill="#ffb869"/>
-    <text x="300.0" y="56.0" dy="0.7em" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Marketing</text>
-    <line x1="300" y1="300" x2="448.5" y2="151.5" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
-    <circle cx="448.5" cy="151.5" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
-    <circle cx="448.5" cy="151.5" r="2.4" fill="#ffb869"/>
-    <text x="472.5" y="127.5" dy="0.7em" text-anchor="start" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Sales</text>
-    <line x1="300" y1="300" x2="510.0" y2="300.0" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
-    <circle cx="510.0" cy="300.0" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
-    <circle cx="510.0" cy="300.0" r="2.4" fill="#ffb869"/>
-    <text x="544.0" y="300.0" dy="0.32em" text-anchor="start" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">CRM</text>
-    <line x1="300" y1="300" x2="448.5" y2="448.5" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
-    <circle cx="448.5" cy="448.5" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
-    <circle cx="448.5" cy="448.5" r="2.4" fill="#ffb869"/>
-    <text x="472.5" y="472.5" dy="-0.2em" text-anchor="start" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Contracts</text>
-    <line x1="300" y1="300" x2="300.0" y2="510.0" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
-    <circle cx="300.0" cy="510.0" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
-    <circle cx="300.0" cy="510.0" r="2.4" fill="#ffb869"/>
-    <text x="300.0" y="544.0" dy="-0.2em" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Billing</text>
-    <line x1="300" y1="300" x2="151.5" y2="448.5" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
-    <circle cx="151.5" cy="448.5" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
-    <circle cx="151.5" cy="448.5" r="2.4" fill="#ffb869"/>
-    <text x="127.5" y="472.5" dy="-0.2em" text-anchor="end" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Commissions</text>
-    <line x1="300" y1="300" x2="90.0" y2="300.0" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
-    <circle cx="90.0" cy="300.0" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
-    <circle cx="90.0" cy="300.0" r="2.4" fill="#ffb869"/>
-    <text x="56.0" y="300.0" dy="0.32em" text-anchor="end" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Delivery</text>
-    <line x1="300" y1="300" x2="151.5" y2="151.5" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
-    <circle cx="151.5" cy="151.5" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
-    <circle cx="151.5" cy="151.5" r="2.4" fill="#ffb869"/>
-    <text x="127.5" y="127.5" dy="0.7em" text-anchor="end" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Renewals</text>
-
-  <circle cx="300" cy="300" r="30" fill="url(#hub)"/>
-  <circle cx="300" cy="300" r="9" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
-  <text x="300" y="300" dy="0.33em" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="10.5" letter-spacing="0.12em" fill="#ffd9a8">FLOW</text>
-</svg></div>
-</div></section>
-
-<div class="wrap"><div class="divider"></div></div>
-
-<section id="proof"><div class="wrap">
-  <div class="lab reveal">Proof — not assertion</div>
-  <div class="pcard reveal">
+<section class="case"><div class="wrap reveal">
+  <div class="pcard">
     <div class="left">
-      <div class="tag">Reproducible case study</div>
+      <div class="tag">B2B SaaS &middot; revenue reconciliation</div>
       <h3>Flow Audit</h3>
-      <p>The method, demonstrated end to end: a tested, documented pipeline that reconciles CRM, contracts, billing, and commissions, surfaces every leak, and prices it — with detection proven exact against a ground-truth ledger. A second worked case study reconciles multi-currency revenue on a public retail dataset and surfaces a <strong>$252K</strong> reporting gap that anyone can re-run.</p>
+      <p>Built on a synthetic 500-account book with a known ground-truth ledger, Flow Audit reconciles CRM, contracts, billing, and commissions against one another and surfaces every place value leaks &mdash; silent churn, duplicate revenue, commission overpayment, under-billing, and more. Because the truth is known in advance, detection can be proven exact, not merely plausible.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="flow-audit/">See it run <span class="ar">→</span></a>
-        <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">The build on GitHub <span class="ar">→</span></a>
+        <a class="btn btn-primary" href="/flow-audit/">See it run <span class="ar">&rarr;</span></a>
+        <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">The build on GitHub <span class="ar">&rarr;</span></a>
       </div>
     </div>
     <div class="right">
-      <div class="stat"><div class="v"><span class="c">€</span>4,619,320</div><div class="l">Leakage detected · demo run</div></div>
+      <div class="stat"><div class="v"><span class="c">&euro;</span>4.6M</div><div class="l">Leakage surfaced &middot; demo run</div></div>
       <div class="stat"><div class="v blue">100% / 100%</div><div class="l">Precision &amp; recall, calibrated</div></div>
-      <div class="stat"><div class="v">21 · 52</div><div class="l">dbt models · passing tests</div></div>
+      <div class="stat"><div class="v">267</div><div class="l">Leaks across six types</div></div>
     </div>
   </div>
-  <p class="body-lg reveal" style="margin-top:26px">Two findings, both reproducible — and more as new data comes in. <a href="case-studies/" style="color:var(--orange-2);text-decoration:none">See all case studies →</a> &nbsp;·&nbsp; <a href="research/" style="color:var(--orange-2);text-decoration:none">The evidence behind it →</a></p>
+  <div class="story">
+    <div><h4>The pain</h4><p>A deal closes in the CRM, a contract is signed, invoices go out, commission is paid. Four systems that should agree &mdash; and quietly don't. Revenue that's counted but never collected; commission paid above plan; the same revenue booked twice.</p></div>
+    <div><h4>Why it persists</h4><p>Each system is correct on its own terms. No single tool sees across all four, so the disagreements between them are invisible &mdash; and what no one can see, no one fixes.</p></div>
+    <div><h4>The method</h4><p>Reconcile the systems against each other, classify every unexplained variance by type, and price it. A calibration layer with planted, known leaks proves the detection catches everything and invents nothing.</p></div>
+    <div><h4>The proof</h4><p>Against the ground-truth ledger, detection reaches 100% precision and 100% recall &mdash; zero misses, zero false alarms &mdash; surfacing &euro;4.6M across 267 leaks in six categories. The full pipeline is on GitHub.</p></div>
+  </div>
 </div></section>
 
-<!-- roadmap intentionally omitted: the public site shows mission + proof, not a product/engine catalog -->
-
-<div class="wrap"><div class="divider"></div></div>
-
-<section id="founder"><div class="wrap reveal">
-  <div class="lab">The founder</div>
-  <div class="inner">
-    <div class="mono-badge"><span>A</span></div>
-    <div>
-      <h3>Aryan Mohammaddoost</h3>
-      <div class="role">Founder &amp; analytics engineer</div>
-      <p>Spatium Flow is founded by an analytics engineer who spent eight years inside the commercial value chain — customer operations, CRM, SEO, and full commercial builds — before engineering the data layer that measures it. Flow Audit is the distillation of that path: a conviction that revenue isn't lost, it leaks, and that the leak can be found and proven.</p>
-      <div class="creds">
-        <span>SQL · dbt · Python</span>
-        <span>Power BI · DuckDB · BigQuery</span>
-        <span>HubSpot RevOps certified</span>
-        <span>B.Sc. Industrial Engineering</span>
+<section class="case"><div class="wrap reveal">
+  <div class="pcard">
+    <div class="left">
+      <div class="tag">Retail &middot; currency consolidation</div>
+      <h3>The $252K in the exchange rate</h3>
+      <p>Applied to a public Maven &ldquo;Global Electronics Retailer&rdquo; dataset: $54.7M of revenue, 46.6% of it booked in foreign currencies. Reconciling every order to its transaction-date exchange rate &mdash; against the common shortcut of one year-end rate &mdash; surfaces a $252,477 revenue misstatement hiding entirely in rate timing.</p>
+      <div class="cta-row">
+        <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">Reconciliation script on GitHub <span class="ar">&rarr;</span></a>
       </div>
     </div>
+    <div class="right">
+      <div class="stat"><div class="v"><span class="c">$</span>252K</div><div class="l">Revenue misstated &middot; rate timing</div></div>
+      <div class="stat"><div class="v blue">46.6%</div><div class="l">Revenue in foreign currency</div></div>
+      <div class="stat"><div class="v">$54.7M</div><div class="l">Revenue reconciled</div></div>
+    </div>
+  </div>
+  <div class="story">
+    <div><h4>The pain</h4><p>Almost half of revenue is earned in EUR, GBP, CAD, and AUD. Before it reaches a report it must be converted to one currency &mdash; and the rate chosen for that conversion quietly changes the number.</p></div>
+    <div><h4>Why it persists</h4><p>Currency conversion looks like plumbing, so it's treated like plumbing. Applying a single year-end rate to a whole year of transactions feels harmless; no system flags the gap, because every system did as it was told.</p></div>
+    <div><h4>The method</h4><p>A documented DuckDB pipeline aligns the raw files, rebuilds line-level revenue, joins each order to its transaction-date spot rate, and reconciles that against the year-end shortcut &mdash; pricing the difference.</p></div>
+    <div><h4>Reproduce it</h4><p>Download the public dataset, run <code>reconcile.py</code>, and you reach $252,477. The finding isn't asserted &mdash; it's falsifiable, and the script is published for anyone to check.</p></div>
   </div>
 </div></section>
+
+<section class="case"><div class="wrap reveal">
+  <p class="body-lg">More case studies are added as new datasets are analyzed &mdash; each a real reconciliation, each reproducible. <a href="/#contact" style="color:var(--orange-2);text-decoration:none">Bring a dataset &rarr;</a></p>
+</div></section>
+
 
 <footer class="foot" id="contact"><div class="wrap reveal">
   <div class="lab">Get in touch</div>
