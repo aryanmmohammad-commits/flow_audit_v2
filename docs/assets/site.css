@@ -2,9 +2,9 @@
    Spatium Flow — shared interstellar design system
    ============================================================ */
 :root{
-  --void:#04060f; --space:#070b1a; --space-2:#0a1024; --deep:#0c1430;
+  --void:#020308; --space:#04060d; --space-2:#070b1c; --deep:#0a1228;
   --blue:#1f4fa3; --blue-bright:#3a72d4; --blue-soft:#6f9be0;
-  --orange:#d98a3f; --orange-2:#e6a45c; --amber:#e8b878; --ember:#c8702c;
+  --orange:#f0852e; --orange-2:#ff9d45; --amber:#ffb869; --ember:#e2641d;
   --green:#96e8ac;
   --star:#eaf2ff; --paper:#eef1f8; --mist:#aab6cf; --faint:#6f7d9c;
   --line:rgba(140,160,210,.16); --line-2:rgba(140,160,210,.10);
@@ -22,16 +22,16 @@ a{color:inherit}
 
 /* starfield behind everything */
 #sky{position:fixed;inset:0;z-index:0;display:block;background:
-  radial-gradient(120% 80% at 78% -10%, rgba(240,133,46,.10), transparent 55%),
-  radial-gradient(90% 70% at 12% 108%, rgba(31,79,163,.18), transparent 60%),
-  linear-gradient(180deg,#04060f 0%,#070b1a 40%,#05080f 100%)}
+  radial-gradient(120% 80% at 80% -10%, rgba(240,133,46,.09), transparent 55%),
+  radial-gradient(90% 70% at 10% 110%, rgba(31,79,163,.14), transparent 60%),
+  linear-gradient(180deg,#020308 0%,#04060d 45%,#020308 100%)}
 .page{position:relative;z-index:1}
 
 /* top bar */
 .bar{position:absolute;top:0;left:0;right:0;z-index:10}
 .bar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:28px}
 .brand{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:var(--paper);text-decoration:none;font-weight:500}
-.brand .mark{width:26px;height:26px;flex:none}
+.brand .mark{width:34px;height:34px;flex:none}
 .bar nav{display:flex;gap:26px;font-family:var(--mono);font-size:12.5px;color:var(--mist);letter-spacing:.02em}
 .bar nav a{text-decoration:none;transition:color .18s}
 .bar nav a:hover,.bar nav a.on{color:var(--orange-2)}
