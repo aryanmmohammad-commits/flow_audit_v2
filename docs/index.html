@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Spatium Flow — analytics for the spaces between systems</title>
-<meta name="description" content="Spatium Flow builds the analytics that find where value leaks between the systems of the value chain — and prices every gap. Flow Audit is our first product.">
+<title>Spatium Flow — revenue integrity for the value chain</title>
+<meta name="description" content="Spatium Flow keeps value traceable as it moves through a business — reconciling systems to find, measure, and explain where revenue leaks. Built on the Law of Value Continuity.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -166,6 +166,11 @@
   .gr-txt b{color:#fff;font-weight:600}
   @media(max-width:620px){.gap-demo{grid-template-columns:1fr;gap:12px}.gp-mid{height:30px}.gp-arrow{transform:rotate(90deg)}}
 
+  /* The Law of Value Continuity */
+  .law{padding:74px 0 22px;position:relative}
+  .law-text{font-family:var(--serif);font-weight:300;font-size:clamp(23px,3.2vw,37px);line-height:1.32;letter-spacing:-.01em;color:#fff;max-width:780px;margin-bottom:26px}
+  .law-text em{font-style:italic;color:var(--orange-2)}
+
   .constellation{display:flex;justify-content:center;margin:30px auto 0;max-width:560px}
   .constellation svg{width:100%;height:auto;display:block}
   .reveal{opacity:0;transform:translateY(16px)}
@@ -183,9 +188,9 @@
     SPATIUM&nbsp;FLOW
   </div>
   <nav>
-    <a href="#thesis">Thesis</a>
-    <a href="flow-audit/">Product</a>
-    <a href="articles/">Articles</a>
+    <a href="#law">The Law</a>
+    <a href="#method">Method</a>
+    <a href="#proof">Proof</a>
     <a href="about/">About</a>
     <a href="#contact">Contact</a>
   </nav>
@@ -193,12 +198,12 @@
 
 <header class="hero"><div class="wrap hero-grid">
   <div class="hero-text">
-    <div class="eyebrow">Operational analytics for the value chain</div>
+    <div class="eyebrow">Revenue integrity</div>
     <h1><span class="ln">Value moves through systems.</span><span class="ln">It <em>leaks</em> in the spaces between.</span></h1>
-    <p class="sub">Every business runs on a chain of systems — from first touch to cash collected. In the gaps between them, where no single system is watching, value quietly escapes. Spatium Flow builds the analytics that make those gaps visible, measurable, and recoverable.</p>
+    <p class="sub">As value moves through a business — from first touch to cash collected — it changes form at every handoff. Where it changes form but stops being traceable, value quietly escapes. Spatium Flow reconciles the systems so value stays visible, measurable, and explained — end to end.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="flow-audit/">See Flow Audit running <span class="ar">→</span></a>
-      <a class="btn btn-ghost" href="#gap">How it works</a>
+      <a class="btn btn-primary" href="#proof">See the proof <span class="ar">→</span></a>
+      <a class="btn btn-ghost" href="#method">How it works</a>
     </div>
   </div>
   <div class="hero-emblem">
@@ -215,6 +220,12 @@
   <text x="200" y="232" text-anchor="middle" font-family="Fraunces,Georgia,serif" font-size="76" font-weight="300" letter-spacing="-1" fill="#eef1f8" opacity=".95">SF</text>
 </svg></div>
 </div></header>
+
+<section id="law" class="law"><div class="wrap reveal">
+  <div class="lab">The Law of Value Continuity</div>
+  <p class="law-text">When value is created, it must remain <em>traceable</em> as it changes form.<br>If it changes form but cannot be traced, measured, or explained — <em>waste begins.</em></p>
+  <p class="body-lg">This is the principle beneath everything Spatium Flow does. A business rarely loses value in one dramatic moment — it loses it quietly, in the seams between the systems that each hold only a piece of the truth. Keep value traceable across those seams, and the leak has nowhere left to hide.</p>
+</div></section>
 
 <section id="gap" class="gap-explain"><div class="wrap reveal">
   <div class="lab">Spatium — latin: the space between</div>
@@ -244,11 +255,11 @@
   <div class="proof-note">Proven against a ground-truth ledger — not asserted. <a href="flow-audit/">See the calibration &rarr;</a></div>
 </div></section>
 
-<section id="thesis"><div class="wrap reveal">
-  <div class="lab">The thesis</div>
-  <h2>No single system owns the gap. So no one measures it.</h2>
+<section id="method"><div class="wrap reveal">
+  <div class="lab">The method</div>
+  <h2>No single system owns the gap. So we reconcile them all.</h2>
   <p class="body-lg">A deal closes in the CRM, a contract is signed, invoices go out, commission is paid. Four systems that should agree — and quietly don't. The same is true across the chain: <strong>marketing to sales, sales to billing, billing to delivery.</strong> Each system is correct on its own terms, yet value slips through the seams between them. Spatium Flow reconciles the systems against each other, finds the unexplained variance, and prices it. One discipline: <strong>find the obstruction in the value flow, and remove it.</strong></p>
-  <p class="body-lg" style="margin-top:18px">It isn't a one-way line. The systems form a web — a leak in billing distorts forecasting; a CRM error ripples into commissions. Each point affects every other.</p>
+  <p class="body-lg" style="margin-top:18px">It isn't a one-way line. Your systems form a web — CRM, billing, contracts, payments, delivery, renewals — and a leak in one ripples through the rest. <strong>These systems are the data we work with;</strong> their quiet disagreements are exactly where value hides. We read them together and reconcile them against each other.</p>
   <div class="constellation"><svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The value chain as eight interconnected systems — each impacts the others">
   <defs><radialGradient id="hub" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb869" stop-opacity="0.9"/><stop offset="100%" stop-color="#f0852e" stop-opacity="0"/></radialGradient></defs>
     <line x1="300.0" y1="90.0" x2="448.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
@@ -320,14 +331,17 @@
 
 <div class="wrap"><div class="divider"></div></div>
 
-<section id="product"><div class="wrap">
-  <div class="lab reveal">Product 01 — live</div>
+<section id="proof"><div class="wrap">
+  <div class="lab reveal">Proof — not assertion</div>
   <div class="pcard reveal">
     <div class="left">
-      <div class="tag">Revenue operations</div>
+      <div class="tag">Reproducible case study</div>
       <h3>Flow Audit</h3>
-      <p>Our first product finds where B2B SaaS revenue leaks between CRM, contracts, billing, and commissions — silent churn, duplicate revenue, commission overpayment, under-billing, and more — and prices every gap. Built as a tested, documented data pipeline, with detection proven exact against a ground-truth ledger.</p>
-      <a class="btn btn-primary" href="flow-audit/">Explore the live diagnostic <span class="ar">→</span></a>
+      <p>The method, demonstrated end to end: a tested, documented pipeline that reconciles CRM, contracts, billing, and commissions, surfaces every leak, and prices it — with detection proven exact against a ground-truth ledger. A second worked case study reconciles multi-currency revenue on a public retail dataset and surfaces a <strong>$252K</strong> reporting gap that anyone can re-run.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="flow-audit/">See it run <span class="ar">→</span></a>
+        <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">The build on GitHub <span class="ar">→</span></a>
+      </div>
     </div>
     <div class="right">
       <div class="stat"><div class="v"><span class="c">€</span>4,619,320</div><div class="l">Leakage detected · demo run</div></div>
@@ -337,17 +351,7 @@
   </div>
 </div></section>
 
-<section id="roadmap"><div class="wrap reveal">
-  <div class="lab">The roadmap</div>
-  <h2>One method, applied wherever value flows.</h2>
-  <p class="body-lg">Flow Audit is the first product, not the last. The same method — reconcile the systems, find the gap, price it — extends across the value chain. Built today; the rest is where Spatium Flow is going.</p>
-  <div class="rgrid">
-    <div class="ritem live"><span class="st">Live</span><h4>Revenue reconciliation</h4><p>Flow Audit — CRM, contracts, billing, commissions.</p></div>
-    <div class="ritem next"><span class="st">Next</span><h4>Pipeline integrity</h4><p>Where forecast diverges from the deals that actually move.</p></div>
-    <div class="ritem next"><span class="st">Next</span><h4>Marketing attribution</h4><p>Where spend disconnects from sourced, traceable revenue.</p></div>
-    <div class="ritem next"><span class="st">Next</span><h4>Fulfilment &amp; delivery</h4><p>Where what was sold drifts from what was delivered.</p></div>
-  </div>
-</div></section>
+<!-- roadmap intentionally omitted: the public site shows mission + proof, not a product/engine catalog -->
 
 <div class="wrap"><div class="divider"></div></div>
 
@@ -387,62 +391,34 @@
 </div>
 
 <script>
-// ---- starfield: varied stars (white/amber/green) + shooting light-paths ----
+// ---- starfield: quiet, static night sky, gentle twinkle (no drift, no streaks) ----
 (function(){
   const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const cv = document.getElementById('sky'); const ctx = cv.getContext('2d');
-  let w,h,dpr,stars=[],shoot=[],lastShoot=0;
-  const COL={white:'rgba(234,242,255,',warm:'rgba(255,184,105,',green:'rgba(150,232,172,'};
-  function pick(){const r=Math.random();return r<0.10?'warm':(r<0.19?'green':'white');}
+  const cv = document.getElementById('sky'); if(!cv) return;
+  const ctx = cv.getContext('2d');
+  let w,h,dpr,stars=[];
   function size(){
     dpr=Math.min(window.devicePixelRatio||1,2);
     w=cv.width=innerWidth*dpr; h=cv.height=innerHeight*dpr;
     cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px';
-    const n=Math.round((innerWidth*innerHeight)/8000);
+    const n=Math.round((innerWidth*innerHeight)/30000);   // sparse, calm
     stars=Array.from({length:n},()=>{
       const z=Math.random();
-      return {x:Math.random()*w,y:Math.random()*h,z:z,
-        r:(Math.pow(z,1.5)*2.0+0.25)*dpr,
-        tw:Math.random()*Math.PI*2, tws:0.4+Math.random()*1.8,
-        vx:(Math.pow(z,2)*0.24+0.01)*dpr,   // wide speed variance: near stars much faster
-        c:pick()};
+      return {x:Math.random()*w,y:Math.random()*h,
+        r:(z*0.8+0.35)*dpr, base:0.22+z*0.4,
+        tw:Math.random()*Math.PI*2, tws:0.12+Math.random()*0.3,
+        warm:Math.random()<0.06};
     });
-  }
-  function spawnShoot(){
-    const r=Math.random();
-    const col = r<0.5?'green':(r<0.72?'warm':'white');   // ~half the paths are green
-    const dir = Math.random()<0.5?1:-1;
-    const ang = (0.18+Math.random()*0.34);
-    const sp = (5.5+Math.random()*5)*dpr;
-    shoot.push({x:Math.random()*w, y:Math.random()*h*0.55,
-      vx:Math.cos(ang)*sp*dir, vy:Math.sin(ang)*sp+sp*0.35,
-      life:0, max:55+Math.random()*45, col});
   }
   function draw(t){
     ctx.clearRect(0,0,w,h);
-    for(const s2 of stars){
-      if(!reduce){s2.x-=s2.vx; if(s2.x<-2)s2.x=w+2;}
-      const tw=reduce?0.7:(0.4+0.5*(0.5+0.5*Math.sin(t*0.001*s2.tws+s2.tw)));
-      const a=tw*(0.35+s2.z*0.65);
-      ctx.beginPath(); ctx.arc(s2.x,s2.y,s2.r,0,6.2832);
-      ctx.fillStyle=COL[s2.c]+a+')';
-      if(s2.z>0.72){ctx.shadowBlur=6*dpr; ctx.shadowColor=COL[s2.c]+'0.8)';} else ctx.shadowBlur=0;
+    for(const s of stars){
+      // stars do NOT move; only a gentle brightness twinkle
+      const tw=reduce?0.6:(s.base+0.18*Math.sin(t*0.001*s.tws+s.tw));
+      const a=Math.max(0.06,tw);
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.2832);
+      ctx.fillStyle=(s.warm?'rgba(255,196,140,':'rgba(216,226,242,')+a+')';
       ctx.fill();
-    }
-    ctx.shadowBlur=0;
-    if(!reduce){
-      if(t-lastShoot > 2000+Math.random()*2800){lastShoot=t; spawnShoot();}
-      for(let i=shoot.length-1;i>=0;i--){
-        const p=shoot[i]; p.life++; p.x+=p.vx; p.y+=p.vy;
-        const k=1-p.life/p.max; if(k<=0){shoot.splice(i,1);continue;}
-        const tx=p.x-p.vx*6, ty=p.y-p.vy*6;
-        const g=ctx.createLinearGradient(tx,ty,p.x,p.y); const b=COL[p.col];
-        g.addColorStop(0,b+'0)'); g.addColorStop(1,b+(k*0.9)+')');
-        ctx.strokeStyle=g; ctx.lineWidth=1.4*dpr; ctx.lineCap='round';
-        ctx.beginPath(); ctx.moveTo(tx,ty); ctx.lineTo(p.x,p.y); ctx.stroke();
-        ctx.beginPath(); ctx.arc(p.x,p.y,1.5*dpr,0,6.2832); ctx.fillStyle=b+k+')';
-        ctx.shadowBlur=8*dpr; ctx.shadowColor=b+'0.9)'; ctx.fill(); ctx.shadowBlur=0;
-      }
     }
     if(!reduce) requestAnimationFrame(draw);
   }
