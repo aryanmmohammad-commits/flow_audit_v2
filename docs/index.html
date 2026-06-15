@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spatium Flow — analytics for the spaces between systems</title>
 <meta name="description" content="Spatium Flow builds the analytics that find where value leaks between the systems of the value chain — and prices every gap. Flow Audit is our first product.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
@@ -163,6 +166,8 @@
   .gr-txt b{color:#fff;font-weight:600}
   @media(max-width:620px){.gap-demo{grid-template-columns:1fr;gap:12px}.gp-mid{height:30px}.gp-arrow{transform:rotate(90deg)}}
 
+  .constellation{display:flex;justify-content:center;margin:30px auto 0;max-width:560px}
+  .constellation svg{width:100%;height:auto;display:block}
   .reveal{opacity:0;transform:translateY(16px)}
   .reveal.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
   @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}.eyebrow,h1 .ln,.sub,.cta-row{opacity:1!important}}
@@ -243,14 +248,74 @@
   <div class="lab">The thesis</div>
   <h2>No single system owns the gap. So no one measures it.</h2>
   <p class="body-lg">A deal closes in the CRM, a contract is signed, invoices go out, commission is paid. Four systems that should agree — and quietly don't. The same is true across the chain: <strong>marketing to sales, sales to billing, billing to delivery.</strong> Each system is correct on its own terms, yet value slips through the seams between them. Spatium Flow reconciles the systems against each other, finds the unexplained variance, and prices it. One discipline: <strong>find the obstruction in the value flow, and remove it.</strong></p>
-  <div class="chain">
-    <span class="step">Marketing</span><span class="arr">→</span>
-    <span class="step">Sales / CRM</span><span class="arr">→</span>
-    <span class="step">Contracts</span><span class="arr">→</span>
-    <span class="step">Billing</span><span class="arr">→</span>
-    <span class="step">Commissions</span><span class="arr">→</span>
-    <span class="step">Delivery</span>
-  </div>
+  <p class="body-lg" style="margin-top:18px">It isn't a one-way line. The systems form a web — a leak in billing distorts forecasting; a CRM error ripples into commissions. Each point affects every other.</p>
+  <div class="constellation"><svg viewBox="0 0 600 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The value chain as eight interconnected systems — each impacts the others">
+  <defs><radialGradient id="hub" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#ffb869" stop-opacity="0.9"/><stop offset="100%" stop-color="#f0852e" stop-opacity="0"/></radialGradient></defs>
+    <line x1="300.0" y1="90.0" x2="448.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300.0" y1="90.0" x2="510.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300.0" y1="90.0" x2="448.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300.0" y1="90.0" x2="300.0" y2="510.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300.0" y1="90.0" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300.0" y1="90.0" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300.0" y1="90.0" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="151.5" x2="510.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="151.5" x2="448.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="151.5" x2="300.0" y2="510.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="151.5" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="151.5" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="151.5" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="510.0" y1="300.0" x2="448.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="510.0" y1="300.0" x2="300.0" y2="510.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="510.0" y1="300.0" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="510.0" y1="300.0" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="510.0" y1="300.0" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="448.5" x2="300.0" y2="510.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="448.5" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="448.5" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="448.5" y1="448.5" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300.0" y1="510.0" x2="151.5" y2="448.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300.0" y1="510.0" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300.0" y1="510.0" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="151.5" y1="448.5" x2="90.0" y2="300.0" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="151.5" y1="448.5" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="90.0" y1="300.0" x2="151.5" y2="151.5" stroke="#3a5a8f" stroke-width="0.6" opacity="0.18"/>
+    <line x1="300" y1="300" x2="300.0" y2="90.0" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
+    <circle cx="300.0" cy="90.0" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
+    <circle cx="300.0" cy="90.0" r="2.4" fill="#ffb869"/>
+    <text x="300.0" y="56.0" dy="0.7em" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Marketing</text>
+    <line x1="300" y1="300" x2="448.5" y2="151.5" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
+    <circle cx="448.5" cy="151.5" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
+    <circle cx="448.5" cy="151.5" r="2.4" fill="#ffb869"/>
+    <text x="472.5" y="127.5" dy="0.7em" text-anchor="start" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Sales</text>
+    <line x1="300" y1="300" x2="510.0" y2="300.0" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
+    <circle cx="510.0" cy="300.0" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
+    <circle cx="510.0" cy="300.0" r="2.4" fill="#ffb869"/>
+    <text x="544.0" y="300.0" dy="0.32em" text-anchor="start" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">CRM</text>
+    <line x1="300" y1="300" x2="448.5" y2="448.5" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
+    <circle cx="448.5" cy="448.5" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
+    <circle cx="448.5" cy="448.5" r="2.4" fill="#ffb869"/>
+    <text x="472.5" y="472.5" dy="-0.2em" text-anchor="start" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Contracts</text>
+    <line x1="300" y1="300" x2="300.0" y2="510.0" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
+    <circle cx="300.0" cy="510.0" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
+    <circle cx="300.0" cy="510.0" r="2.4" fill="#ffb869"/>
+    <text x="300.0" y="544.0" dy="-0.2em" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Billing</text>
+    <line x1="300" y1="300" x2="151.5" y2="448.5" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
+    <circle cx="151.5" cy="448.5" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
+    <circle cx="151.5" cy="448.5" r="2.4" fill="#ffb869"/>
+    <text x="127.5" y="472.5" dy="-0.2em" text-anchor="end" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Commissions</text>
+    <line x1="300" y1="300" x2="90.0" y2="300.0" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
+    <circle cx="90.0" cy="300.0" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
+    <circle cx="90.0" cy="300.0" r="2.4" fill="#ffb869"/>
+    <text x="56.0" y="300.0" dy="0.32em" text-anchor="end" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Delivery</text>
+    <line x1="300" y1="300" x2="151.5" y2="151.5" stroke="#f0852e" stroke-width="0.9" opacity="0.28"/>
+    <circle cx="151.5" cy="151.5" r="6.5" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
+    <circle cx="151.5" cy="151.5" r="2.4" fill="#ffb869"/>
+    <text x="127.5" y="127.5" dy="0.7em" text-anchor="end" font-family="'Space Grotesk',sans-serif" font-size="14" fill="#cdd6e8" letter-spacing="0.3">Renewals</text>
+
+  <circle cx="300" cy="300" r="30" fill="url(#hub)"/>
+  <circle cx="300" cy="300" r="9" fill="#0a1228" stroke="#ff9d45" stroke-width="1.4"/>
+  <text x="300" y="300" dy="0.33em" text-anchor="middle" font-family="'Space Grotesk',sans-serif" font-size="10.5" letter-spacing="0.12em" fill="#ffd9a8">FLOW</text>
+</svg></div>
 </div></section>
 
 <div class="wrap"><div class="divider"></div></div>
