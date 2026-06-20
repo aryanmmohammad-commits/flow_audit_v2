@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spatium Flow — case studies</title>
+<meta name="description" content="Reproducible revenue-integrity case studies: Flow Audit and a $252K currency-reconciliation finding on public data. Take the data, run the code, reach the same number.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* deep space */
+    --void:#020308; --space:#04060d; --space-2:#070b1c; --deep:#0a1228;
+    --blue:#1f4fa3; --blue-bright:#3a72d4; --blue-soft:#6f9be0;
+    --orange:#f0852e; --orange-2:#ff9d45; --amber:#ffb869; --ember:#e2641d;
+    --star:#eaf2ff; --paper:#eef1f8; --mist:#aab6cf; --faint:#6f7d9c;
+    --line:rgba(140,160,210,.16); --line-2:rgba(140,160,210,.10);
+    --mono:'Space Grotesk',ui-monospace,'Cascadia Mono',Menlo,monospace;
+    --sans:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+    --serif:'Fraunces',Georgia,'Times New Roman',serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--void);color:var(--paper);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 32px;position:relative}
+  a{color:inherit}
+  ::selection{background:var(--orange);color:var(--void)}
+
+  /* fixed starfield behind everything */
+  #sky{position:fixed;inset:0;z-index:0;display:block;background:
+    radial-gradient(120% 80% at 80% -10%, rgba(240,133,46,.09), transparent 55%),
+    radial-gradient(90% 70% at 10% 110%, rgba(31,79,163,.14), transparent 60%),
+    linear-gradient(180deg,#020308 0%,#04060d 45%,#020308 100%)}
+  .page{position:relative;z-index:1}
+
+  /* top bar */
+  .bar{position:absolute;top:0;left:0;right:0;z-index:10}
+  .bar .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:28px}
+  .brand{display:flex;align-items:center;gap:11px;font-family:var(--mono);font-size:13px;letter-spacing:.18em;color:var(--paper);text-decoration:none;font-weight:500}
+  .brand .mark{width:24px;height:24px;flex:none}
+  .bar nav{display:flex;gap:28px;font-family:var(--mono);font-size:12.5px;color:var(--mist);letter-spacing:.02em}
+  .bar nav a{text-decoration:none;transition:color .18s}
+  .bar nav a:hover{color:var(--orange-2)}
+  @media(max-width:660px){.bar nav{display:none}}
+
+  /* hero */
+  
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--orange);margin-bottom:30px;opacity:0;animation:rise .9s .1s ease forwards}
+  h1{font-family:var(--serif);font-weight:300;font-size:clamp(38px,7vw,82px);line-height:1.0;letter-spacing:-.02em;max-width:15ch;margin-bottom:30px;text-shadow:none}
+  h1 .ln{display:block;opacity:0;animation:rise 1s ease forwards}
+  h1 .ln:nth-child(1){animation-delay:.18s}
+  h1 .ln:nth-child(2){animation-delay:.34s}
+  h1 em{font-style:italic;font-weight:400;color:var(--orange-2)}
+  .sub{font-size:clamp(16px,2.1vw,19px);color:var(--mist);max-width:50ch;line-height:1.65;margin-bottom:42px;opacity:0;animation:rise 1s .5s ease forwards}
+  .cta-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center;opacity:0;animation:rise 1s .66s ease forwards}
+  .btn{font-family:var(--mono);font-size:13px;letter-spacing:.02em;font-weight:500;text-decoration:none;padding:14px 24px;border-radius:9px;transition:transform .16s,box-shadow .16s,background .16s,border-color .16s;display:inline-flex;align-items:center;gap:9px}
+  .btn-primary{background:linear-gradient(135deg,var(--orange),var(--ember));color:#1a0f04;box-shadow:0 0 0 rgba(240,133,46,0)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 40px -10px rgba(240,133,46,.6)}
+  .btn-ghost{border:1px solid var(--line);color:var(--paper);background:rgba(140,160,210,.04)}
+  .btn-ghost:hover{border-color:var(--blue-soft);color:#fff}
+  .btn .ar{transition:transform .16s}.btn:hover .ar{transform:translateX(3px)}
+  @keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+  /* the SIGNATURE rift — two systems, a glowing orange rift in deep space */
+  @media(max-width:560px){.iv{grid-template-columns:1fr;max-width:340px;gap:12px}.iv .between{height:34px}.iv .between::before{left:50%;right:auto;top:8px;bottom:8px;width:1px;height:auto}}
+
+  /* section shell */
+  section{padding:92px 0;position:relative}
+  .lab{font-family:var(--mono);font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--orange);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+  .lab::before{content:"";width:26px;height:1px;background:var(--orange);opacity:.7}
+  h2{font-family:var(--serif);font-weight:300;font-size:clamp(27px,4vw,42px);line-height:1.1;letter-spacing:-.015em;max-width:18ch;margin-bottom:22px}
+  .body-lg{font-size:17px;color:var(--mist);max-width:60ch;line-height:1.7}
+  .body-lg strong{color:var(--paper);font-weight:500}
+  .body-lg em{color:var(--orange-2);font-style:italic}
+
+  /* stats / proof band */
+  .proof{padding:54px 0 16px;position:relative}
+  .proof-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:40px 0}
+  .pf{text-align:center}
+  .pf .pv{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5vw,52px);line-height:1;color:#fff;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .pf .pv .c{color:var(--orange-2);font-size:.5em;vertical-align:.35em;margin-right:.04em}
+  .pf .pv .u{color:var(--orange-2);font-size:.6em;vertical-align:.05em;margin-left:.02em}
+  .pf .pl{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;color:var(--faint);margin-top:13px;line-height:1.5;text-transform:uppercase}
+  .proof-note{text-align:center;font-family:var(--mono);font-size:12.5px;color:var(--mist);margin-top:22px}
+  .proof-note a{color:var(--orange-2);text-decoration:none}
+  .proof-note a:hover{text-decoration:underline}
+  @media(max-width:680px){.proof-grid{grid-template-columns:1fr 1fr;gap:30px 18px;padding:32px 0}}
+  .divider{height:1px;background:linear-gradient(90deg,transparent,var(--line),transparent)}
+
+  /* thesis chain */
+  .chain{display:flex;flex-wrap:wrap;gap:8px;margin-top:38px;align-items:center}
+  .chain .step{font-family:var(--mono);font-size:11.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--mist);border:1px solid var(--line);border-radius:7px;padding:9px 14px;background:rgba(140,160,210,.04)}
+  .chain .arr{color:var(--orange);font-size:13px;opacity:.7}
+
+  /* product */
+  .pcard{display:grid;grid-template-columns:1.15fr .85fr;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:linear-gradient(180deg,rgba(140,160,210,.05),rgba(140,160,210,.015))}
+  .pcard .left{padding:40px 38px}
+  .pcard .tag{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-2);margin-bottom:15px}
+  .pcard h3{font-family:var(--serif);font-weight:400;font-size:32px;margin-bottom:15px;color:#fff}
+  .pcard p{font-size:15px;color:var(--mist);line-height:1.65;margin-bottom:28px;max-width:46ch}
+  .pcard .right{border-left:1px solid var(--line);padding:34px 32px;display:flex;flex-direction:column;justify-content:center;background:rgba(4,6,15,.4)}
+  .stat{padding:15px 0;border-bottom:1px solid var(--line-2)}
+  .stat:last-child{border-bottom:none}
+  .stat .v{font-family:var(--serif);font-size:32px;line-height:1;color:var(--orange-2);font-variant-numeric:tabular-nums;text-shadow:0 0 30px rgba(240,133,46,.35)}
+  .stat .v .c{color:var(--blue-soft);font-size:.5em;vertical-align:.3em;margin-right:.06em;text-shadow:none}
+  .stat .v.blue{color:var(--blue-soft);text-shadow:0 0 30px rgba(58,114,212,.4)}
+  .stat .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin-top:8px}
+  @media(max-width:720px){.pcard{grid-template-columns:1fr}.pcard .right{border-left:none;border-top:1px solid var(--line)}}
+
+  /* roadmap */
+  .rgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:12px}
+  .ritem{border:1px solid var(--line);border-radius:12px;padding:22px 20px;background:rgba(140,160,210,.03)}
+  .ritem .st{font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:14px}
+  .ritem.live .st{background:linear-gradient(135deg,var(--orange),var(--ember));color:#1a0f04;font-weight:600}
+  .ritem.next{border-style:dashed;background:transparent}
+  .ritem.next .st{color:var(--blue-soft);border:1px solid var(--line)}
+  .ritem h4{font-size:15.5px;font-weight:600;margin-bottom:7px;letter-spacing:-.01em;color:var(--paper)}
+  .ritem p{font-size:13px;color:var(--faint);line-height:1.5}
+  @media(max-width:760px){.rgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:440px){.rgrid{grid-template-columns:1fr}}
+
+  /* founder */
+  .founder .inner{display:grid;grid-template-columns:auto 1fr;gap:30px;align-items:start;max-width:820px}
+  .mono-badge{width:86px;height:86px;border-radius:15px;background:linear-gradient(160deg,var(--deep),var(--void));border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none}
+  .mono-badge span{font-family:var(--serif);font-size:36px;color:var(--orange-2);text-shadow:0 0 24px rgba(240,133,46,.4)}
+  .founder h3{font-size:20px;font-weight:600;margin-bottom:4px;letter-spacing:-.01em}
+  .founder .role{font-family:var(--mono);font-size:12.5px;color:var(--orange-2);margin-bottom:18px}
+  .founder p{font-size:15.5px;color:var(--mist);line-height:1.68;max-width:60ch;margin-bottom:16px}
+  .founder .creds{display:flex;flex-wrap:wrap;gap:8px}
+  .founder .creds span{font-family:var(--mono);font-size:11.5px;color:var(--mist);border:1px solid var(--line);border-radius:7px;padding:7px 13px;background:rgba(140,160,210,.04)}
+  @media(max-width:560px){.founder .inner{grid-template-columns:1fr}}
+
+  /* footer */
+  .foot{border-top:1px solid var(--line);padding:64px 0 44px;background:linear-gradient(180deg,transparent,rgba(4,6,15,.6))}
+  .foot h2{margin-bottom:26px}
+  .foot .contact{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:52px}
+  .foot a.cbtn{font-family:var(--mono);font-size:13px;text-decoration:none;border:1px solid var(--line);border-radius:9px;padding:13px 19px;transition:border-color .16s,color .16s,transform .16s;color:var(--mist)}
+  .foot a.cbtn:hover{border-color:var(--blue-soft);color:#fff;transform:translateY(-2px)}
+  .foot a.cbtn.gold{background:linear-gradient(135deg,var(--orange),var(--ember));color:#1a0f04;border-color:transparent;font-weight:600}
+  .foot .base{display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px;align-items:center;border-top:1px solid var(--line-2);padding-top:30px;font-family:var(--mono);font-size:12px;color:var(--faint)}
+
+  /* balanced hero */
+  .hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 70px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;width:100%}
+  .hero-text{max-width:none}
+  .hero-emblem{display:flex;align-items:center;justify-content:center}
+  .hero-emblem svg{width:100%;max-width:560px;height:auto;display:block;filter:drop-shadow(0 0 30px rgba(240,133,46,.14))}
+  @media(max-width:880px){.hero-grid{grid-template-columns:1fr;gap:8px}.hero-emblem{order:-1;margin-bottom:4px}.hero-emblem svg{width:240px}}
+
+  /* the space-between explainer */
+  .gap-explain{padding:30px 0 92px;position:relative}
+  .gap-demo{display:grid;grid-template-columns:1fr 56px 1fr;gap:0;align-items:stretch;margin:34px 0 26px;max-width:860px}
+  .gp-sys{border:1px solid var(--line);border-radius:13px;padding:24px 26px;background:linear-gradient(180deg,rgba(140,160,210,.05),rgba(140,160,210,.015))}
+  .gp-tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-soft);margin-bottom:11px}
+  .gp-claim{font-size:16px;color:var(--mist);line-height:1.5}
+  .gp-claim b{color:#fff;font-weight:600}
+  .gp-mid{display:flex;align-items:center;justify-content:center}
+  .gp-arrow{font-family:var(--mono);font-size:18px;color:var(--orange);opacity:.85}
+  .gap-result{max-width:860px;border-left:3px solid var(--orange);padding:14px 0 14px 22px;display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+  .gr-amt{font-family:var(--serif);font-size:34px;color:var(--orange-2);line-height:1;font-variant-numeric:tabular-nums;text-shadow:0 0 26px rgba(240,133,46,.3)}
+  .gr-txt{font-size:15.5px;color:var(--mist);line-height:1.6;max-width:52ch}
+  .gr-txt b{color:#fff;font-weight:600}
+  @media(max-width:620px){.gap-demo{grid-template-columns:1fr;gap:12px}.gp-mid{height:30px}.gp-arrow{transform:rotate(90deg)}}
+
+  /* The Law of Value Continuity */
+  .law{padding:74px 0 22px;position:relative}
+  .law-text{font-family:var(--serif);font-weight:300;font-size:clamp(23px,3.2vw,37px);line-height:1.32;letter-spacing:-.01em;color:#fff;max-width:780px;margin-bottom:26px}
+  .law-text em{font-style:italic;color:var(--orange-2)}
+
+  .constellation{display:flex;justify-content:center;margin:30px auto 0;max-width:560px}
+  .constellation svg{width:100%;height:auto;display:block}
+  /* evidence cards + case list (home) */
+  .evgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
+  .ev{border:1px solid var(--line);border-radius:14px;padding:26px 28px;background:linear-gradient(180deg,rgba(140,160,210,.05),rgba(140,160,210,.015))}
+  .ev .n{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5vw,46px);line-height:1;color:var(--orange-2);text-shadow:0 0 26px rgba(240,133,46,.28);letter-spacing:-.02em}
+  .ev .d{font-size:14.5px;color:var(--mist);line-height:1.6;margin-top:14px}
+  .ev .s{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:14px}
+  .ev .s a{color:var(--faint);text-decoration:none;border-bottom:1px solid var(--line)}
+  .ev .s a:hover{color:var(--orange-2)}
+  .caselist{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}
+  .caserow{display:block;border:1px solid var(--line);border-radius:14px;padding:26px 28px;background:linear-gradient(180deg,rgba(140,160,210,.05),rgba(140,160,210,.015));text-decoration:none;transition:border-color .18s,transform .18s}
+  .caserow:hover{border-color:#3a5a8f;transform:translateY(-2px)}
+  .cr-tag{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7e9bd0;margin-bottom:10px}
+  .cr-title{font-family:var(--serif);font-weight:400;font-size:24px;color:#fff;margin-bottom:11px}
+  .cr-desc{font-size:14.5px;color:var(--mist);line-height:1.6}
+  .cr-go{font-family:var(--mono);font-size:12px;color:var(--orange-2);margin-top:16px}
+  @media(max-width:680px){.evgrid,.caselist{grid-template-columns:1fr}}
+  .reveal{opacity:0;transform:translateY(16px)}
+  .reveal.in{opacity:1;transform:none;transition:opacity .7s ease,transform .7s ease}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}.reveal{opacity:1;transform:none}.eyebrow,h1 .ln,.sub,.cta-row{opacity:1!important}}
+
+  /* sub-page additions */
+  .page-hero{padding:120px 0 12px}
+  .case{padding:46px 0}
+  .case + .case{border-top:1px solid var(--line)}
+  .story{display:grid;grid-template-columns:repeat(2,1fr);gap:20px 44px;margin-top:30px}
+  .story h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--orange-2);margin-bottom:9px}
+  .story p{font-size:15px;color:var(--mist);line-height:1.65}
+  @media(max-width:680px){.story{grid-template-columns:1fr;gap:18px}}
+  .evgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
+  .ev{border:1px solid var(--line);border-radius:14px;padding:26px 28px;background:linear-gradient(180deg,rgba(140,160,210,.05),rgba(140,160,210,.015))}
+  .ev .n{font-family:var(--serif);font-weight:300;font-size:clamp(34px,5vw,46px);line-height:1;color:var(--orange-2);text-shadow:0 0 26px rgba(240,133,46,.28);letter-spacing:-.02em}
+  .ev .d{font-size:14.5px;color:var(--mist);line-height:1.6;margin-top:14px}
+  .ev .s{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-top:14px}
+  @media(max-width:680px){.evgrid{grid-template-columns:1fr}}
+  .srcs{font-size:14px;color:var(--faint);line-height:1.7;max-width:72ch}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<div class="page">
+
+<div class="bar"><div class="wrap">
+  <a class="brand" href="/">
+    <svg class="mark" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.0 2.0 L20.53 11.9 L29.31 6.69 L24.1 15.47 L34.0 18.0 L24.1 20.53 L29.31 29.31 L20.53 24.1 L18.0 34.0 L15.47 24.1 L6.69 29.31 L11.9 20.53 L2.0 18.0 L11.9 15.47 L6.69 6.69 L15.47 11.9 Z" stroke="#ffb869" stroke-width="1.15" stroke-linejoin="round" fill="none" opacity=".95"/><path d="M18.0 10.6 L19.15 15.23 L23.23 12.77 L20.77 16.85 L25.4 18.0 L20.77 19.15 L23.23 23.23 L19.15 20.77 L18.0 25.4 L16.85 20.77 L12.77 23.23 L15.23 19.15 L10.6 18.0 L15.23 16.85 L12.77 12.77 L16.85 15.23 Z" stroke="#f0852e" stroke-width=".9" stroke-linejoin="round" fill="none" opacity=".55"/><circle cx="18" cy="18" r="1.7" fill="#ffd9a8"/></svg>
+    SPATIUM&nbsp;FLOW
+  </a>
+  <nav>
+    <a href="/#aim">The aim</a>
+    <a href="/#evidence">Evidence</a>
+    <a href="/case-studies/" style="color:var(--orange-2)">Case Studies</a>
+    <a href="/#contact">Contact</a>
+  </nav>
+</div></div>
+
+
+<section class="page-hero"><div class="wrap reveal">
+  <div class="lab">Case studies</div>
+  <h2>Proof you can re-run.</h2>
+  <p class="body-lg">Every finding here comes from real data, with the method shown in full. Nothing is asserted that can't be reproduced — take the data, run the code, reach the same number. This is the discipline of revenue integrity: not opinion, <em>evidence</em>.</p>
+</div></section>
+
+<section class="case"><div class="wrap reveal">
+  <div class="pcard">
+    <div class="left">
+      <div class="tag">B2B SaaS &middot; revenue reconciliation</div>
+      <h3>Flow Audit</h3>
+      <p>Built on a synthetic 500-account book with a known ground-truth ledger, Flow Audit reconciles CRM, contracts, billing, and commissions against one another and surfaces every place value leaks &mdash; silent churn, duplicate revenue, commission overpayment, under-billing, and more. Because the truth is known in advance, detection can be proven exact, not merely plausible.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="/flow-audit/">See it run <span class="ar">&rarr;</span></a>
+        <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">The build on GitHub <span class="ar">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="right">
+      <div class="stat"><div class="v"><span class="c">&euro;</span>4.6M</div><div class="l">Leakage surfaced &middot; demo run</div></div>
+      <div class="stat"><div class="v blue">100% / 100%</div><div class="l">Precision &amp; recall, calibrated</div></div>
+      <div class="stat"><div class="v">267</div><div class="l">Leaks across six types</div></div>
+    </div>
+  </div>
+  <div class="story">
+    <div><h4>The pain</h4><p>A deal closes in the CRM, a contract is signed, invoices go out, commission is paid. Four systems that should agree &mdash; and quietly don't. Revenue that's counted but never collected; commission paid above plan; the same revenue booked twice.</p></div>
+    <div><h4>Why it persists</h4><p>Each system is correct on its own terms. No single tool sees across all four, so the disagreements between them are invisible &mdash; and what no one can see, no one fixes.</p></div>
+    <div><h4>The method</h4><p>Reconcile the systems against each other, classify every unexplained variance by type, and price it. A calibration layer with planted, known leaks proves the detection catches everything and invents nothing.</p></div>
+    <div><h4>The proof</h4><p>Against the ground-truth ledger, detection reaches 100% precision and 100% recall &mdash; zero misses, zero false alarms &mdash; surfacing &euro;4.6M across 267 leaks in six categories. The full pipeline is on GitHub.</p></div>
+  </div>
+</div></section>
+
+<section class="case"><div class="wrap reveal">
+  <div class="pcard">
+    <div class="left">
+      <div class="tag">Retail &middot; currency consolidation</div>
+      <h3>The $252K in the exchange rate</h3>
+      <p>Applied to a public Maven &ldquo;Global Electronics Retailer&rdquo; dataset: $54.7M of revenue, 46.6% of it booked in foreign currencies. Reconciling every order to its transaction-date exchange rate &mdash; against the common shortcut of one year-end rate &mdash; surfaces a $252,477 revenue misstatement hiding entirely in rate timing.</p>
+      <div class="cta-row">
+        <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">Reconciliation script on GitHub <span class="ar">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="right">
+      <div class="stat"><div class="v"><span class="c">$</span>252K</div><div class="l">Revenue misstated &middot; rate timing</div></div>
+      <div class="stat"><div class="v blue">46.6%</div><div class="l">Revenue in foreign currency</div></div>
+      <div class="stat"><div class="v">$54.7M</div><div class="l">Revenue reconciled</div></div>
+    </div>
+  </div>
+  <div class="story">
+    <div><h4>The pain</h4><p>Almost half of revenue is earned in EUR, GBP, CAD, and AUD. Before it reaches a report it must be converted to one currency &mdash; and the rate chosen for that conversion quietly changes the number.</p></div>
+    <div><h4>Why it persists</h4><p>Currency conversion looks like plumbing, so it's treated like plumbing. Applying a single year-end rate to a whole year of transactions feels harmless; no system flags the gap, because every system did as it was told.</p></div>
+    <div><h4>The method</h4><p>A documented DuckDB pipeline aligns the raw files, rebuilds line-level revenue, joins each order to its transaction-date spot rate, and reconciles that against the year-end shortcut &mdash; pricing the difference.</p></div>
+    <div><h4>Reproduce it</h4><p>Download the public dataset, run <code>reconcile.py</code>, and you reach $252,477. The finding isn't asserted &mdash; it's falsifiable, and the script is published for anyone to check.</p></div>
+  </div>
+</div></section>
+
+<section class="case"><div class="wrap reveal">
+  <p class="body-lg">More case studies are added as new datasets are analyzed &mdash; each a real reconciliation, each reproducible. <a href="/#contact" style="color:var(--orange-2);text-decoration:none">Bring a dataset &rarr;</a></p>
+</div></section>
+
+
+<footer class="foot" id="contact"><div class="wrap reveal">
+  <div class="lab">Get in touch</div>
+  <h2>Where does value leak in your chain?</h2>
+  <div class="contact">
+    <a class="cbtn gold" href="mailto:aryan.m.mohammad@gmail.com">aryan.m.mohammad@gmail.com</a>
+    <a class="cbtn" href="https://www.linkedin.com/in/aryan-mohammaddoost-990b6631a" target="_blank" rel="noopener">LinkedIn →</a>
+    <a class="cbtn" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">GitHub →</a>
+    <a class="cbtn" href="https://t.me/Ryanmhd98" target="_blank" rel="noopener">Telegram →</a>
+  </div>
+  <div class="base">
+    <span>© 2026 Spatium Flow</span>
+    <span>Growth comes from removing obstruction in the value flow.</span>
+  </div>
+</div></footer>
+
+</div>
+
+<script>
+// ---- starfield: quiet night sky — slow, calm drift + gentle twinkle (no fast stars, no streaks) ----
+(function(){
+  const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const cv = document.getElementById('sky'); if(!cv) return;
+  const ctx = cv.getContext('2d');
+  let w,h,dpr,stars=[];
+  function size(){
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    w=cv.width=innerWidth*dpr; h=cv.height=innerHeight*dpr;
+    cv.style.width=innerWidth+'px'; cv.style.height=innerHeight+'px';
+    const n=Math.round((innerWidth*innerHeight)/16000);   // gentle density, calm
+    stars=Array.from({length:n},()=>{
+      const z=Math.random();
+      return {x:Math.random()*w,y:Math.random()*h,
+        r:(z*0.8+0.35)*dpr, base:0.22+z*0.4,
+        tw:Math.random()*Math.PI*2, tws:0.12+Math.random()*0.3,
+        vx:(0.016+z*0.04)*dpr,            // slow, gentle drift — none move fast
+        warm:Math.random()<0.06};
+    });
+  }
+  function draw(t){
+    ctx.clearRect(0,0,w,h);
+    for(const s of stars){
+      if(!reduce){ s.x-=s.vx; if(s.x<-2) s.x=w+2; }   // calm drift
+      const tw=reduce?0.6:(s.base+0.18*Math.sin(t*0.001*s.tws+s.tw));
+      const a=Math.max(0.06,tw);
+      ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,6.2832);
+      ctx.fillStyle=(s.warm?'rgba(255,196,140,':'rgba(216,226,242,')+a+')';
+      ctx.fill();
+    }
+    if(!reduce) requestAnimationFrame(draw);
+  }
+  size();
+  if(reduce){draw(0);} else {requestAnimationFrame(draw);}
+  let to; addEventListener('resize',()=>{clearTimeout(to);to=setTimeout(size,150)});
+})();
+// ---- scroll reveal ----
+if(!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)){
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+} else {
+  document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+}
+</script>
+</body>
+</html>
