@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spatium Flow — case studies</title>
-<meta name="description" content="Reproducible revenue-integrity case studies: Flow Audit and a $252K currency-reconciliation finding on public data. Take the data, run the code, reach the same number.">
+<meta name="description" content="Reproducible revenue-integrity case studies: Flow Audit, a $252K currency-reconciliation finding, and a D2C margin-and-returns diagnosis. Run the code, reach the same number.">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -231,7 +231,7 @@
 <section class="page-hero"><div class="wrap reveal">
   <div class="lab">Case studies</div>
   <h2>Proof you can re-run.</h2>
-  <p class="body-lg">Every finding here comes from real data, with the method shown in full. Nothing is asserted that can't be reproduced — take the data, run the code, reach the same number. This is the discipline of revenue integrity: not opinion, <em>evidence</em>.</p>
+  <p class="body-lg">Every finding here is reached by rebuilding the numbers and reconciling the systems against one another, with the method shown in full. Nothing is asserted that can't be reproduced &mdash; run the code, reach the same number. This is the discipline of revenue integrity: not opinion, <em>evidence</em>.</p>
 </div></section>
 
 <section class="case"><div class="wrap reveal">
@@ -239,7 +239,7 @@
     <div class="left">
       <div class="tag">B2B SaaS &middot; revenue reconciliation</div>
       <h3>Flow Audit</h3>
-      <p>Built on a synthetic 500-account book with a known ground-truth ledger, Flow Audit reconciles CRM, contracts, billing, and commissions against one another and surfaces every place value leaks &mdash; silent churn, duplicate revenue, commission overpayment, under-billing, and more. Because the truth is known in advance, detection can be proven exact, not merely plausible.</p>
+      <p>Flow Audit reconciles a B2B SaaS revenue stack &mdash; CRM, contracts, billing, and commissions &mdash; against one another, and against a known ground-truth ledger. Because the correct answer is established in advance, every leak it surfaces is proven exact, not merely plausible: silent churn, duplicate revenue, commission overpayment, under-billing, and more.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="/flow-audit/">See it run <span class="ar">&rarr;</span></a>
         <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">The build on GitHub <span class="ar">&rarr;</span></a>
@@ -264,9 +264,9 @@
     <div class="left">
       <div class="tag">Retail &middot; currency consolidation</div>
       <h3>The $252K in the exchange rate</h3>
-      <p>Applied to a public Maven &ldquo;Global Electronics Retailer&rdquo; dataset: $54.7M of revenue, 46.6% of it booked in foreign currencies. Reconciling every order to its transaction-date exchange rate &mdash; against the common shortcut of one year-end rate &mdash; surfaces a $252,477 revenue misstatement hiding entirely in rate timing.</p>
+      <p>A retailer's order book: $54.7M of revenue, 46.6% of it booked in foreign currencies. Reconciling every order to its transaction-date exchange rate &mdash; against the common shortcut of one year-end rate &mdash; surfaces a $252,477 revenue misstatement hiding entirely in rate timing.</p>
       <div class="cta-row">
-        <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">Reconciliation script on GitHub <span class="ar">&rarr;</span></a>
+        <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow-audit-retail" target="_blank" rel="noopener">The engine on GitHub <span class="ar">&rarr;</span></a>
       </div>
     </div>
     <div class="right">
@@ -278,8 +278,32 @@
   <div class="story">
     <div><h4>The pain</h4><p>Almost half of revenue is earned in EUR, GBP, CAD, and AUD. Before it reaches a report it must be converted to one currency &mdash; and the rate chosen for that conversion quietly changes the number.</p></div>
     <div><h4>Why it persists</h4><p>Currency conversion looks like plumbing, so it's treated like plumbing. Applying a single year-end rate to a whole year of transactions feels harmless; no system flags the gap, because every system did as it was told.</p></div>
-    <div><h4>The method</h4><p>A documented DuckDB pipeline aligns the raw files, rebuilds line-level revenue, joins each order to its transaction-date spot rate, and reconciles that against the year-end shortcut &mdash; pricing the difference.</p></div>
-    <div><h4>Reproduce it</h4><p>Download the public dataset, run <code>reconcile.py</code>, and you reach $252,477. The finding isn't asserted &mdash; it's falsifiable, and the script is published for anyone to check.</p></div>
+    <div><h4>The method</h4><p>A documented DuckDB engine aligns the raw files, rebuilds line-level revenue, joins each order to its transaction-date spot rate, and reconciles that against the year-end shortcut &mdash; pricing the difference.</p></div>
+    <div><h4>Reproduce it</h4><p>Run the published engine against the same data and you reach $252,477. The finding isn't asserted &mdash; it's falsifiable, every figure locked by tests, the full method published for anyone to check.</p></div>
+  </div>
+</div></section>
+
+<section class="case"><div class="wrap reveal">
+  <div class="pcard">
+    <div class="left">
+      <div class="tag">D2C e-commerce &middot; margin, returns &amp; attribution</div>
+      <h3>The margin you keep isn't the margin you think</h3>
+      <p>A direct-to-consumer fashion brand's full stack &mdash; catalog, orders, line items, ad spend, and the web funnel. Rebuilding margin from unit cost and reconciling the systems against one another surfaces a realised margin well below the full-price figure, crores tied up in returns, and an ad dashboard that disagrees with the order book.</p>
+      <div class="cta-row">
+        <a class="btn btn-ghost" href="https://github.com/aryanmmohammad-commits/flow-audit-ecommerce" target="_blank" rel="noopener">The engine on GitHub <span class="ar">&rarr;</span></a>
+      </div>
+    </div>
+    <div class="right">
+      <div class="stat"><div class="v">52.1%</div><div class="l">Realised margin &middot; vs 62.4% full-price</div></div>
+      <div class="stat"><div class="v blue"><span class="c">&#8377;</span>2.69<span class="u">Cr</span></div><div class="l">Revenue returned or RTO'd</div></div>
+      <div class="stat"><div class="v">36 / 50</div><div class="l">Campaigns off vs the order book</div></div>
+    </div>
+  </div>
+  <div class="story">
+    <div><h4>The pain</h4><p>The brand believes it runs on 55&ndash;65% margins, watches a healthy ROAS climb, and treats returns as just part of fashion. Three teams, three dashboards, each saying things are fine &mdash; while the cash reaching the bank is thinner than any one screen explains.</p></div>
+    <div><h4>Why it persists</h4><p>The loss isn't on any one screen &mdash; it's in the seams between them. The catalog's margin versus the discounts that actually shipped; the order header versus its line items; the ad platform versus the order book. No system is wrong; no one owns the space between them.</p></div>
+    <div><h4>The method</h4><p>Rebuild margin from selling price and unit cost, sum line items against the order header, reconcile reported ad conversions to actual orders, and separate revenue kept from revenue returned &mdash; then price each gap.</p></div>
+    <div><h4>The finding</h4><p>Realised margin is 52.1% against a 62.4% full-price margin, with &#8377;5.37 lakh lost selling below cost. &#8377;2.69 crore sits in returns and RTO &mdash; the controllable share driven by size and image mismatches. And 36 of 50 ad campaigns diverge from the order book by over 20%. The full engine and tests are on GitHub.</p></div>
   </div>
 </div></section>
 
@@ -294,7 +318,7 @@
   <div class="contact">
     <a class="cbtn gold" href="mailto:aryan.m.mohammad@gmail.com">aryan.m.mohammad@gmail.com</a>
     <a class="cbtn" href="https://www.linkedin.com/in/aryan-mohammaddoost-990b6631a" target="_blank" rel="noopener">LinkedIn →</a>
-    <a class="cbtn" href="https://github.com/aryanmmohammad-commits/flow_audit_v2" target="_blank" rel="noopener">GitHub →</a>
+    <a class="cbtn" href="https://github.com/aryanmmohammad-commits" target="_blank" rel="noopener">GitHub →</a>
     <a class="cbtn" href="https://t.me/Ryanmhd98" target="_blank" rel="noopener">Telegram →</a>
   </div>
   <div class="base">
